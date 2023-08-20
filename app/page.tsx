@@ -1,10 +1,10 @@
-import Gallery from "./components/Gallery";
+import Gallery from "../components/Gallery";
 
 export default function Home() {
   return (
-    <main>
+    <section>
       <h1>Hello World</h1>
       <Gallery />
-    </main>
+    </section>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CloudinaryResource } from "@/models";
+import { CloudinaryResource } from "models";
 
 const getImages = async () => {
   const response = await fetch("http://localhost:4000/home");

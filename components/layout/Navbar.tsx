@@ -1,49 +1,48 @@
+import { useState } from "react";
 import Link from "next/link";
 
-interface LinkProps {
-  id: number;
-  text: string;
-  sublinks?: {
-    id: number;
-    text: string;
-  }[];
-}
+import { NavLink } from "models";
 
-const links: LinkProps[] = [
+const links: NavLink[] = [
   {
     id: 1,
-    text: "Blattodea",
+    text: "Home",
+    root: true,
   },
   {
     id: 2,
-    text: "Coleoptera",
+    text: "Blattodea",
   },
   {
     id: 3,
-    text: "Diptera",
+    text: "Coleoptera",
   },
   {
     id: 4,
-    text: "Hemiptera",
+    text: "Diptera",
   },
   {
     id: 5,
-    text: "Hymenoptera",
+    text: "Hemiptera",
   },
   {
     id: 6,
+    text: "Hymenoptera",
+  },
+  {
+    id: 7,
     text: "Lepidoptera",
     sublinks: [
-      { id: 1, text: "Butteflies" },
+      { id: 1, text: "Butterflies" },
       { id: 2, text: "Moths" },
     ],
   },
   {
-    id: 7,
+    id: 8,
     text: "Mantodea",
   },
   {
-    id: 8,
+    id: 9,
     text: "Odonata",
     sublinks: [
       { id: 1, text: "Dragonflies" },
@@ -51,47 +50,56 @@ const links: LinkProps[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     text: "Orthoptera",
   },
   {
-    id: 10,
+    id: 11,
     text: "Phasmida",
   },
   {
-    id: 11,
+    id: 12,
     text: "Trichoptera",
   },
 ];
 
-const Navbar = () => {
+interface Props {
+  setIsOpen: (value: React.SetStateAction<boolean>) => void;
+}
+
+const Navbar = ({ setIsOpen }: Props) => {
+  const [showSublinks, setShowSublinks] = useState(false);
+  const handleClick = () => setIsOpen(false);
   return (
     <nav>
-      <ul>
+      <ul className='flex flex-col gap-y-5 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0'>
         {links
           .sort((a, b) => a.id - b.id)
-          .map(({ id, text, sublinks }) => {
+          .map(({ id, text, root, sublinks }) => {
             return (
               <div key={id}>
                 {sublinks ? (
-                  <>
-                    {/* // TODO: show div on hover of li */}
-                    <li>{text}</li>
-                    <div>
-                      <ul>
-                        {sublinks.map(({ id, text }) => {
-                          return (
-                            <li key={id}>
-                              <Link href={`/${text.toLowerCase()}`}>{text}</Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                  <div className='group'>
+                    <li className='lg:hover:cursor-pointer'>{text}</li>
+                    <div className='lg:hidden lg:group-hover:block py-4 px-8 lg:absolute'>
+                      {sublinks.map((sublink) => {
+                        return (
+                          <li key={sublink.id}>
+                            <Link
+                              href={`/${text.toLowerCase()}/${sublink.text.toLowerCase()}`}
+                              onClick={handleClick}>
+                              {sublink.text}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </div>
-                  </>
+                  </div>
                 ) : (
                   <li>
-                    <Link href={`/${text.toLowerCase()}`}>{text}</Link>
+                    <Link href={root ? "/" : `/${text.toLowerCase()}`} onClick={handleClick}>
+                      {text}
+                    </Link>
                   </li>
                 )}
               </div>

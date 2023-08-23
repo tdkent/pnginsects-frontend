@@ -1,14 +1,20 @@
 import Image from "next/image";
 
 import { CloudinaryResource } from "models";
+import { backendUrl } from "lib/constants";
 
-const getImages = async () => {
-  const response = await fetch("http://localhost:4000/home");
+interface Props {
+  name: string;
+}
+
+const getImages = async (endpoint: string) => {
+  const response = await fetch(`${backendUrl}/${endpoint}`);
   return response.json();
 };
 
-const Gallery = async () => {
-  const { resources }: { resources: CloudinaryResource[] } = await getImages();
+export default async function ImageGallery({ name }: Props) {
+  const endpoint = name.toLowerCase();
+  const { resources }: { resources: CloudinaryResource[] } = await getImages(endpoint);
   return (
     <div>
       {resources.map((image) => {
@@ -26,6 +32,4 @@ const Gallery = async () => {
       })}
     </div>
   );
-};
-
-export default Gallery;
+}

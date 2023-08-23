@@ -1,65 +1,64 @@
-import { useState } from "react";
 import Link from "next/link";
 
-import { NavLink } from "models";
+import { NavName, NavLink } from "models";
 
 const links: NavLink[] = [
   {
     id: 1,
-    text: "Home",
+    text: NavName.home,
     root: true,
   },
   {
     id: 2,
-    text: "Blattodea",
+    text: NavName.blattodea,
   },
   {
     id: 3,
-    text: "Coleoptera",
+    text: NavName.coleoptera,
   },
   {
     id: 4,
-    text: "Diptera",
+    text: NavName.diptera,
   },
   {
     id: 5,
-    text: "Hemiptera",
+    text: NavName.hemiptera,
   },
   {
     id: 6,
-    text: "Hymenoptera",
+    text: NavName.hymenoptera,
   },
   {
     id: 7,
-    text: "Lepidoptera",
+    text: NavName.lepidoptera,
     sublinks: [
-      { id: 1, text: "Butterflies" },
-      { id: 2, text: "Moths" },
+      { id: 1, text: NavName.butterflies },
+      { id: 2, text: NavName.moths },
     ],
   },
   {
     id: 8,
-    text: "Mantodea",
+    text: NavName.mantodea,
   },
   {
     id: 9,
-    text: "Odonata",
+    text: NavName.odonata,
     sublinks: [
-      { id: 1, text: "Dragonflies" },
-      { id: 2, text: "Damselflies" },
+      { id: 1, text: NavName.dragonfiles },
+      { id: 2, text: NavName.damselflies },
     ],
   },
   {
     id: 10,
-    text: "Orthoptera",
+    text: NavName.orthoptera,
   },
   {
     id: 11,
-    text: "Phasmida",
+    text: NavName.phasmida,
   },
   {
     id: 12,
-    text: "Trichoptera",
+    text: NavName.trichoptera,
   },
 ];
 
@@ -68,7 +67,6 @@ interface Props {
 }
 
 const Navbar = ({ setIsOpen }: Props) => {
-  const [showSublinks, setShowSublinks] = useState(false);
   const handleClick = () => setIsOpen(false);
   return (
     <nav>

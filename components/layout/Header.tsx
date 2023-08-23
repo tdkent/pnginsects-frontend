@@ -7,7 +7,6 @@ import DarkModeSelect from "./DarkModeSelect";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log("🚀 ~ file: Header.tsx:10 ~ Header ~ isOpen:", isOpen);
   return (
     <header className='border-b'>
       {/* flex col */}
@@ -27,7 +26,10 @@ const Header = () => {
           <h1>Insects of Papua New Guinea</h1>
         </div>
       </div>
-      <div className={`${isOpen ? "left-0" : "left-full"} fixed lg:left-0 top-16 bg-white w-full`}>
+      <div
+        className={`${
+          isOpen ? "left-0" : "left-full"
+        } fixed top-16 bg-white w-full lg:left-0 lg:relative lg:top-0`}>
         <Navbar setIsOpen={setIsOpen} />
       </div>
     </header>

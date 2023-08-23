@@ -9,6 +9,25 @@ export interface NavLink {
   }[];
 }
 
+export enum NavName {
+  blattodea = "Blattodea",
+  butterflies = "Butterflies",
+  coleoptera = "Coleoptera",
+  damselflies = "Damselflies",
+  diptera = "Diptera",
+  dragonfiles = "Dragonflies",
+  hemiptera = "Hemiptera",
+  home = "Home",
+  hymenoptera = "Hymenoptera",
+  lepidoptera = "Lepidoptera",
+  mantodea = "Mantodea",
+  moths = "Moths",
+  odonata = "Odonata",
+  orthoptera = "Orthoptera",
+  phasmida = "Phasmida",
+  trichoptera = "Trichoptera",
+}
+
 // cloudinary
 export interface CloudinaryResource {
   asset_id: string;

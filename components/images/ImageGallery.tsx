@@ -18,6 +18,7 @@ export default async function ImageGallery({ name }: Props) {
   return (
     <div>
       {resources.map((image) => {
+        console.log(image);
         return (
           <div key={image.asset_id} className='relative w-[300px] aspect-[3/2]'>
             <Image
@@ -25,7 +26,7 @@ export default async function ImageGallery({ name }: Props) {
               src={image.secure_url}
               fill
               className='object-cover'
-              quality={50}
+              quality={10}
             />
           </div>
         );

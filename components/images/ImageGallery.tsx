@@ -13,23 +13,37 @@ const getImages = async (endpoint: string) => {
 }
 
 export default async function ImageGallery({ name }: Props) {
+  // fetch image data
   const endpoint = name.toLowerCase()
-  const { resources }: { resources: CloudinaryResource[] } =
-    await getImages(endpoint)
+  const resources: CloudinaryResource[] = await getImages(endpoint)
+
+  // create array of unique section names
+  const folderNames = resources.map((image) => image.folder.split("/")[1])
+  const sectionNames: string[] = [...new Set(folderNames)]
+
   return (
     <div>
-      {resources.map((image) => {
-        console.log(image)
+      {sectionNames.map((name) => {
         return (
-          <div key={image.asset_id} className="relative w-[300px] aspect-[3/2]">
-            <Image
-              alt={image.public_id}
-              src={image.secure_url}
-              fill
-              className="object-cover"
-              quality={10}
-            />
-          </div>
+          <section key={name}>
+            <h2>{name}</h2>
+            {resources.map((resource) => {
+              const section = resource.folder.split("/")[1]
+              return (
+                section === name && (
+                  <div key={resource.asset_id}>
+                    <Image
+                      src={resource.secure_url}
+                      alt={section}
+                      width={300}
+                      height={200}
+                      quality={10}
+                    />
+                  </div>
+                )
+              )
+            })}
+          </section>
         )
       })}
     </div>

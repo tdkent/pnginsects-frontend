@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-import { CloudinaryResource } from "models"
-import { backendUrl } from "lib/constants"
+import { CloudinaryResource } from "@/utils/models"
+import { backendUrl } from "@/utils/lib/constants"
 
 interface Props {
   name: string

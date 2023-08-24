@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { cloudinaryUrlPrefix } from "lib/constants"
+import { cloudinaryUrlPrefix } from "@/utils/lib/constants"
 
 const Footer = () => {
   return (

@@ -1,6 +1,6 @@
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
-import { NavName } from "@/models/index"
+import { NavName } from "@/utils/models"
 
 const Blattodea = () => {
   return (

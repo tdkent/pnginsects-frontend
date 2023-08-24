@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { NavName, NavLink } from "models"
+import { NavName, NavLink } from "@/utils/models"
 
 const links: NavLink[] = [
   {

@@ -1,5 +1,5 @@
-import { NavName } from "models"
-import ImageGallery from "components/images/ImageGallery"
+import { NavName } from "@/utils/models"
+import ImageGallery from "@/components/images/ImageGallery"
 
 export default function Home() {
   return (

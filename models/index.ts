@@ -1,12 +1,12 @@
 // layout
 export interface NavLink {
-  id: number;
-  text: string;
-  root?: boolean;
+  id: number
+  text: string
+  root?: boolean
   sublinks?: {
-    id: number;
-    text: string;
-  }[];
+    id: number
+    text: string
+  }[]
 }
 
 export enum NavName {
@@ -30,16 +30,16 @@ export enum NavName {
 
 // cloudinary
 export interface CloudinaryResource {
-  asset_id: string;
-  public_id: string;
-  format: string;
-  version: number;
-  resource_type: "upload";
-  created_at: string;
-  bytes: number;
-  width: number;
-  height: number;
-  folder: string;
-  url: string;
-  secure_url: string;
+  asset_id: string
+  public_id: string
+  format: string
+  version: number
+  resource_type: "upload"
+  created_at: string
+  bytes: number
+  width: number
+  height: number
+  folder: string
+  url: string
+  secure_url: string
 }

@@ -4,6 +4,6 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     domains: ["res.cloudinary.com"],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

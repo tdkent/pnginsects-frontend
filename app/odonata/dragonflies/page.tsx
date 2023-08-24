@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Dragonflies = () => {
-  return <div>Dragonflies</div>;
-};
+  return <div>Dragonflies</div>
+}
 
-export default Dragonflies;
+export default Dragonflies

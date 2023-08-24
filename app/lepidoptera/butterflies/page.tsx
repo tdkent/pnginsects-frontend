@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Butterflies = () => {
-  return <div>Butterflies</div>;
-};
+  return <div>Butterflies</div>
+}
 
-export default Butterflies;
+export default Butterflies

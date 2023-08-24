@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Hymenoptera = () => {
-  return <div>Hymenoptera</div>;
-};
+  return <div>Hymenoptera</div>
+}
 
-export default Hymenoptera;
+export default Hymenoptera

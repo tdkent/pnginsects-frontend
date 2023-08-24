@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Moths = () => {
-  return <div>Moths</div>;
-};
+  return <div>Moths</div>
+}
 
-export default Moths;
+export default Moths

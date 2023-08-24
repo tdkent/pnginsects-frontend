@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Mantodea = () => {
-  return <div>Mantodea</div>;
-};
+  return <div>Mantodea</div>
+}
 
-export default Mantodea;
+export default Mantodea

@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Coleoptera = () => {
-  return <div>Coleoptera</div>;
-};
+  return <div>Coleoptera</div>
+}
 
-export default Coleoptera;
+export default Coleoptera

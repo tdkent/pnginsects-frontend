@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Diptera = () => {
-  return <div>Diptera</div>;
-};
+  return <div>Diptera</div>
+}
 
-export default Diptera;
+export default Diptera

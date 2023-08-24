@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Damselflies = () => {
-  return <div>Damselflies</div>;
-};
+  return <div>Damselflies</div>
+}
 
-export default Damselflies;
+export default Damselflies

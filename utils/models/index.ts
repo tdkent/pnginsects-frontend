@@ -29,7 +29,7 @@ export enum NavName {
 }
 
 // cloudinary
-export interface CloudinaryResource {
+interface Resource {
   asset_id: string
   public_id: string
   format: string
@@ -42,4 +42,9 @@ export interface CloudinaryResource {
   folder: string
   url: string
   secure_url: string
+}
+
+export interface FilteredCloudinaryResources {
+  sectionName: string
+  images: Resource[]
 }

@@ -20,6 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className}>
+        <div id="backdrop" />
+        <div id="modal" />
         <div id="wrapper" className="min-h-[calc(100vh-80px)]">
           <Header />
           <main>{children}</main>

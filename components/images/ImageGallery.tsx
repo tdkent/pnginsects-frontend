@@ -1,7 +1,6 @@
-import Image from "next/image"
-
 import { FilteredCloudinaryResources } from "@/utils/models"
 import { backendUrl } from "@/utils/lib/constants"
+import SingleImage from "./SingleImage"
 
 interface Props {
   name: string
@@ -23,21 +22,14 @@ export default async function ImageGallery({ name }: Props) {
         return (
           <section key={sectionName}>
             <h2>{sectionName}</h2>
-            {images.map(
-              ({ asset_id, public_id, width, height, secure_url }, i) => {
-                return (
-                  <div key={asset_id}>
-                    <Image
-                      src={secure_url}
-                      alt={`${sectionName} image #${i + 1}`}
-                      width={300}
-                      height={200}
-                      quality={10}
-                    />
-                  </div>
-                )
-              },
-            )}
+            {images.map((image, i) => (
+              <SingleImage
+                key={image.asset_id}
+                sectionName={sectionName}
+                image={image}
+                i={i}
+              />
+            ))}
           </section>
         )
       })}

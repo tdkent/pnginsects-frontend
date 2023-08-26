@@ -15,12 +15,14 @@ interface Props {
 export default function SingleImage({
   sectionName,
   images,
-  image: { secure_url, width, height },
+  image: { secure_url, public_id },
   i,
 }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   const altText = `${sectionName} image #${i + 1}`
+
+  const isCaption = public_id.split("/")[2][0] === "'"
   return (
     <>
       {isOpen && (
@@ -32,7 +34,7 @@ export default function SingleImage({
           i={i}
         />
       )}
-      <div onClick={() => setIsOpen((prev) => !prev)}>
+      <figure onClick={() => setIsOpen((prev) => !prev)}>
         <Image
           src={secure_url}
           alt={altText}
@@ -40,7 +42,8 @@ export default function SingleImage({
           height={200}
           quality={10}
         />
-      </div>
+        {isCaption && <figcaption>{public_id.split("/")[2]}</figcaption>}
+      </figure>
     </>
   )
 }

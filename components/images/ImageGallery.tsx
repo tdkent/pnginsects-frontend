@@ -26,6 +26,7 @@ export default async function ImageGallery({ name }: Props) {
               <SingleImage
                 key={image.asset_id}
                 sectionName={sectionName}
+                images={images}
                 image={image}
                 i={i}
               />

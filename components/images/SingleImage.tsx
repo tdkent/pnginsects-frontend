@@ -7,12 +7,14 @@ import Modal from "../modal/Modal"
 
 interface Props {
   sectionName: string
+  images: Resource[]
   image: Resource
   i: number
 }
 
 export default function SingleImage({
   sectionName,
+  images,
   image: { secure_url, width, height },
   i,
 }: Props) {
@@ -22,7 +24,13 @@ export default function SingleImage({
   return (
     <>
       {isOpen && (
-        <Modal imgUrl={secure_url} altText={altText} setIsOpen={setIsOpen} />
+        <Modal
+          imgUrl={secure_url}
+          images={images}
+          altText={altText}
+          setIsOpen={setIsOpen}
+          i={i}
+        />
       )}
       <div onClick={() => setIsOpen((prev) => !prev)}>
         <Image

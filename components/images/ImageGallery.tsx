@@ -1,6 +1,6 @@
 import { CloudinaryResources } from "@/utils/models"
 import SingleImage from "./SingleImage"
-import { getImages } from "@/utils/fetch.tsx"
+import { getImages, shortenSectionName } from "@/utils/funcs"
 
 interface Props {
   name: string
@@ -13,8 +13,9 @@ export default async function ImageGallery({ name }: Props) {
     <div>
       {resources.map(({ sectionName, images }, i) => {
         const imgUrls = images.map((img) => img.secure_url)
+        const shortSection = shortenSectionName(sectionName)
         return (
-          <section id={`${sectionName}`} key={i}>
+          <section id={shortSection} key={i}>
             <h2>{sectionName}</h2>
             {images.map((img, i) => {
               return (

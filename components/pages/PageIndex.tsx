@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { getImages } from "@/utils/fetch.tsx"
+import { getImages, shortenSectionName } from "@/utils/funcs"
 import { CloudinaryResources } from "@/utils/models"
 
 interface Props {
@@ -16,9 +16,10 @@ export default async function PageIndex({ name }: Props) {
       <nav>
         <ul>
           {sections.map((section, i) => {
+            const shortSection = shortenSectionName(section)
             return (
               <li key={i}>
-                <Link href={`#${section}`}>{section}</Link>
+                <Link href={`#${shortSection}`}>{shortSection}</Link>
               </li>
             )
           })}

@@ -42,6 +42,7 @@ export interface Resource {
   folder: string
   url: string
   secure_url: string
+  caption: string
 }
 
 export interface FilteredCloudinaryResources {

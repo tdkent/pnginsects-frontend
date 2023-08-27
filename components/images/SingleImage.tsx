@@ -6,43 +6,31 @@ import { Resource } from "@/utils/models"
 import Modal from "../modal/Modal"
 
 interface Props {
+  idx: number
+  imgUrls: string[]
+  img: Resource
   sectionName: string
-  images: Resource[]
-  image: Resource
-  i: number
 }
 
-export default function SingleImage({
-  sectionName,
-  images,
-  image: { secure_url, public_id },
-  i,
-}: Props) {
+export default function SingleImage(props: Props) {
+  const {
+    img: { secure_url, caption },
+    sectionName,
+  } = props
   const [isOpen, setIsOpen] = useState(false)
 
-  const altText = `${sectionName} image #${i + 1}`
-
-  const isCaption = public_id.split("/")[2][0] === "'"
   return (
     <>
-      {isOpen && (
-        <Modal
-          imgUrl={secure_url}
-          images={images}
-          altText={altText}
-          setIsOpen={setIsOpen}
-          i={i}
-        />
-      )}
+      {isOpen && <Modal setIsOpen={setIsOpen} {...props} />}
       <figure onClick={() => setIsOpen((prev) => !prev)}>
         <Image
           src={secure_url}
-          alt={altText}
+          alt={sectionName}
           width={300}
           height={200}
           quality={10}
         />
-        {isCaption && <figcaption>{public_id.split("/")[2]}</figcaption>}
+        {caption && <figcaption>{caption}</figcaption>}
       </figure>
     </>
   )

@@ -18,19 +18,22 @@ export default async function ImageGallery({ name }: Props) {
 
   return (
     <div>
-      {resources.map(({ sectionName, images }) => {
+      {resources.map(({ sectionName, images }, i) => {
+        const imgUrls = images.map((img) => img.secure_url)
         return (
-          <section key={sectionName}>
+          <section key={i}>
             <h2>{sectionName}</h2>
-            {images.map((image, i) => (
-              <SingleImage
-                key={image.asset_id}
-                sectionName={sectionName}
-                images={images}
-                image={image}
-                i={i}
-              />
-            ))}
+            {images.map((img, i) => {
+              return (
+                <SingleImage
+                  key={i}
+                  idx={i}
+                  imgUrls={imgUrls}
+                  img={img}
+                  sectionName={sectionName}
+                />
+              )
+            })}
           </section>
         )
       })}

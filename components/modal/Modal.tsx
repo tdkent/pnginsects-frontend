@@ -11,22 +11,21 @@ import Backdrop from "./Backdrop"
 import { Resource } from "@/utils/models"
 
 interface Props {
-  imgUrl: string
-  images: Resource[]
-  altText: string
+  idx: number
+  imgUrls: string[]
+  img: Resource
+  sectionName: string
+  // eslint-disable-next-line no-unused-vars
   setIsOpen: (value: React.SetStateAction<boolean>) => void
-  i: number
 }
 
-function ModalContent({ imgUrl, images, altText, setIsOpen, i }: Props) {
-  const [currentImg, setCurrentImg] = useState<string>(imgUrl)
-  const [currentIdx, setCurrentIdx] = useState<number>(i)
-
-  const sectionImgUrls = images.map((img) => img.secure_url)
+function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
+  const [currentImg, setCurrentImg] = useState<string>(imgUrls[idx])
+  const [currentIdx, setCurrentIdx] = useState<number>(idx)
 
   useEffect(() => {
-    setCurrentImg(sectionImgUrls[currentIdx])
-  }, [currentIdx, sectionImgUrls])
+    setCurrentImg(imgUrls[currentIdx])
+  }, [currentIdx, imgUrls])
 
   const handleLeftClick = () => {
     setCurrentIdx((prev) => prev - 1)
@@ -52,13 +51,13 @@ function ModalContent({ imgUrl, images, altText, setIsOpen, i }: Props) {
         <div className="relative w-[900px] aspect-[3/2]">
           <Image
             src={currentImg}
-            alt={altText}
+            alt={sectionName}
             fill
             className="object-cover"
             quality={10}
           />
         </div>
-        {currentIdx !== sectionImgUrls.length - 1 && (
+        {currentIdx !== imgUrls.length - 1 && (
           <div>
             <ChevronRightIcon
               className="w-12 h-12 text-white"

@@ -6,7 +6,7 @@ import { NavName } from "@/utils/models"
 const Blattodea = () => {
   return (
     <div className="flex flex-row-reverse">
-      <PageIndex sections={[]} />
+      <PageIndex name={NavName.blattodea} />
       <article className="w-4/5">
         <PageHeader
           alt1="Cockroach"

@@ -45,7 +45,10 @@ export interface Resource {
   caption: string
 }
 
-export interface FilteredCloudinaryResources {
-  sectionName: string
-  images: Resource[]
+export interface CloudinaryResources {
+  sections: string[]
+  resources: {
+    sectionName: string
+    images: Resource[]
+  }[]
 }

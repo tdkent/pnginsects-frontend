@@ -3,7 +3,7 @@ import PageIndex from "@/components/pages/PageIndex"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 
-const Blattodea = () => {
+export default function Blattodea() {
   return (
     <div className="flex flex-row-reverse">
       <PageIndex name={NavName.blattodea} />
@@ -14,10 +14,10 @@ const Blattodea = () => {
           asset1="v1692732151/assets/cockroach_luskgx.png"
           asset2="v1692732149/assets/termite_w4gea5.png"
           text="Blattodea - Cockroaches and Termites"
-          width1={1498}
-          height1={920}
-          width2={997}
-          height2={709}
+          width1="1498"
+          height1="920"
+          width2="997"
+          height2="709"
         />
         <section>
           <p>
@@ -54,5 +54,3 @@ const Blattodea = () => {
     </div>
   )
 }
-
-export default Blattodea

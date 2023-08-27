@@ -8,10 +8,10 @@ interface Props {
   asset1: string
   asset2: string
   text: string
-  width1: number
-  width2: number
-  height1: number
-  height2: number
+  width1: string
+  width2: string
+  height1: string
+  height2: string
 }
 
 export default function PageHeader({
@@ -26,13 +26,13 @@ export default function PageHeader({
   height2,
 }: Props) {
   return (
-    <div className="flex">
+    <div className="flex h-12">
       <div className={`relative w-12 aspect-[${width1}/${height1}]`}>
         <Image
           src={`${cloudinaryUrlPrefix}/${asset1}`}
           alt={alt1}
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
       <h2>{text}</h2>
@@ -41,7 +41,7 @@ export default function PageHeader({
           src={`${cloudinaryUrlPrefix}/${asset2}`}
           alt={alt2}
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
     </div>

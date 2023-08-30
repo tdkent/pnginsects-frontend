@@ -35,20 +35,20 @@ function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
   }
 
   const content = (
-    <div className="fixed top-0 left-0 z-50 flex flex-col">
+    <div className="fixed left-0 top-0 z-50 flex flex-col">
       <div onClick={() => setIsOpen(false)}>
-        <XMarkIcon className="w-10 h-10 text-white" />
+        <XMarkIcon className="h-10 w-10 text-white" />
       </div>
       <div className="flex items-center">
         {currentIdx && (
           <div>
             <ChevronLeftIcon
-              className="w-12 h-12 text-white"
+              className="h-12 w-12 text-white"
               onClick={handleLeftClick}
             />
           </div>
         )}
-        <div className="relative w-[900px] aspect-[3/2]">
+        <div className="relative aspect-[3/2] w-[900px]">
           <Image
             src={currentImg}
             alt={sectionName}
@@ -60,7 +60,7 @@ function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
         {currentIdx !== imgUrls.length - 1 && (
           <div>
             <ChevronRightIcon
-              className="w-12 h-12 text-white"
+              className="h-12 w-12 text-white"
               onClick={handleRightClick}
             />
           </div>
@@ -70,7 +70,7 @@ function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
   )
   return ReactDOM.createPortal(
     content,
-    document.getElementById("modal") as HTMLElement,
+    document.getElementById("modal") as HTMLElement
   )
 }
 

@@ -79,7 +79,7 @@ const Navbar = ({ setIsOpen }: Props) => {
                 {sublinks ? (
                   <div className="group">
                     <li className="lg:hover:cursor-pointer">{text}</li>
-                    <div className="lg:hidden lg:group-hover:block py-4 px-8 lg:absolute">
+                    <div className="px-8 py-4 lg:absolute lg:hidden lg:group-hover:block">
                       {sublinks.map((sublink) => {
                         return (
                           <li key={sublink.id}>

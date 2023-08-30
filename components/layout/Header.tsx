@@ -1,9 +1,12 @@
 "use client"
 import { useState } from "react"
+import { Grenze_Gotisch } from "next/font/google"
 
 import Navbar from "./Navbar"
 import MobileNavSelect from "./MobileNavSelect"
 import DarkModeSelect from "./DarkModeSelect"
+
+const grenzeGotisch = Grenze_Gotisch({ subsets: ["latin"] })
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,13 +26,15 @@ const Header = () => {
         </div>
         <div className="flex justify-center">
           {/* Logo, site title */}
-          <h1>Insects of Papua New Guinea</h1>
+          <h1 className={grenzeGotisch.className}>
+            Insects of Papua New Guinea
+          </h1>
         </div>
       </div>
       <div
         className={`${
           isOpen ? "left-0" : "left-full"
-        } fixed top-16 bg-white w-full lg:left-0 lg:relative lg:top-0`}
+        } bg-white fixed top-16 w-full lg:relative lg:left-0 lg:top-0`}
       >
         <Navbar setIsOpen={setIsOpen} />
       </div>

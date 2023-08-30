@@ -7,12 +7,12 @@ interface Props {
 export default function Backdrop({ setIsOpen }: Props) {
   const backdrop = (
     <div
-      className="fixed top-0 left-0 w-full h-screen bg-black/80 z-10"
+      className="fixed left-0 top-0 z-10 h-screen w-full bg-black/80"
       onClick={() => setIsOpen(false)}
     ></div>
   )
   return ReactDOM.createPortal(
     backdrop,
-    document.getElementById("backdrop") as HTMLElement,
+    document.getElementById("backdrop") as HTMLElement
   )
 }

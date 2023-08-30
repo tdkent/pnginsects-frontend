@@ -1,11 +1,15 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Open_Sans } from "next/font/google"
+import { Open_Sans, Playfair_Display } from "next/font/google"
 
 import Header from "components/layout/Header"
 import Footer from "components/layout/Footer"
 
-const openSans = Open_Sans({ subsets: ["latin"] })
+const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" })
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+})
 
 export const metadata: Metadata = {
   title: "Insects of Papua New Guinea",
@@ -18,8 +22,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={openSans.className}>
+    <html
+      lang="en"
+      className={`${openSans.variable} ${playfairDisplay.variable}`}
+    >
+      <body>
         <div id="backdrop" />
         <div id="modal" />
         <div id="wrapper" className="min-h-[calc(100vh-80px)]">

@@ -33,7 +33,12 @@ const config: Config = {
         900: "#222222",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-open-sans)"],
+        serif: ["var(--font-playfair-display)"],
+      },
+    },
   },
   plugins: [],
 }

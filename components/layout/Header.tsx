@@ -1,12 +1,9 @@
 "use client"
 import { useState } from "react"
-import { Grenze_Gotisch } from "next/font/google"
 
 import Navbar from "./Navbar"
 import MobileNavSelect from "./MobileNavSelect"
 import DarkModeSelect from "./DarkModeSelect"
-
-const grenzeGotisch = Grenze_Gotisch({ subsets: ["latin"] })
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,9 +23,7 @@ const Header = () => {
         </div>
         <div className="flex justify-center">
           {/* Logo, site title */}
-          <h1 className={grenzeGotisch.className}>
-            Insects of Papua New Guinea
-          </h1>
+          <h1>Insects of Papua New Guinea</h1>
         </div>
       </div>
       <div

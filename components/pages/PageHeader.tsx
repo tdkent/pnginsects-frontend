@@ -26,8 +26,10 @@ export default function PageHeader({
   height2,
 }: Props) {
   return (
-    <div className="flex h-12">
-      <div className={`relative w-12 aspect-[${width1}/${height1}]`}>
+    <div className="flex">
+      <div
+        className={`relative w-12 aspect-[${width1}/${height1}] max-sm:hidden`}
+      >
         <Image
           src={`${cloudinaryUrlPrefix}/${asset1}`}
           alt={alt1}
@@ -35,8 +37,10 @@ export default function PageHeader({
           className="object-contain"
         />
       </div>
-      <h2>{text}</h2>
-      <div className={`relative w-12 aspect-[${width2}/${height2}]`}>
+      <h2 className="pb-6 text-2xl leading-9">{text}</h2>
+      <div
+        className={`relative w-12 aspect-[${width2}/${height2}] max-md:hidden`}
+      >
         <Image
           src={`${cloudinaryUrlPrefix}/${asset2}`}
           alt={alt2}

@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import PageIndexSelect from "./PageIndexSelect"
 import { getImages, shortenSectionName } from "@/utils/funcs"
 import { CloudinaryResources } from "@/utils/models"
 
@@ -11,9 +12,9 @@ export default async function PageIndex({ name }: Props) {
   const endpoint = name.toLowerCase()
   const { sections }: CloudinaryResources = await getImages(endpoint)
   return (
-    <aside className="w-1/5">
-      <div>On this page</div>
-      <nav>
+    <aside className="w-full border-y border-neutral-100 px-4 py-3 lg:w-1/5">
+      <PageIndexSelect sections={sections} />
+      <nav className="max-lg:hidden">
         <ul>
           {sections.map((section, i) => {
             const shortSection = shortenSectionName(section)

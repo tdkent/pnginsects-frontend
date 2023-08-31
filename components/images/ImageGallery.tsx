@@ -15,8 +15,12 @@ export default async function ImageGallery({ name }: Props) {
         const imgUrls = images.map((img) => img.secure_url)
         const shortSection = shortenSectionName(sectionName)
         return (
-          <section id={shortSection} key={i}>
-            <h2>{sectionName}</h2>
+          <section
+            id={shortSection}
+            key={i}
+            className="mt-8 border-t border-neutral-200 pt-8"
+          >
+            <h3>{sectionName}</h3>
             {images.map((img, i) => {
               return (
                 <SingleImage

@@ -8,12 +8,9 @@ import DarkModeSelect from "./DarkModeSelect"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="border-b">
-      {/* flex col */}
+    <header>
       <div className="flex flex-col">
         <div className="flex justify-end">
-          {/* Navigation elements, dark mode */}
-          {/* This elements sits on top in mobile layout */}
           <div className="lg:hidden">
             <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
@@ -22,7 +19,6 @@ const Header = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          {/* Logo, site title */}
           <h1>Insects of Papua New Guinea</h1>
         </div>
       </div>

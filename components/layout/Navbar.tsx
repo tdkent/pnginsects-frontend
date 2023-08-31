@@ -63,14 +63,19 @@ const links: NavLink[] = [
 ]
 
 interface Props {
+  isOpen: boolean
   setIsOpen: (value: React.SetStateAction<boolean>) => void
 }
 
-const Navbar = ({ setIsOpen }: Props) => {
+const Navbar = ({ isOpen, setIsOpen }: Props) => {
   const handleClick = () => setIsOpen(false)
   return (
-    <nav>
-      <ul className="flex flex-col gap-y-5 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0">
+    <nav
+      className={`${
+        isOpen ? "left-0" : "left-full"
+      } fixed bottom-0 top-[72px] z-10 h-screen w-screen overflow-y-auto overflow-x-hidden border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 pb-[72px] lg:relative lg:left-0 lg:top-0`}
+    >
+      <ul className="h-[calc(100% + 4rem)] relative flex flex-col gap-y-6 overflow-y-auto p-6 pb-10 font-light text-primary-50 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {
@@ -78,11 +83,13 @@ const Navbar = ({ setIsOpen }: Props) => {
               <div key={id}>
                 {sublinks ? (
                   <div className="group">
-                    <li className="lg:hover:cursor-pointer">{text}</li>
-                    <div className="px-8 py-4 lg:absolute lg:hidden lg:group-hover:block">
+                    <li className="text-primary-400 lg:hover:cursor-pointer">
+                      {text}
+                    </li>
+                    <div className="flex flex-col gap-y-6 pt-6 lg:absolute lg:hidden lg:group-hover:block">
                       {sublinks.map((sublink) => {
                         return (
-                          <li key={sublink.id}>
+                          <li key={sublink.id} className="px-8">
                             <Link
                               href={`/${text.toLowerCase()}/${sublink.text.toLowerCase()}`}
                               onClick={handleClick}
@@ -95,7 +102,7 @@ const Navbar = ({ setIsOpen }: Props) => {
                     </div>
                   </div>
                 ) : (
-                  <li>
+                  <li className="boder">
                     <Link
                       href={root ? "/" : `/${text.toLowerCase()}`}
                       onClick={handleClick}

@@ -10,9 +10,9 @@ export default function MobileNavSelect({ isOpen, setIsOpen }: Props) {
   return (
     <div className="lg:hidden">
       {isOpen ? (
-        <XMarkIcon className="text-black h-8 w-8" onClick={handleClick} />
+        <XMarkIcon className="h-8 w-8 text-primary-100" onClick={handleClick} />
       ) : (
-        <Bars3Icon className="text-black h-8 w-8" onClick={handleClick} />
+        <Bars3Icon className="h-8 w-8 text-primary-100" onClick={handleClick} />
       )}
     </div>
   )

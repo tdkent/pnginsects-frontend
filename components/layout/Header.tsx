@@ -8,10 +8,10 @@ import DarkModeSelect from "./DarkModeSelect"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header className="flex items-center justify-between px-5 pb-4 pt-2">
-      <h1 className="">
+    <header className="flex h-[72px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2">
+      <h1 className="text-primary-300">
         Insects of
-        <span className="text-2xl leading-5 max-md:block">
+        <span className="text-2xl leading-5 text-primary-100 max-md:block">
           Papua New Guinea
         </span>
       </h1>
@@ -19,13 +19,7 @@ const Header = () => {
         <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
         <DarkModeSelect />
       </div>
-      <div
-        className={`${
-          isOpen ? "left-0" : "left-full"
-        } bg-white fixed top-16 w-full lg:relative lg:left-0 lg:top-0`}
-      >
-        <Navbar setIsOpen={setIsOpen} />
-      </div>
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   )
 }

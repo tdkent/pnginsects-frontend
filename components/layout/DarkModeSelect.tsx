@@ -8,9 +8,9 @@ export default function DarkModeSelect() {
   return (
     <div className="">
       {isDark ? (
-        <MoonIcon className="text-black h-8 w-8" onClick={handleClick} />
+        <MoonIcon className="h-8 w-8 text-primary-100" onClick={handleClick} />
       ) : (
-        <SunIcon className="text-black h-8 w-8" onClick={handleClick} />
+        <SunIcon className="h-8 w-8 text-primary-100" onClick={handleClick} />
       )}
     </div>
   )

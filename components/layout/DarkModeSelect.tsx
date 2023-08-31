@@ -6,11 +6,11 @@ export default function DarkModeSelect() {
   const [isDark, setIsDark] = useState(false)
   const handleClick = () => setIsDark((prev) => !prev)
   return (
-    <div>
+    <div className="">
       {isDark ? (
-        <MoonIcon className="h-8 w-8 text-black" onClick={handleClick} />
+        <MoonIcon className="text-black h-8 w-8" onClick={handleClick} />
       ) : (
-        <SunIcon className="h-8 w-8 text-black" onClick={handleClick} />
+        <SunIcon className="text-black h-8 w-8" onClick={handleClick} />
       )}
     </div>
   )

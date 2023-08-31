@@ -8,11 +8,11 @@ interface Props {
 export default function MobileNavSelect({ isOpen, setIsOpen }: Props) {
   const handleClick = () => setIsOpen((prev) => !prev)
   return (
-    <div>
+    <div className="lg:hidden">
       {isOpen ? (
-        <XMarkIcon className="h-8 w-8 text-black" onClick={handleClick} />
+        <XMarkIcon className="text-black h-8 w-8" onClick={handleClick} />
       ) : (
-        <Bars3Icon className="h-8 w-8 text-black" onClick={handleClick} />
+        <Bars3Icon className="text-black h-8 w-8" onClick={handleClick} />
       )}
     </div>
   )

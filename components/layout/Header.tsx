@@ -8,19 +8,16 @@ import DarkModeSelect from "./DarkModeSelect"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <header>
-      <div className="flex flex-col">
-        <div className="flex justify-end">
-          <div className="lg:hidden">
-            <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
-          </div>
-          <div>
-            <DarkModeSelect />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <h1>Insects of Papua New Guinea</h1>
-        </div>
+    <header className="flex items-center justify-between px-5 pb-4 pt-2">
+      <h1 className="">
+        Insects of
+        <span className="text-2xl leading-5 max-md:block">
+          Papua New Guinea
+        </span>
+      </h1>
+      <div className="flex gap-x-2">
+        <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
+        <DarkModeSelect />
       </div>
       <div
         className={`${

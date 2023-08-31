@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Orthoptera() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.orthoptera} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Grasshopper"
           alt2="Katydid"
@@ -38,6 +38,6 @@ export default function Orthoptera() {
         </section>
         <ImageGallery name={NavName.orthoptera} />
       </article>
-    </div>
+    </>
   )
 }

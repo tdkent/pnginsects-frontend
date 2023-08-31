@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Trichoptera() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.trichoptera} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Caddisfly"
           alt2="Caddisfly"
@@ -37,6 +37,6 @@ export default function Trichoptera() {
         </section>
         <ImageGallery name={NavName.trichoptera} />
       </article>
-    </div>
+    </>
   )
 }

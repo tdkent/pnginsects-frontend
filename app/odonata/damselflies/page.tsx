@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Damselflies() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.damselflies} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Damselfly"
           alt2="Damselfly"
@@ -38,6 +38,6 @@ export default function Damselflies() {
         </section>
         <ImageGallery name={NavName.damselflies} />
       </article>
-    </div>
+    </>
   )
 }

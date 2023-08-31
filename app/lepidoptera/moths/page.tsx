@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Moths() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.moths} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Moth"
           alt2="Moth"
@@ -36,6 +36,6 @@ export default function Moths() {
         </section>
         <ImageGallery name={NavName.moths} />
       </article>
-    </div>
+    </>
   )
 }

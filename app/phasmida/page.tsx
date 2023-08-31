@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Phasmida() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.phasmida} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Stick Insect"
           alt2="Leaf Insect"
@@ -39,6 +39,6 @@ export default function Phasmida() {
         </section>
         <ImageGallery name={NavName.phasmida} />
       </article>
-    </div>
+    </>
   )
 }

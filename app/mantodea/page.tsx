@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Mantodea() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.mantodea} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Mantis"
           alt2="Mantis"
@@ -38,6 +38,6 @@ export default function Mantodea() {
         </section>
         <ImageGallery name={NavName.mantodea} />
       </article>
-    </div>
+    </>
   )
 }

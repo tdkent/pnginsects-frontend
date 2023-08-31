@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Butterflies() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.butterflies} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Butterfly"
           alt2="Butterfly"
@@ -37,6 +37,6 @@ export default function Butterflies() {
         </section>
         <ImageGallery name={NavName.butterflies} />
       </article>
-    </div>
+    </>
   )
 }

@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Hemiptera() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.hemiptera} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Bug"
           alt2="Shield Bug"
@@ -40,6 +40,6 @@ export default function Hemiptera() {
         </section>
         <ImageGallery name={NavName.hemiptera} />
       </article>
-    </div>
+    </>
   )
 }

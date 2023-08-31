@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Dragonflies() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.dragonfiles} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Dragonfly"
           alt2="Dragonfly"
@@ -37,6 +37,6 @@ export default function Dragonflies() {
         </section>
         <ImageGallery name={NavName.dragonfiles} />
       </article>
-    </div>
+    </>
   )
 }

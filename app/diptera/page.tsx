@@ -5,9 +5,9 @@ import { NavName } from "@/utils/models"
 
 export default function Diptera() {
   return (
-    <div className="flex flex-row-reverse">
+    <>
       <PageIndex name={NavName.diptera} />
-      <article className="w-4/5">
+      <article className="article-container">
         <PageHeader
           alt1="Fly"
           alt2="Mosquito"
@@ -29,13 +29,13 @@ export default function Diptera() {
             predators.
           </p>
           <p>
-            Identification Tips: Flies have a compact body with large, often
-            prominent compound eyes. They possess short antennae and mouthparts
-            adapted for piercing, sucking, or lapping.
+            <strong>Identification Tips:</strong> Flies have a compact body with
+            large, often prominent compound eyes. They possess short antennae
+            and mouthparts adapted for piercing, sucking, or lapping.
           </p>
         </section>
         <ImageGallery name={NavName.diptera} />
       </article>
-    </div>
+    </>
   )
 }

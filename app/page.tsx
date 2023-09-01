@@ -1,11 +1,15 @@
+import { EnvelopeIcon } from "@heroicons/react/24/outline"
+
 import { NavName } from "@/utils/models"
 import ImageGallery from "@/components/images/ImageGallery"
 
 export default function Home() {
   return (
-    <>
+    <article className="article-container">
       <section>
-        <h2>Welcome to Insects of Papua New Guinea</h2>
+        <h2 className="my-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700">
+          Welcome to Insects of Papua New Guinea!
+        </h2>
         <p>
           My name is James Wareing and I am currently working in conservation in
           the Torricelli Mountain Range of Papua New Guinea. The goal of this
@@ -31,11 +35,20 @@ export default function Home() {
         <p>
           Any feedback, especially in relation to identifications, is always
           gratefully received. I would also welcome the use of my photos, should
-          the appropriate credit naturally be given. You can find me at
-          jtwareing@gmail.com
+          the appropriate credit naturally be given.
         </p>
+        <div className="mt-10 border-t border-neutral-200 px-6 pb-4 pt-8 text-xl leading-8 text-primary-700">
+          Get in Touch
+          <div className="flex items-center gap-x-3 pt-4 text-base text-neutral-900">
+            <EnvelopeIcon className="-mt-0.5 h-5 w-5" />
+            <div className="flex flex-col items-center">
+              <a href="mailto:jtwareing@gmail.com">jtwareing@gmail.com</a>
+              <div className="mt-0.5 w-[90%] border-t border-dashed" />
+            </div>
+          </div>
+        </div>
       </section>
       <ImageGallery name={NavName.home} />
-    </>
+    </article>
   )
 }

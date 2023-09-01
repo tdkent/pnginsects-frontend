@@ -17,7 +17,7 @@
   }
 
   article p {
-    @apply mb-5 last:mb-10;
+    @apply mb-5 leading-8 last:mb-10;
   }
 
   h1,

@@ -20,7 +20,7 @@ export default async function ImageGallery({ name }: Props) {
             key={i}
             className="mt-8 border-t border-neutral-200 pt-8"
           >
-            <h3>{sectionName}</h3>
+            {sectionName !== "Tiles" && <h3>{sectionName}</h3>}
             {images.map((img, i) => {
               return (
                 <SingleImage

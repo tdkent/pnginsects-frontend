@@ -7,8 +7,8 @@ import Modal from "../modal/Modal"
 
 interface Props {
   idx: number
-  imgUrls: string[]
   img: Resource
+  imgs: Resource[]
   sectionName: string
 }
 
@@ -19,12 +19,14 @@ export default function SingleImage(props: Props) {
     sectionName,
   } = props
   const [isOpen, setIsOpen] = useState(false)
-
   return (
     <>
       {isOpen && <Modal setIsOpen={setIsOpen} {...props} />}
-      <figure onClick={() => setIsOpen((prev) => !prev)} className="my-8">
-        <div className="w-100vw relative aspect-[3/2] border border-neutral-500">
+      <figure
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="my-5 basis-full"
+      >
+        <div className="relative aspect-[3/2] w-full border border-neutral-400">
           <Image
             src={secure_url}
             alt={`${sectionName} ${idx + 1}`}

@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* body */
   body {
-    @apply font-sans text-neutral-900;
+    @apply bg-white font-sans text-neutral-900;
   }
 
-  /* articles */
+  /* containers & layout */
   .article-container {
     @apply flex flex-col px-4 py-8 lg:flex-row-reverse;
   }
@@ -20,6 +21,11 @@
     @apply mb-5 leading-8 last:mb-10;
   }
 
+  svg {
+    @apply stroke-1;
+  }
+
+  /* typography */
   h1,
   h2 {
     @apply font-serif;

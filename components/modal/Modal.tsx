@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import ReactDOM from "react-dom"
 import Image from "next/image"
 import {
   ChevronRightIcon,
   ChevronLeftIcon,
-  XMarkIcon,
+  XCircleIcon,
 } from "@heroicons/react/24/outline"
 
 import Backdrop from "./Backdrop"
@@ -12,20 +12,30 @@ import { Resource } from "@/utils/models"
 
 interface Props {
   idx: number
-  imgUrls: string[]
   img: Resource
+  imgs: Resource[]
   sectionName: string
   // eslint-disable-next-line no-unused-vars
   setIsOpen: (value: React.SetStateAction<boolean>) => void
 }
 
-function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
-  const [currentImg, setCurrentImg] = useState<string>(imgUrls[idx])
-  const [currentIdx, setCurrentIdx] = useState<number>(idx)
+function ModalContent(props: Props) {
+  const { idx, imgs, sectionName, setIsOpen } = props
+
+  const imgUrls = useMemo(() => imgs.map((img) => img.secure_url), [imgs])
+  const imgCaptions = useMemo(
+    () => imgs.map((img) => (img.caption ? img.caption : "")),
+    [imgs]
+  )
+
+  const [currentImg, setCurrentImg] = useState(imgUrls[idx])
+  const [currentIdx, setCurrentIdx] = useState(idx)
+  const [currentCaption, setCurrentCaption] = useState("")
 
   useEffect(() => {
     setCurrentImg(imgUrls[currentIdx])
-  }, [currentIdx, imgUrls])
+    setCurrentCaption(imgCaptions[currentIdx])
+  }, [currentIdx, imgUrls, imgCaptions])
 
   const handleLeftClick = () => {
     setCurrentIdx((prev) => prev - 1)
@@ -35,20 +45,23 @@ function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
   }
 
   const content = (
-    <div className="fixed left-0 top-0 z-50 flex flex-col">
-      <div onClick={() => setIsOpen(false)}>
-        <XMarkIcon className="h-10 w-10 text-white" />
+    <div className="fixed left-0 top-1/2 z-50 flex w-screen -translate-y-[calc(50%+3rem)] flex-col gap-y-4">
+      <div
+        className="mr-[10%] flex justify-end"
+        onClick={() => setIsOpen(false)}
+      >
+        <XCircleIcon className="h-8 w-8 text-neutral-50" />
       </div>
-      <div className="flex items-center">
-        {currentIdx && (
-          <div>
+      <div className="flex flex-wrap items-center">
+        <div className="basis-[10%]">
+          {currentIdx && (
             <ChevronLeftIcon
-              className="h-12 w-12 text-white"
+              className="h-8 w-8 text-neutral-50"
               onClick={handleLeftClick}
             />
-          </div>
-        )}
-        <div className="relative aspect-[3/2] w-[900px]">
+          )}
+        </div>
+        <div className="relative flex aspect-[3/2] basis-[80%] flex-col">
           <Image
             src={currentImg}
             alt={sectionName}
@@ -57,14 +70,17 @@ function ModalContent({ idx, imgUrls, img, sectionName, setIsOpen }: Props) {
             quality={10}
           />
         </div>
-        {currentIdx !== imgUrls.length - 1 && (
-          <div>
+        <div className="basis-[10%]">
+          {currentIdx !== imgUrls.length - 1 && (
             <ChevronRightIcon
-              className="h-12 w-12 text-white"
+              className="h-8 w-8 text-neutral-50"
               onClick={handleRightClick}
             />
-          </div>
-        )}
+          )}
+        </div>
+        <div className="mt-4 h-7 basis-full px-8 text-center font-light text-primary-50">
+          {currentCaption}
+        </div>
       </div>
     </div>
   )

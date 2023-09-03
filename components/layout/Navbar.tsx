@@ -73,9 +73,9 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
     <nav
       className={`${
         isOpen ? "left-0" : "left-full"
-      } fixed bottom-0 top-[72px] z-20 h-screen w-screen overflow-y-auto overflow-x-hidden border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 pb-[72px] lg:relative lg:left-0 lg:top-0`}
+      } fixed bottom-0 top-[64px] z-50 h-screen w-screen overflow-y-auto overflow-x-hidden border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 pb-[72px] lg:relative lg:left-0 lg:top-0`}
     >
-      <ul className="h-[calc(100% + 4rem)] relative flex flex-col gap-y-6 overflow-y-auto p-6 pb-10 font-light text-primary-50 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0">
+      <ul className="h-[calc(100% + 4rem)] relative flex flex-col gap-y-6 overflow-y-auto p-6 pb-24 font-light text-primary-50 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {

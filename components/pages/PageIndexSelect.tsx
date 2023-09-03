@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline"
 
@@ -11,6 +11,11 @@ interface Props {
 
 export default function PageIndexSelect({ sections }: Props) {
   const [isOpen, setIsOpen] = useState(false)
+  useEffect(() => {
+    isOpen
+      ? document.body.classList.add("overflow-hidden")
+      : document.body.classList.remove("overflow-hidden")
+  }, [isOpen])
   return (
     <div className="flex flex-col">
       <div
@@ -22,7 +27,7 @@ export default function PageIndexSelect({ sections }: Props) {
         ) : (
           <ChevronRightIcon className="h-4 w-4" />
         )}
-        <div className="pl-2">On this page</div>
+        <div className="pl-2">Species on this page</div>
       </div>
       {isOpen && (
         <nav className="h-screen py-3 pl-6 text-neutral-700">

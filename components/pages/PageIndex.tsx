@@ -12,7 +12,7 @@ export default async function PageIndex({ name }: Props) {
   const endpoint = name.toLowerCase()
   const { sections }: CloudinaryResources = await getImages(endpoint)
   return (
-    <aside className="w-full border-y border-neutral-100 px-4 py-3 lg:w-1/5">
+    <aside className="bg-white sticky top-0 z-10 w-full border-y border-neutral-100 px-4 py-3 lg:w-1/5">
       <PageIndexSelect sections={sections} />
       <nav className="max-lg:hidden">
         <ul>

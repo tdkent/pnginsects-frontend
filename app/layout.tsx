@@ -29,11 +29,13 @@ export default function RootLayout({
       <body>
         <div id="backdrop" />
         <div id="modal" />
-        <div id="wrapper" className="min-h-[calc(100vh-80px)]">
-          <Header />
-          <main>{children}</main>
+        <div id="wrapper">
+          <div className="min-h-[calc(100vh-80px)]">
+            <Header />
+            <main>{children}</main>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   )

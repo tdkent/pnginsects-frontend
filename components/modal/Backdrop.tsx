@@ -1,14 +1,15 @@
 import ReactDOM from "react-dom"
 
 interface Props {
-  setIsOpen: (value: React.SetStateAction<boolean>) => void
+  // eslint-disable-next-line no-unused-vars
+  handleClick: (value: boolean) => void
 }
 
-export default function Backdrop({ setIsOpen }: Props) {
+export default function Backdrop({ handleClick }: Props) {
   const backdrop = (
     <div
-      className="bg-black/90 fixed left-0 top-0 z-40 h-screen w-full"
-      onClick={() => setIsOpen(false)}
+      className="fixed left-0 top-0 z-40 h-screen w-full bg-black/90"
+      onClick={() => handleClick(false)}
     ></div>
   )
   return ReactDOM.createPortal(

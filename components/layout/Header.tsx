@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 
 import Navbar from "./Navbar"
 import MobileNavSelect from "./MobileNavSelect"
@@ -9,12 +10,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <header className="flex h-[72px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2">
-      <h1 className="text-primary-300">
-        Insects of
-        <span className="text-2xl leading-5 text-primary-100 max-md:block">
-          Papua New Guinea
-        </span>
-      </h1>
+      <Link href="/">
+        <h1 className="text-primary-300">
+          Insects of
+          <span className="text-2xl leading-5 text-primary-100 max-md:block">
+            Papua New Guinea
+          </span>
+        </h1>
+      </Link>
       <div className="flex gap-x-2">
         <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
         <DarkModeSelect />

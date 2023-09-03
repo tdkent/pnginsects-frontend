@@ -25,6 +25,11 @@
     @apply stroke-1;
   }
 
+  /* body scroll lock */
+  .scroll-lock {
+    @apply fixed h-full w-full overflow-auto;
+  }
+
   /* typography */
   h1,
   h2 {

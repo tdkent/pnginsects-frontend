@@ -16,11 +16,11 @@ interface Props {
   imgs: Resource[]
   sectionName: string
   // eslint-disable-next-line no-unused-vars
-  setIsOpen: (value: React.SetStateAction<boolean>) => void
+  handleClick: (value: boolean) => void
 }
 
 function ModalContent(props: Props) {
-  const { idx, imgs, sectionName, setIsOpen } = props
+  const { idx, imgs, sectionName, handleClick } = props
 
   const imgUrls = useMemo(() => imgs.map((img) => img.secure_url), [imgs])
   const imgCaptions = useMemo(
@@ -48,7 +48,7 @@ function ModalContent(props: Props) {
     <div className="fixed left-0 top-1/2 z-50 flex w-screen -translate-y-[calc(50%+3rem)] flex-col gap-y-4">
       <div
         className="mr-[10%] flex justify-end"
-        onClick={() => setIsOpen(false)}
+        onClick={() => handleClick(false)}
       >
         <XCircleIcon className="h-8 w-8 text-neutral-50" />
       </div>
@@ -93,7 +93,7 @@ function ModalContent(props: Props) {
 export default function Modal(props: Props) {
   return (
     <>
-      <Backdrop setIsOpen={props.setIsOpen} />
+      <Backdrop handleClick={props.handleClick} />
       <ModalContent {...props} />
     </>
   )

@@ -25,14 +25,14 @@ export default function PageIndexSelect({ sections }: Props) {
         <div className="pl-2">On this page</div>
       </div>
       {isOpen && (
-        <nav className="py-3 pl-6 text-neutral-700">
-          <ul>
+        <nav className="h-screen py-3 pl-6 text-neutral-700">
+          <ul className="h-[calc(100vh-200px)] overflow-y-auto">
             {sections.map((section, i) => {
               const shortSection = shortenSectionName(section)
               return (
                 <li
                   key={i}
-                  className="py-2 text-sm"
+                  className="py-3 text-sm"
                   onClick={() => setIsOpen(false)}
                 >
                   <Link href={`#${shortSection}`}>{shortSection}</Link>

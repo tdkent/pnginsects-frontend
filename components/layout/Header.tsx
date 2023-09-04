@@ -14,7 +14,7 @@ const Header = () => {
       : document.body.classList.remove("overflow-hidden")
   }, [isOpen])
   return (
-    <header className="sticky top-0 z-50 flex h-[64px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2">
+    <header className="z-50 flex h-[64px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2">
       <Link href="/">
         <h1 className="text-primary-300">
           Insects of

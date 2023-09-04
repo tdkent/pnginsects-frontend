@@ -1,6 +1,7 @@
 import PageHeader from "@/components/pages/PageHeader"
 import PageIndex from "@/components/pages/PageIndex"
 import ImageGallery from "@/components/images/ImageGallery"
+import InViewBoundary from "@/components/layout/InViewBoundary"
 import { NavName } from "@/utils/models"
 
 export default function Blattodea() {
@@ -51,6 +52,7 @@ export default function Blattodea() {
         </section>
         <ImageGallery name={NavName.blattodea} />
       </article>
+      <InViewBoundary />
     </>
   )
 }

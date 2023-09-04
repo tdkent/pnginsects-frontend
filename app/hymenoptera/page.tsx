@@ -1,12 +1,12 @@
+import Subnav from "@/components/pages/Subnav"
 import PageHeader from "@/components/pages/PageHeader"
-import PageIndex from "@/components/pages/PageIndex"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 
 export default function Hymenoptera() {
   return (
     <>
-      <PageIndex name={NavName.hymenoptera} />
+      <Subnav name={NavName.hymenoptera} />
       <article className="article-container">
         <PageHeader
           alt1="Bee"

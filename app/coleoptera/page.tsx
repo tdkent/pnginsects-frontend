@@ -1,12 +1,12 @@
 import PageHeader from "@/components/pages/PageHeader"
-import PageIndex from "@/components/pages/PageIndex"
+import Subnav from "@/components/pages/Subnav"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 
 export default function Coleoptera() {
   return (
     <>
-      <PageIndex name={NavName.coleoptera} />
+      <Subnav name={NavName.coleoptera} />
       <article className="article-container">
         <PageHeader
           alt1="Rhinoceros Beetle"

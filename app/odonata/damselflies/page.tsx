@@ -1,12 +1,12 @@
+import Subnav from "@/components/pages/Subnav"
 import PageHeader from "@/components/pages/PageHeader"
-import PageIndex from "@/components/pages/PageIndex"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 
 export default function Damselflies() {
   return (
     <>
-      <PageIndex name={NavName.damselflies} />
+      <Subnav name={NavName.damselflies} />
       <article className="article-container">
         <PageHeader
           alt1="Damselfly"

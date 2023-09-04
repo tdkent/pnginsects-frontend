@@ -36,6 +36,9 @@ export default function RootLayout({
           </div>
           <Footer />
         </div>
+        {/* <a className="top" href="#">
+          Back to Top ↑
+        </a> */}
       </body>
     </html>
   )

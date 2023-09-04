@@ -30,6 +30,28 @@
     @apply fixed h-full w-full overflow-auto;
   }
 
+  /* back to top */
+  .top {
+    @apply sticky bottom-4 mt-[calc(100vh+100px)] place-self-end;
+  }
+
+  /* .top {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    --offset: 100px;
+    margin-top: calc(100vh + var(--offset));
+    font-family: sans-serif;
+    color: #fff;
+    background: #000;
+    border-radius: 100px;
+    place-self: end;
+    position: sticky;
+    right: -30px;
+    bottom: 10px;
+    white-space: nowrap
+  } */
+
   /* typography */
   h1,
   h2 {

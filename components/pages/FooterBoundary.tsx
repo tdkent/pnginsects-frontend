@@ -3,8 +3,8 @@ import { InView } from "react-intersection-observer"
 
 import useStore from "@/utils/hooks"
 
-export default function InViewBoundary() {
-  const changeVisibility = useStore((state) => state.changeVisibility)
+export default function FooterBoundary() {
+  const changeVisibility = useStore((state) => state.changeFooterVisibility)
   return (
     <InView
       as="div"

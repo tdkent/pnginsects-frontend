@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { cloudinaryUrlPrefix } from "@/utils/lib/constants"
+import PageHeaderBoundary from "./PageHeaderBoundary"
 
 interface Props {
   alt1: string
@@ -26,28 +27,31 @@ export default function PageHeader({
   height2,
 }: Props) {
   return (
-    <div className="flex">
-      <div
-        className={`relative w-12 aspect-[${width1}/${height1}] max-sm:hidden`}
-      >
-        <Image
-          src={`${cloudinaryUrlPrefix}/${asset1}`}
-          alt={alt1}
-          fill
-          className="object-contain"
-        />
+    <>
+      <div className="flex">
+        <div
+          className={`relative w-12 aspect-[${width1}/${height1}] max-sm:hidden`}
+        >
+          <Image
+            src={`${cloudinaryUrlPrefix}/${asset1}`}
+            alt={alt1}
+            fill
+            className="object-contain"
+          />
+        </div>
+        <h2 className="pb-6 text-xl leading-8">{text}</h2>
+        <div
+          className={`relative w-12 aspect-[${width2}/${height2}] max-md:hidden`}
+        >
+          <Image
+            src={`${cloudinaryUrlPrefix}/${asset2}`}
+            alt={alt2}
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
-      <h2 className="pb-6 text-xl leading-8">{text}</h2>
-      <div
-        className={`relative w-12 aspect-[${width2}/${height2}] max-md:hidden`}
-      >
-        <Image
-          src={`${cloudinaryUrlPrefix}/${asset2}`}
-          alt={alt2}
-          fill
-          className="object-contain"
-        />
-      </div>
-    </div>
+      <PageHeaderBoundary />
+    </>
   )
 }

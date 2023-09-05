@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function SubnavContents({ sections }: Props) {
-  const isVisible = useStore((state) => state.isVisible)
+  const isVisible = useStore((state) => state.isFooterVisible)
   return (
     <aside
       className={`${

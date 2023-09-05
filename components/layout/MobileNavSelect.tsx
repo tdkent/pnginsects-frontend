@@ -2,6 +2,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
 interface Props {
   isOpen: boolean
+  // eslint-disable-next-line no-unused-vars
   setIsOpen: (value: React.SetStateAction<boolean>) => void
 }
 

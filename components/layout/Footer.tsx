@@ -3,12 +3,12 @@ import Link from "next/link"
 import { EnvelopeIcon } from "@heroicons/react/24/outline"
 
 import { cloudinaryUrlPrefix } from "@/utils/lib/constants"
-import InViewBoundary from "./InViewBoundary"
+import FooterBoundary from "../pages/FooterBoundary"
 
 const Footer = () => {
   return (
     <>
-      <InViewBoundary />
+      <FooterBoundary />
       <footer className="min-h-[80px] items-center justify-center bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-sm font-light text-primary-50">
         <p className="mb-6">
           Any feedback, especially in relation to identifications, is always

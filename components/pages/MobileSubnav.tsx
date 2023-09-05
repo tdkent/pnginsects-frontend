@@ -1,9 +1,14 @@
 "use client"
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline"
+import {
+  ChevronRightIcon,
+  ChevronDownIcon,
+  ArrowUpIcon,
+} from "@heroicons/react/24/outline"
 
 import { shortenSectionName } from "@/utils/funcs"
+import useStore from "@/utils/hooks"
 
 interface Props {
   sections: string[]
@@ -17,7 +22,12 @@ export default function MobileSubnav({ sections }: Props) {
       ? document.body.classList.add("overflow-hidden")
       : document.body.classList.remove("overflow-hidden")
   }, [isOpen])
-
+  // intersection observer state
+  const [headerDiv, setHeaderDiv] = useState<HTMLElement | null>(null)
+  useEffect(() => {
+    setHeaderDiv(document.getElementById("page-header-boundary"))
+  }, [])
+  const isVisible = useStore((state) => state.isPageHeaderVisible)
   return (
     <div className="flex flex-col lg:hidden">
       <div className="flex items-center justify-between px-4 lg:hidden">
@@ -32,6 +42,16 @@ export default function MobileSubnav({ sections }: Props) {
           )}
           <div className="pl-2">Page contents</div>
         </div>
+        <a
+          href="#"
+          onClick={() => setIsOpen(false)}
+          className={`${
+            !headerDiv || isVisible ? "opacity-0" : "opacity-1"
+          } flex items-center px-1 transition-opacity duration-300`}
+        >
+          <div className="pr-2">Back to top</div>
+          <ArrowUpIcon className="h-4 w-4" />
+        </a>
       </div>
       {isOpen && (
         <nav className="h-screen px-4 py-3">

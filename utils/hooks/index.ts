@@ -1,14 +1,18 @@
 import { create } from "zustand"
 
 interface VisibilityState {
-  isVisible: boolean
-  // eslint-disable-next-line no-unused-vars
-  changeVisibility: (value: boolean) => void
+  isFooterVisible: boolean
+  isPageHeaderVisible: boolean
+  changeFooterVisibility: (value: boolean) => void
+  changePageHeaderVisibility: (value: boolean) => void
 }
 
 const useStore = create<VisibilityState>()((set) => ({
-  isVisible: false,
-  changeVisibility: (value) => set(() => ({ isVisible: value })),
+  isFooterVisible: false,
+  isPageHeaderVisible: false,
+  changeFooterVisibility: (value) => set(() => ({ isFooterVisible: value })),
+  changePageHeaderVisibility: (value) =>
+    set(() => ({ isPageHeaderVisible: value })),
 }))
 
 export default useStore

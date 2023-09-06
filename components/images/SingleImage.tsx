@@ -16,10 +16,10 @@ export default function SingleImage(props: Props) {
   const {
     idx,
     img: { secure_url, caption },
+    imgs,
     sectionName,
   } = props
   const [isOpen, setIsOpen] = useState(false)
-
   // body scroll lock
   const [wrapper, setWrapper] = useState<HTMLElement | null>(null)
   const [scrollTop, setScrollTop] = useState(0)
@@ -37,23 +37,33 @@ export default function SingleImage(props: Props) {
       : window.scrollTo(0, scrollTop)
   })
 
+  // is true if img is last of odd-numbered group
+  const isLastImg = idx === imgs.length - 1 && imgs.length % 2 === 1
+
   return (
     <>
       {isOpen && <Modal handleClick={handleClick} {...props} />}
-      <figure onClick={() => handleClick(true)} className="my-5 basis-full">
-        <div className="relative aspect-[3/2] w-full border border-neutral-400">
-          <Image
-            src={secure_url}
-            alt={`${sectionName} ${idx + 1}`}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            quality={10}
-          />
+      <figure
+        onClick={() => handleClick(true)}
+        className={`${
+          isLastImg ? "sm:basis-full" : "sm:basis-1/2"
+        } my-0 shrink basis-full sm:my-0 sm:p-1`}
+      >
+        <div className="relative mb-4 pb-4 sm:mb-2">
+          <div className="relative aspect-[3/2] w-full border border-neutral-300">
+            <Image
+              src={secure_url}
+              alt={`${sectionName} ${idx + 1}`}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              quality={10}
+            />
+          </div>
+          {caption && (
+            <figcaption className="absolute ml-2 text-sm">{caption}</figcaption>
+          )}
         </div>
-        {caption && (
-          <figcaption className="-mb-3 pt-1 text-sm">{caption}</figcaption>
-        )}
       </figure>
     </>
   )

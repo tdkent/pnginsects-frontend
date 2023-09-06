@@ -40,10 +40,9 @@ export default function Home() {
         <div className="mt-10 border-t border-neutral-200 px-6 pb-4 pt-8 text-xl leading-8 text-primary-700">
           Get in Touch
           <div className="flex items-center gap-x-3 pt-4 text-base text-neutral-900">
-            <EnvelopeIcon className="-mt-0.5 h-5 w-5" />
-            <div className="flex flex-col items-center">
+            <EnvelopeIcon className="h-5 w-5" />
+            <div className="flex flex-col items-center font-bold">
               <a href="mailto:jtwareing@gmail.com">jtwareing@gmail.com</a>
-              <div className="mt-0.5 w-[90%] border-t border-dashed" />
             </div>
           </div>
         </div>

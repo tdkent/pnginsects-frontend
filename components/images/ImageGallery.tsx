@@ -19,7 +19,7 @@ export default async function ImageGallery({ name }: Props) {
             key={i}
             className="mt-8 w-full border-t border-neutral-200 pt-8"
           >
-            {sectionName !== "Tiles" && <h3 className="mb-2">{sectionName}</h3>}
+            {sectionName !== "Tiles" && <h3 className="mb-6">{sectionName}</h3>}
             <div className="flex flex-wrap">
               {images.map((img, i, arr) => {
                 return (

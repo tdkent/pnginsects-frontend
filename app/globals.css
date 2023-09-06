@@ -10,19 +10,15 @@
 
   /* containers & layout */
   .article-container {
-    @apply flex flex-col px-4 py-8 lg:flex-row-reverse;
-  }
-
-  article {
-    @apply px-1;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:flex-row-reverse;
   }
 
   article p {
-    @apply mb-5 leading-8 last:mb-10;
+    @apply mb-5 leading-8 last:mb-10 md:pr-8;
   }
 
   svg {
-    @apply stroke-1;
+    @apply stroke-1 sm:stroke-[1.5px];
   }
 
   /* body scroll lock */

@@ -14,16 +14,16 @@ const Header = () => {
       : document.body.classList.remove("overflow-hidden")
   }, [isOpen])
   return (
-    <header className="z-50 flex h-[64px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2">
+    <header className="z-50 flex h-[64px] items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2 sm:h-[72px] md:px-8">
       <Link href="/">
-        <h1 className="text-primary-300">
+        <h1 className="text-primary-300 sm:text-2xl">
           Insects of
-          <span className="text-2xl leading-5 text-primary-100 max-md:block">
+          <span className="text-2xl leading-5 text-primary-100 max-sm:block sm:pl-2">
             Papua New Guinea
           </span>
         </h1>
       </Link>
-      <div className="flex gap-x-2">
+      <div className="flex gap-x-2 sm:gap-x-6">
         <MobileNavSelect isOpen={isOpen} setIsOpen={setIsOpen} />
         <DarkModeSelect />
       </div>

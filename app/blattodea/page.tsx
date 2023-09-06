@@ -11,7 +11,7 @@ export default function Blattodea() {
         <PageHeader
           alt1="Cockroach"
           alt2="Termite"
-          asset1="v1692732151/assets/cockroach_luskgx.png"
+          asset1="v1692732149/assets/termite_w4gea5.png"
           asset2="v1692732149/assets/termite_w4gea5.png"
           text="Blattodea - Cockroaches and Termites"
           width1="1498"

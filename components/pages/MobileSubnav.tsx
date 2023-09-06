@@ -30,7 +30,7 @@ export default function MobileSubnav({ sections }: Props) {
   const isVisible = useStore((state) => state.isPageHeaderVisible)
   return (
     <div className="flex flex-col lg:hidden">
-      <div className="flex items-center justify-between px-4 lg:hidden">
+      <div className="flex items-center justify-between px-4 md:px-8 lg:hidden">
         <div
           className="flex items-center"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -62,7 +62,7 @@ export default function MobileSubnav({ sections }: Props) {
                 return (
                   <li
                     key={i}
-                    className="px-6 py-3 text-sm"
+                    className="px-6 py-3 text-sm md:px-8 md:py-4"
                     onClick={() => setIsOpen(false)}
                   >
                     <Link href={`#${shortSection}`}>{shortSection}</Link>

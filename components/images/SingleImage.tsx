@@ -49,7 +49,7 @@ export default function SingleImage(props: Props) {
           isLastImg ? "sm:basis-full" : "sm:basis-1/2"
         } my-0 shrink basis-full sm:my-0 sm:p-1`}
       >
-        <div className="relative mb-4 pb-4 sm:mb-2">
+        <div className="relative mb-4 pb-4 sm:mb-2 md:mb-4">
           <div className="relative aspect-[3/2] w-full border border-neutral-300">
             <Image
               src={secure_url}

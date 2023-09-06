@@ -47,21 +47,21 @@ function ModalContent(props: Props) {
   const content = (
     <div className="fixed left-0 top-1/2 z-50 flex w-screen -translate-y-[calc(50%+3rem)] flex-col gap-y-4">
       <div
-        className="mr-[10%] flex justify-end"
+        className="mr-[10%] flex justify-end sm:mr-[8%]"
         onClick={() => handleClick(false)}
       >
-        <XCircleIcon className="h-8 w-8 text-neutral-50" />
+        <XCircleIcon className="h-8 w-8 text-neutral-50 sm:h-12 sm:w-12" />
       </div>
-      <div className="flex flex-wrap items-center">
-        <div className="basis-[10%]">
+      <div className="flex flex-wrap items-center justify-center">
+        <div className="flex basis-[10%] justify-center sm:basis-[8%]">
           {currentIdx && (
             <ChevronLeftIcon
-              className="h-8 w-8 text-neutral-50"
+              className="h-8 w-8 text-neutral-50 sm:h-12 sm:w-12"
               onClick={handleLeftClick}
             />
           )}
         </div>
-        <div className="relative flex aspect-[3/2] basis-[80%] flex-col">
+        <div className="relative flex aspect-[3/2] basis-[80%] flex-col sm:basis-[84%]">
           <Image
             src={currentImg}
             alt={sectionName}
@@ -70,10 +70,10 @@ function ModalContent(props: Props) {
             quality={10}
           />
         </div>
-        <div className="basis-[10%]">
+        <div className="flex basis-[10%] justify-center sm:basis-[8%]">
           {currentIdx !== imgUrls.length - 1 && (
             <ChevronRightIcon
-              className="h-8 w-8 text-neutral-50"
+              className="h-8 w-8 text-neutral-50 sm:h-12 sm:w-12"
               onClick={handleRightClick}
             />
           )}

@@ -7,7 +7,6 @@ import {
   ArrowUpIcon,
 } from "@heroicons/react/24/outline"
 
-import { shortenSectionName } from "@/utils/funcs"
 import useStore from "@/utils/hooks"
 
 interface Props {
@@ -46,7 +45,7 @@ export default function MobileSubnav({ sections }: Props) {
           href="#"
           onClick={() => setIsOpen(false)}
           className={`${
-            !headerDiv || isVisible ? "opacity-0" : "opacity-1"
+            !headerDiv || isVisible || isOpen ? "opacity-0" : "opacity-1"
           } flex items-center px-1 transition-opacity duration-300`}
         >
           <div className="pr-2">Back to top</div>
@@ -55,17 +54,16 @@ export default function MobileSubnav({ sections }: Props) {
       </div>
       {isOpen && (
         <nav className="h-screen px-4 py-3">
-          <ul className="h-[calc(100vh-230px)] overflow-y-scroll border border-neutral-300 bg-white py-2 text-neutral-900">
+          <ul className="h-[calc(100vh-160px)] overflow-y-scroll py-2 text-primary-700">
             {sections &&
               sections.map((section, i) => {
-                const shortSection = shortenSectionName(section)
                 return (
                   <li
                     key={i}
                     className="px-6 py-3 text-sm md:px-8 md:py-4"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Link href={`#${shortSection}`}>{shortSection}</Link>
+                    <Link href={`#${section}`}>{section}</Link>
                   </li>
                 )
               })}

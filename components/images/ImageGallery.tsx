@@ -1,6 +1,6 @@
 import { CloudinaryResources } from "@/utils/models"
 import SingleImage from "./SingleImage"
-import { getImages, shortenSectionName } from "@/utils/funcs"
+import { getImages } from "@/utils/funcs"
 
 interface Props {
   name: string
@@ -12,12 +12,11 @@ export default async function ImageGallery({ name }: Props) {
   return (
     <div>
       {resources.map(({ sectionName, images }, i) => {
-        const shortSection = shortenSectionName(sectionName)
         return (
           <section
-            id={shortSection}
+            id={sectionName}
             key={i}
-            className="mt-8 w-full border-t border-neutral-200 pt-8"
+            className="mt-12 w-full border-t border-neutral-200 pt-16"
           >
             {sectionName !== "Tiles" && <h3 className="mb-6">{sectionName}</h3>}
             <div className="flex flex-wrap">

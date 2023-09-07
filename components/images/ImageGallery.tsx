@@ -16,7 +16,9 @@ export default async function ImageGallery({ name }: Props) {
           <section
             id={sectionName}
             key={i}
-            className="mt-12 w-full border-t border-neutral-200 pt-16"
+            className={`mt-12 w-full ${
+              sectionName !== "Tiles" && "border-t"
+            } border-neutral-200 pt-16 lg:mt-0 lg:pt-32`}
           >
             {sectionName !== "Tiles" && <h3 className="mb-6">{sectionName}</h3>}
             <div className="flex flex-wrap">

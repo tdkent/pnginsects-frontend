@@ -10,7 +10,7 @@
 
   /* containers & layout */
   .article-container {
-    @apply flex flex-col px-5 py-8 md:px-8 lg:flex-row-reverse;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20;
   }
 
   article p {

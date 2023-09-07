@@ -2,7 +2,6 @@
 import Link from "next/link"
 
 import MobileSubnav from "./MobileSubnav"
-import { shortenSectionName } from "@/utils/funcs"
 import useStore from "@/utils/hooks"
 
 interface Props {
@@ -15,23 +14,25 @@ export default function SubnavContents({ sections }: Props) {
     <aside
       className={`${
         isVisible ? "opacity-0" : "opacity-100"
-      } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50/95 py-3 font-semibold text-primary-700 transition-opacity duration-300 lg:w-1/5`}
+      } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50/95 py-3 font-semibold text-primary-700 transition-opacity duration-300 lg:fixed lg:right-0 lg:top-[113px] lg:h-[calc(100vh-160px)] lg:w-[30%] lg:overflow-y-scroll lg:border-none lg:bg-white lg:py-12 lg:pr-6 lg:text-sm lg:font-normal lg:text-neutral-900`}
     >
       {/* Mobile subnav */}
       <MobileSubnav sections={sections} />
       {/* Desktop subnav */}
       <nav className="max-lg:hidden">
-        <ul>
+        <ul className="">
+          <div className="mb-1.5 font-medium">Page Contents</div>
           {sections &&
             sections.map((section, i) => {
-              const shortSection = shortenSectionName(section)
               return (
-                <li key={i}>
-                  <Link href={`#${shortSection}`}>{shortSection}</Link>
+                <li
+                  key={i}
+                  className="py-1.5 leading-6 text-neutral-600 hover:text-neutral-900"
+                >
+                  <Link href={`#${section}`}>{section}</Link>
                 </li>
               )
             })}
-          xw
         </ul>
       </nav>
     </aside>

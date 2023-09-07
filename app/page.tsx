@@ -5,9 +5,9 @@ import ImageGallery from "@/components/images/ImageGallery"
 
 export default function Home() {
   return (
-    <article className="article-container">
+    <article className="article-container lg:w-full">
       <section>
-        <h2 className="my-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700">
+        <h2 className="mb-16 mt-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12">
           Welcome to Insects of Papua New Guinea!
         </h2>
         <p>
@@ -37,11 +37,11 @@ export default function Home() {
           gratefully received. I would also welcome the use of my photos, should
           the appropriate credit naturally be given.
         </p>
-        <div className="mt-10 border-t border-neutral-200 px-6 pb-4 pt-8 text-xl leading-8 text-primary-700">
+        <div className="mt-16 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12">
           Get in Touch
           <div className="flex items-center gap-x-3 pt-4 text-base text-neutral-900">
             <EnvelopeIcon className="h-5 w-5" />
-            <div className="flex flex-col items-center font-bold">
+            <div className="flex flex-col items-center">
               <a href="mailto:jtwareing@gmail.com">jtwareing@gmail.com</a>
             </div>
           </div>

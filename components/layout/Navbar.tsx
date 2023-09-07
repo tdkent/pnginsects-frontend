@@ -64,6 +64,7 @@ const links: NavLink[] = [
 
 interface Props {
   isOpen: boolean
+  // eslint-disable-next-line no-unused-vars
   setIsOpen: (value: React.SetStateAction<boolean>) => void
 }
 
@@ -72,10 +73,10 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
   return (
     <nav
       className={`${
-        isOpen ? "left-0" : "left-full"
-      } fixed bottom-0 top-[64px] z-50 h-screen w-screen overflow-y-auto overflow-x-hidden border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 pb-[72px] sm:top-[72px] lg:relative lg:left-0 lg:top-0`}
+        isOpen ? "max-lg:left-0" : "max-lg:left-full"
+      } fixed top-[64px] w-screen border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:pb-[72px] sm:top-[72px] lg:fixed lg:left-0`}
     >
-      <ul className="h-[calc(100% + 4rem)] relative flex flex-col gap-y-6 overflow-y-auto p-6 pb-24 font-light text-primary-50 sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-center lg:gap-x-4 lg:gap-y-0">
+      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-50 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {

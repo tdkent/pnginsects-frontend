@@ -39,7 +39,9 @@ export default function PageHeader({
             className="object-contain"
           />
         </div>
-        <h2 className="text-xl leading-8 sm:ml-2 md:mx-3">{text}</h2>
+        <h2 className="text-xl leading-8 sm:ml-2 md:mx-3 lg:text-2xl">
+          {text}
+        </h2>
         {/* <div
           className={`relative w-10 aspect-[${width2}/${height2}] max-md:hidden`}
         >

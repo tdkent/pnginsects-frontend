@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <>
       <FooterBoundary />
-      <footer className="min-h-[80px] items-center justify-center bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-sm font-light text-primary-50">
+      <footer className="bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-sm font-light text-primary-50 sm:h-[210px] md:px-8">
         <p className="mb-6">
           Any feedback, especially in relation to identifications, is always
           gratefully received.
@@ -18,7 +18,7 @@ const Footer = () => {
           I welcome the use of my photos, should the appropriate credit
           naturally be given.
         </p>
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center justify-between">
           <a href="mailto:jtwareing@gmail.com">
             <div className="flex items-center gap-x-2">
               <EnvelopeIcon className="mt-0.5 h-4 w-4" />

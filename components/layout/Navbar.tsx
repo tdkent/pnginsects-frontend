@@ -74,7 +74,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
     <nav
       className={`${
         isOpen ? "max-lg:left-0" : "max-lg:left-full"
-      } fixed top-[64px] w-screen border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:pb-[72px] sm:top-[72px] lg:fixed lg:left-0`}
+      } fixed top-[64px] w-screen border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0`}
     >
       <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-50 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs">
         {links

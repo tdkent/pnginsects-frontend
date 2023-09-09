@@ -9,6 +9,10 @@
   }
 
   /* containers & layout */
+  .page-wrapper {
+    @apply lg:flex lg:flex-row-reverse;
+  }
+
   .article-container {
     @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20;
   }
@@ -33,7 +37,7 @@
   }
 
   h3 {
-    @apply text-lg font-semibold;
+    @apply text-lg font-semibold sm:px-1 lg:text-xl;
   }
 
   strong {

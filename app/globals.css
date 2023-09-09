@@ -5,7 +5,11 @@
 @layer base {
   /* body */
   body {
-    @apply bg-white font-sans text-neutral-900;
+    @apply bg-primary-900 font-sans text-neutral-900;
+  }
+
+  main {
+    @apply bg-white;
   }
 
   /* containers & layout */

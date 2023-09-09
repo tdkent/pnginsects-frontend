@@ -1,4 +1,8 @@
+"use client"
+import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline"
 
 import { NavName, NavLink } from "@/utils/models"
 
@@ -69,28 +73,54 @@ interface Props {
 }
 
 const Navbar = ({ isOpen, setIsOpen }: Props) => {
+  const [isSubnav, setIsSubnav] = useState(false)
+  const [hoveredId, setHoveredId] = useState(0)
   const handleClick = () => setIsOpen(false)
+  const pathname = usePathname()
   return (
     <nav
       className={`${
         isOpen ? "max-lg:left-0" : "max-lg:left-full"
-      } fixed top-[64px] w-screen border-t border-t-primary-500 bg-gradient-to-r from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0`}
+      } fixed top-[64px] w-screen border-t border-t-primary-500 from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0 lg:bg-primary-700`}
     >
-      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-50 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs">
+      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-200 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {
+            const isActive = pathname.slice(1) === text.toLowerCase()
             return (
               <div key={id}>
                 {sublinks ? (
-                  <div className="group">
-                    <li className="text-primary-400 lg:hover:cursor-pointer">
+                  <div
+                    className="group"
+                    onMouseEnter={() => {
+                      setIsSubnav(true)
+                      setHoveredId(id)
+                    }}
+                    onMouseLeave={() => {
+                      setIsSubnav(false)
+                      setHoveredId(0)
+                    }}
+                  >
+                    <li className="max-lg:text-primary-400 lg:flex lg:items-center lg:gap-x-1 lg:hover:cursor-pointer">
+                      {isSubnav && id === hoveredId ? (
+                        <ChevronDownIcon className="h-2.5 w-2.5 max-lg:hidden" />
+                      ) : (
+                        <ChevronRightIcon className="h-2.5 w-2.5 max-lg:hidden" />
+                      )}
                       {text}
                     </li>
-                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:group-hover:block">
+                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-700 lg:p-2 lg:text-primary-50 lg:group-hover:block">
                       {sublinks.map((sublink) => {
+                        const isActive =
+                          pathname.split("/")[2] === sublink.text.toLowerCase()
                         return (
-                          <li key={sublink.id} className="px-8">
+                          <li
+                            key={sublink.id}
+                            className={`${
+                              isActive && "text-white"
+                            } px-8 lg:px-0 lg:py-2 lg:hover:text-white`}
+                          >
                             <Link
                               href={`/${text.toLowerCase()}/${sublink.text.toLowerCase()}`}
                               onClick={handleClick}
@@ -103,7 +133,9 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                     </div>
                   </div>
                 ) : (
-                  <li>
+                  <li
+                    className={`${isActive && "text-white"} hover:text-white`}
+                  >
                     <Link
                       href={root ? "/" : `/${text.toLowerCase()}`}
                       onClick={handleClick}

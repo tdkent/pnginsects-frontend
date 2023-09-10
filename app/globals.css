@@ -29,6 +29,10 @@
     @apply stroke-1 sm:stroke-[1.5px];
   }
 
+  a {
+    @apply hover:cursor-pointer;
+  }
+
   /* body scroll lock */
   .scroll-lock {
     @apply fixed h-full w-full overflow-auto;

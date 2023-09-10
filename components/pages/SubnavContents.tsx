@@ -43,7 +43,7 @@ export default function SubnavContents({ sections }: Props) {
             href="#"
             className={`${
               !headerDiv || isPageHeaderVisible ? "opacity-0" : "opacity-100"
-            } mt-4 flex w-fit items-center gap-x-1.5 text-neutral-600 transition-opacity duration-300 hover:cursor-pointer hover:text-neutral-900`}
+            } mt-4 flex w-fit items-center gap-x-1.5 text-neutral-600 transition-opacity duration-300 hover:text-neutral-900`}
           >
             Back to top
             <ArrowUpCircleIcon className="h-4 w-4" />

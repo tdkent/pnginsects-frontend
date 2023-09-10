@@ -31,7 +31,9 @@ export default function MobileSubnavContents({ sections }: Props) {
   return (
     <nav
       className={`${
-        isPageHeaderVisible ? "max-lg:opacity-0" : "max-lg:opacity-100"
+        !headerDiv || isPageHeaderVisible
+          ? "max-lg:opacity-0"
+          : "max-lg:opacity-100"
       } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50/95 py-3 font-semibold text-primary-700 transition-opacity duration-300 lg:hidden`}
     >
       <div className="flex flex-col lg:hidden">

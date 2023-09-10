@@ -35,6 +35,10 @@ export default function SingleImage(props: Props) {
       ? wrapper.scroll(0, scrollTop)
       : window.scrollTo(0, scrollTop)
   })
+  // caption innerHTML
+  const createMarkup = () => {
+    return { __html: caption }
+  }
 
   return (
     <>
@@ -59,9 +63,10 @@ export default function SingleImage(props: Props) {
             />
           </div>
           {caption && (
-            <figcaption className="absolute ml-2 text-sm xl:text-xs">
-              {caption}
-            </figcaption>
+            <figcaption
+              className="absolute ml-1 mt-0.5 text-sm xl:text-xs"
+              dangerouslySetInnerHTML={createMarkup()}
+            />
           )}
         </div>
       </figure>

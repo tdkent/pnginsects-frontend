@@ -44,6 +44,11 @@ function ModalContent(props: Props) {
     setCurrentIdx((prev) => prev + 1)
   }
 
+  // caption innerHTML
+  const createMarkup = () => {
+    return { __html: currentCaption }
+  }
+
   const content = (
     <div className="fixed left-0 top-1/2 z-50 mx-auto flex w-screen max-w-[1280px] -translate-y-[calc(50%+3rem)] flex-col gap-y-4 xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
       <div className="mx-auto flex w-[80%] justify-end sm:w-[84%]">
@@ -80,9 +85,10 @@ function ModalContent(props: Props) {
             />
           )}
         </div>
-        <div className="mt-4 h-7 basis-full px-8 text-center font-light text-primary-50">
-          {currentCaption}
-        </div>
+        <div
+          dangerouslySetInnerHTML={createMarkup()}
+          className="mt-4 h-7 basis-full px-8 text-center font-light text-primary-50"
+        />
       </div>
     </div>
   )

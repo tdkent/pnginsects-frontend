@@ -16,9 +16,9 @@ const Header = () => {
   return (
     <header className="z-50 flex h-[64px] w-screen items-center justify-between bg-gradient-to-r from-primary-900 to-primary-700 px-5 pb-4 pt-2 sm:h-[72px] md:px-8 lg:sticky lg:top-0 lg:bg-gradient-to-b">
       <Link href="/">
-        <h1 className="text-primary-300 sm:text-2xl lg:text-3xl">
+        <h1 className="text-primary-300 sm:text-2xl lg:text-3xl xl:text-4xl">
           Insects of
-          <span className="text-2xl leading-5 text-primary-100 max-sm:block sm:pl-2 lg:text-3xl">
+          <span className="text-2xl leading-5 text-primary-100 max-sm:block sm:pl-2 lg:text-3xl xl:pl-3 xl:text-4xl">
             Papua New Guinea
           </span>
         </h1>

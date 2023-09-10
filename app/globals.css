@@ -9,7 +9,7 @@
   }
 
   main {
-    @apply bg-white;
+    @apply mx-auto max-w-[1280px] border-neutral-200 bg-white xl:border-x;
   }
 
   /* containers & layout */
@@ -18,11 +18,11 @@
   }
 
   .article-container {
-    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20 xl:px-20;
   }
 
   article p {
-    @apply mb-5 leading-8 last:mb-10 md:pr-8;
+    @apply mb-5 leading-8 last:mb-10 md:pr-8 xl:mb-10 xl:w-4/5 xl:pr-0;
   }
 
   svg {

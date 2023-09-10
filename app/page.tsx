@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <article className="article-container lg:w-full">
       <section>
-        <h2 className="mb-16 mt-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12">
+        <h2 className="mb-16 mt-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12 xl:text-2xl">
           Welcome to Insects of Papua New Guinea!
         </h2>
         <p>

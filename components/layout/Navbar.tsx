@@ -83,7 +83,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
         isOpen ? "max-lg:left-0" : "max-lg:left-full"
       } fixed top-[64px] w-screen border-t border-t-primary-500 from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0 lg:bg-primary-700`}
     >
-      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-200 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs">
+      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-200 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-6 lg:py-3 lg:text-xs xl:text-sm">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {
@@ -110,7 +110,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                       )}
                       {text}
                     </li>
-                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-700 lg:p-2 lg:text-primary-50 lg:group-hover:block">
+                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-700 lg:p-2 lg:text-primary-50 lg:group-hover:block xl:w-[98px]">
                       {sublinks.map((sublink) => {
                         const isActive =
                           pathname.split("/")[2] === sublink.text.toLowerCase()

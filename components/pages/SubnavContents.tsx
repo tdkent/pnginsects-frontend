@@ -19,19 +19,19 @@ export default function SubnavContents({ sections }: Props) {
   const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
   return (
     <>
-      <nav className="w-[30%] py-20 text-sm max-lg:hidden">
-        <div className="sticky top-[156px] w-3/4">
-          <div className="h-fit max-h-[430px] overflow-y-scroll border-b border-neutral-200 pb-2 pr-2">
+      <nav className="w-[30%] py-20 pr-8 text-sm max-lg:hidden xl:pr-20">
+        <div className="sticky top-[156px] w-full">
+          <div className="h-fit max-h-[430px] overflow-y-scroll border-b border-neutral-200 pb-2">
             <div className="sticky top-0 bg-white pb-2 font-medium">
               Page Contents
             </div>
-            <ul className="">
+            <ul className="pr-8">
               {sections &&
                 sections.map((section, i) => {
                   return (
                     <li
                       key={i}
-                      className="py-1.5 leading-6 text-neutral-600 hover:text-neutral-900"
+                      className="py-1.5 leading-6 text-neutral-500 hover:text-neutral-900"
                     >
                       <Link href={`#${section}`}>{section}</Link>
                     </li>

@@ -40,7 +40,7 @@ export default function SingleImage(props: Props) {
     <>
       {isOpen && <Modal handleClick={handleClick} {...props} />}
       <figure
-        className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 ${
+        className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 xl:basis-1/3 ${
           sectionName === "Tiles" && "lg:basis-1/3"
         }`}
       >
@@ -59,7 +59,9 @@ export default function SingleImage(props: Props) {
             />
           </div>
           {caption && (
-            <figcaption className="absolute ml-2 text-sm">{caption}</figcaption>
+            <figcaption className="absolute ml-2 text-sm xl:text-xs">
+              {caption}
+            </figcaption>
           )}
         </div>
       </figure>

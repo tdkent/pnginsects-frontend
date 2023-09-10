@@ -29,8 +29,8 @@ export default function RootLayout({
       <body>
         <div id="backdrop" />
         <div id="modal" />
-        <div id="wrapper">
-          <div className="min-h-[calc(100vh-80px)]">
+        <div id="wrapper" className="bg-primary-50">
+          <div className="min-h-[calc(100vh-190px)]">
             <Header />
             <main>{children}</main>
           </div>

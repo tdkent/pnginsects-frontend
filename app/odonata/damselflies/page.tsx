@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import damselfly from "../../../public/damselfly.png"
 
 export default function Damselflies() {
   return (
@@ -11,17 +14,18 @@ export default function Damselflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.damselflies} />
         <article className="article-container">
-          <PageHeader
-            alt1="Damselfly"
-            alt2="Damselfly"
-            asset1="v1692732146/assets/damselfly_q7jns6.png"
-            asset2="v1692732146/assets/damselfly_q7jns6.png"
-            text="Damselflies"
-            width1="1589"
-            height1="658"
-            width2="1589"
-            height2="658"
-          />
+          <PageHeader text="Damselflies">
+            <div className="relative h-10 w-10 max-sm:hidden">
+              <Image
+                alt="Damselfly"
+                src={damselfly}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Damselflies belong to the order Odonata, along with dragonflies,

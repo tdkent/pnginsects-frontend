@@ -1,8 +1,11 @@
 import Subnav from "@/components/pages/Subnav"
+import Image from "next/image"
+
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import caddisfly from "../../public/caddisfly.png"
 
 export default function Trichoptera() {
   return (
@@ -11,17 +14,18 @@ export default function Trichoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.trichoptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Caddisfly"
-            alt2="Caddisfly"
-            asset1="v1692732144/assets/caddisfly2_jukejg.png"
-            asset2="v1692732144/assets/caddisfly_hfvdu2.png"
-            text="Trichoptera - Caddisflies"
-            width1="1291"
-            height1="546"
-            width2="1597"
-            height2="510"
-          />
+          <PageHeader text="Trichoptera - Caddisflies">
+            <div className="relative h-12 w-12 max-sm:hidden">
+              <Image
+                alt="Caddisfly"
+                src={caddisfly}
+                fill
+                sizes="48px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Trichoptera, commonly known as caddisflies, are closely related to

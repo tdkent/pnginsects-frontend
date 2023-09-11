@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import fly from "../../public/fly.png"
 
 export default function Diptera() {
   return (
@@ -11,17 +14,18 @@ export default function Diptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.diptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Fly"
-            alt2="Mosquito"
-            asset1="v1692732143/assets/fly_rseekd.png"
-            asset2="v1692732147/assets/mosquito_nbw4wi.png"
-            text="Diptera - Flies"
-            width1="643"
-            height1="497"
-            width2="656"
-            height2="529"
-          />
+          <PageHeader text="Diptera - Flies">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Fly"
+                src={fly}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Diptera, commonly known as flies, are characterised by their

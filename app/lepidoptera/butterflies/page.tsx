@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import butterfly from "../../../public/butterfly.png"
 
 export default function Butterflies() {
   return (
@@ -11,17 +14,18 @@ export default function Butterflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.butterflies} />
         <article className="article-container">
-          <PageHeader
-            alt1="Butterfly"
-            alt2="Butterfly"
-            asset1="v1692732142/assets/butterfly_r4lqix.png"
-            asset2="v1692732142/assets/butterfly_r4lqix.png"
-            text="Butterflies"
-            width1="871"
-            height1="616"
-            width2="871"
-            height2="616"
-          />
+          <PageHeader text="Butterflies">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Butterfly"
+                src={butterfly}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Butterflies, like moths, belong to the order Lepidoptera. They are

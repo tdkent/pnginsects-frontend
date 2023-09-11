@@ -57,9 +57,9 @@ export default function SingleImage(props: Props) {
               src={secure_url}
               alt={`${sectionName} ${idx + 1}`}
               fill
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 70vw, 725px"
               className="object-cover"
-              quality={10}
+              quality={25}
             />
           </div>
           {caption && (

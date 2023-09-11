@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import dragonfly from "../../../public/dragonfly.png"
 
 export default function Dragonflies() {
   return (
@@ -11,17 +14,18 @@ export default function Dragonflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.dragonfiles} />
         <article className="article-container">
-          <PageHeader
-            alt1="Dragonfly"
-            alt2="Dragonfly"
-            asset1="v1692732157/assets/dragonfly2_ilryiz.png"
-            asset2="v1692732157/assets/dragonfly2_ilryiz.png"
-            text="Dragonflies"
-            width1="2662"
-            height1="1892"
-            width2="2662"
-            height2="1892"
-          />
+          <PageHeader text="Dragonflies">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Dragonfly"
+                src={dragonfly}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Dragonflies belong to the order Odonata. Dragonflies are commonly

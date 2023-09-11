@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import mantis from "../../public/mantis.png"
 
 export default function Mantodea() {
   return (
@@ -11,17 +14,18 @@ export default function Mantodea() {
       <div className="page-wrapper">
         <Subnav name={NavName.mantodea} />
         <article className="article-container">
-          <PageHeader
-            alt1="Mantis"
-            alt2="Mantis"
-            asset1="v1692732148/assets/mantis2_fs8i2r.png"
-            asset2="v1692732149/assets/mantis_dmnc75.png"
-            text="Mantodea - Mantises"
-            width1="884"
-            height1="971"
-            width2="1066"
-            height2="1056"
-          />
+          <PageHeader text="Mantodea - Mantises">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Mantis"
+                src={mantis}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Mantodea, commonly known as praying mantises, are predatory

@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import bug from "../../public/bug.png"
 
 export default function Hemiptera() {
   return (
@@ -11,17 +14,18 @@ export default function Hemiptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.hemiptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Bug"
-            alt2="Shield Bug"
-            asset1="v1692732151/assets/bug_pi6vib.png"
-            asset2="v1692732151/assets/shieldbug_kay1wy.png"
-            text="Hemiptera - True Bugs, Hoppers, Aphids, and Allies"
-            width1="1545"
-            height1="1236"
-            width2="813"
-            height2="817"
-          />
+          <PageHeader text="Hemiptera - True Bugs, Hoppers, Aphids, and Allies">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Bug"
+                src={bug}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Hemiptera includes a diverse group of insects with a wide range of

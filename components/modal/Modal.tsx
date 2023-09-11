@@ -73,8 +73,9 @@ function ModalContent(props: Props) {
             src={currentImg}
             alt={sectionName}
             fill
+            sizes="(max-width: 640px) 80vw, (max-width: 1280px) 84vw, 735px"
             className="object-cover"
-            quality={10}
+            quality={50}
           />
         </div>
         <div className="flex basis-[10%] justify-center sm:basis-[8%]">

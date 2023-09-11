@@ -34,6 +34,7 @@ const Footer = () => {
                   src={`${cloudinaryUrlPrefix}/v1692732142/assets/iNat_jwwhh4.png`}
                   alt="iNaturalist logo"
                   fill
+                  sizes="(max-width: 640px) 70px, (max-width: 1024px) 86px, 102px"
                   className="object-cover"
                 />
               </div>

@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import leafinsect from "../../public/leafinsect.png"
 
 export default function Phasmida() {
   return (
@@ -11,17 +14,18 @@ export default function Phasmida() {
       <div className="page-wrapper">
         <Subnav name={NavName.phasmida} />
         <article className="article-container">
-          <PageHeader
-            alt1="Stick Insect"
-            alt2="Leaf Insect"
-            asset1="v1692732144/assets/stickinsect_mibjpc.png"
-            asset2="v1692732148/assets/leafinsect_aoo2kt.png"
-            text="Phasmida - Stick Insects"
-            width1="2044"
-            height1="793"
-            width2="2284"
-            height2="1066"
-          />
+          <PageHeader text="Phasmida - Stick Insects">
+            <div className="relative h-10 w-10 max-sm:hidden">
+              <Image
+                alt="Leaf Insect"
+                src={leafinsect}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Phasmida, commonly known as stick insects or walking sticks, are

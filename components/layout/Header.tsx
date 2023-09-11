@@ -35,7 +35,7 @@ const Header = () => {
               src={map}
               alt="Map on Papua New Guinea"
               fill
-              quality={50}
+              sizes="114px"
               className="object-contain"
             />
           </div>

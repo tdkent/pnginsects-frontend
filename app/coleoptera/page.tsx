@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import PageHeader from "@/components/pages/PageHeader"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import Subnav from "@/components/pages/Subnav"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import rhinobeetle from "../../public/rhinobeetle.png"
 
 export default function Coleoptera() {
   return (
@@ -11,17 +14,18 @@ export default function Coleoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.coleoptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Rhinoceros Beetle"
-            alt2="Beetle"
-            asset1="v1692732146/assets/rhinobeetle_l103ev.png"
-            asset2="v1692732153/assets/beetle_ztoz6d.png"
-            text="Coleoptera - Beetles"
-            width1="966"
-            height1="532"
-            width2="1175"
-            height2="1187"
-          />
+          <PageHeader text="Coleoptera - Beetles">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Rhinobeetle"
+                src={rhinobeetle}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Coleoptera, the largest order of insects, consists of beetles.

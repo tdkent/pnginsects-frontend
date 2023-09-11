@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import moth from "../../../public/moth.png"
 
 export default function Moths() {
   return (
@@ -11,17 +14,18 @@ export default function Moths() {
       <div className="page-wrapper">
         <Subnav name={NavName.moths} />
         <article className="article-container">
-          <PageHeader
-            alt1="Moth"
-            alt2="Moth"
-            asset1="v1692732144/assets/moth_ndwnvn.png"
-            asset2="v1692732144/assets/moth_ndwnvn.png"
-            text="Moths"
-            width1="599"
-            height1="920"
-            width2="599"
-            height2="920"
-          />
+          <PageHeader text="Moths">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Moth"
+                src={moth}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Moths belong to the order Lepidoptera and are closely related to

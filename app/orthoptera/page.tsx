@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import grasshopper from "../../public/grasshopper.png"
 
 export default function Orthoptera() {
   return (
@@ -11,17 +14,18 @@ export default function Orthoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.orthoptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Grasshopper"
-            alt2="Katydid"
-            asset1="v1692732142/assets/grasshopper_qbj8xr.png"
-            asset2="v1692732145/assets/katydid_ttdlfw.png"
-            text="Orthoptera - Grasshoppers, Crickets, and Katydids"
-            width1="948"
-            height1="518"
-            width2="1081"
-            height2="581"
-          />
+          <PageHeader text="Orthoptera - Grasshoppers, Crickets, and Katydids">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Grasshopper"
+                src={grasshopper}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Orthoptera encompasses insects such as grasshoppers, crickets, and

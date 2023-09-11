@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import bee from "../../public/bee.png"
 
 export default function Hymenoptera() {
   return (
@@ -11,17 +14,18 @@ export default function Hymenoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.hymenoptera} />
         <article className="article-container">
-          <PageHeader
-            alt1="Bee"
-            alt2="Ant"
-            asset1="v1692732144/assets/bee_xcofj5.png"
-            asset2="v1692732144/assets/ant_iivn1u.png"
-            text="Hymenoptera - Bees, Wasps and Ants"
-            width1="715"
-            height1="870"
-            width2="1233"
-            height2="509"
-          />
+          <PageHeader text="Hymenoptera - Bees, Wasps and Ants">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Bee"
+                src={bee}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Hymenoptera, which includes ants, bees, wasps, and sawflies, is a

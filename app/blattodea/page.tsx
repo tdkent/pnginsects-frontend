@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import Subnav from "@/components/pages/Subnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
+import termite from "../../public/termite.png"
 
 export default function Blattodea() {
   return (
@@ -11,17 +14,18 @@ export default function Blattodea() {
       <div className="page-wrapper">
         <Subnav name={NavName.blattodea} />
         <article className="article-container">
-          <PageHeader
-            alt1="Cockroach"
-            alt2="Termite"
-            asset1="v1692732149/assets/termite_w4gea5.png"
-            asset2="v1692732149/assets/termite_w4gea5.png"
-            text="Blattodea - Cockroaches and Termites"
-            width1="1498"
-            height1="920"
-            width2="997"
-            height2="709"
-          />
+          <PageHeader text="Blattodea - Cockroaches and Termites">
+            <div className="relative h-8 w-8 max-sm:hidden">
+              <Image
+                alt="Termite"
+                src={termite}
+                fill
+                sizes="32px"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </PageHeader>
           <section>
             <p>
               Blattodea is an order of insects characterised by their flattened

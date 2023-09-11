@@ -17,6 +17,7 @@ export default function SubnavContents({ sections }: Props) {
     []
   )
   const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
+  const currentVisibleSection = useStore((state) => state.currentVisibleSection)
   return (
     <>
       <nav className="w-[30%] py-20 pr-8 text-sm max-lg:hidden xl:pr-20">
@@ -31,7 +32,9 @@ export default function SubnavContents({ sections }: Props) {
                   return (
                     <li
                       key={i}
-                      className="py-1.5 leading-6 text-neutral-500 hover:text-neutral-900"
+                      className={`py-1.5 leading-6 text-neutral-500 ${
+                        currentVisibleSection === section && "text-primary-600"
+                      } hover:text-neutral-900`}
                     >
                       <Link href={`#${section}`}>{section}</Link>
                     </li>

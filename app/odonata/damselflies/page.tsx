@@ -21,18 +21,7 @@ export default function Damselflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.damselflies} />
         <article className="article-container">
-          <PageHeader text="Damselflies">
-            <div className="relative h-10 w-10 max-sm:hidden">
-              <Image
-                alt="Damselfly"
-                src={damselfly}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader text="Damselflies" src={damselfly} altText="Damselfly" />
           <section>
             <p>
               Damselflies belong to the order Odonata, along with dragonflies,

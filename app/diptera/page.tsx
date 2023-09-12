@@ -21,18 +21,7 @@ export default function Diptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.diptera} />
         <article className="article-container">
-          <PageHeader text="Diptera - Flies">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Fly"
-                src={fly}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader text="Diptera - Flies" src={fly} altText="Fly" />
           <section>
             <p>
               Diptera, commonly known as flies, are characterised by their

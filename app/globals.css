@@ -5,11 +5,11 @@
 @layer base {
   /* body */
   body {
-    @apply bg-primary-900 font-sans text-neutral-900;
+    @apply bg-primary-900 font-sans;
   }
 
   main {
-    @apply mx-auto max-w-[1280px] border-neutral-200 bg-white xl:border-x;
+    @apply mx-auto max-w-[1280px] border-neutral-200 bg-white text-neutral-900 dark:border-t dark:border-black dark:border-t-neutral-800 dark:bg-black dark:text-neutral-50 xl:border-x;
   }
 
   /* containers & layout */

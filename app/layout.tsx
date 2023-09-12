@@ -37,7 +37,7 @@ export default function RootLayout({
       <body>
         <div id="backdrop" />
         <div id="modal" />
-        <div id="wrapper" className="bg-primary-50">
+        <div id="wrapper" className="bg-primary-50 dark:bg-black">
           <div className="min-h-[calc(100vh-190px)]">
             <Header />
             <main>{children}</main>

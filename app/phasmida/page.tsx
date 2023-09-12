@@ -21,18 +21,11 @@ export default function Phasmida() {
       <div className="page-wrapper">
         <Subnav name={NavName.phasmida} />
         <article className="article-container">
-          <PageHeader text="Phasmida - Stick Insects">
-            <div className="relative h-10 w-10 max-sm:hidden">
-              <Image
-                alt="Leaf Insect"
-                src={leafinsect}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Phasmida - Stick Insects"
+            src={leafinsect}
+            altText="Leaf Insect"
+          />
           <section>
             <p>
               Phasmida, commonly known as stick insects or walking sticks, are

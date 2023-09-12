@@ -81,9 +81,9 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
     <nav
       className={`${
         isOpen ? "max-lg:left-0" : "max-lg:left-full"
-      } fixed top-[64px] w-screen border-t border-t-primary-500 from-primary-900 to-primary-700 max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0 lg:bg-primary-700`}
+      } fixed top-[64px] w-screen border-y border-t-primary-500 from-primary-900 to-primary-700 dark:border-neutral-800 dark:from-black dark:to-black max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0 lg:bg-primary-700 lg:dark:bg-black`}
     >
-      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-200 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-8 lg:py-3 lg:text-xs xl:text-sm">
+      <ul className="max-lg:h-[calc(100% + 4rem)] relative flex flex-col p-6 pb-24 font-light text-primary-200 dark:text-neutral-300 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:px-8 lg:py-3 lg:text-xs xl:text-sm">
         {links
           .sort((a, b) => a.id - b.id)
           .map(({ id, text, root, sublinks }) => {
@@ -102,7 +102,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                       setHoveredId(0)
                     }}
                   >
-                    <li className="max-lg:text-primary-400 lg:flex lg:items-center lg:gap-x-1 lg:hover:cursor-pointer">
+                    <li className="max-lg:text-primary-400 max-lg:dark:text-primary-300 lg:flex lg:items-center lg:gap-x-1 lg:hover:cursor-pointer">
                       {isSubnav && id === hoveredId ? (
                         <ChevronDownIcon className="h-2.5 w-2.5 max-lg:hidden" />
                       ) : (
@@ -110,7 +110,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                       )}
                       {text}
                     </li>
-                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-700 lg:p-2 lg:text-primary-50 lg:group-hover:block xl:w-[98px]">
+                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-700 lg:p-2 lg:text-primary-50 lg:group-hover:block lg:dark:border lg:dark:border-neutral-800 lg:dark:bg-black lg:dark:text-neutral-300 xl:w-[98px]">
                       {sublinks.map((sublink) => {
                         const isActive =
                           pathname.split("/")[2] === sublink.text.toLowerCase()
@@ -119,7 +119,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                             key={sublink.id}
                             className={`${
                               isActive && "text-white"
-                            } px-8 lg:px-0 lg:py-2 lg:hover:text-white`}
+                            } px-8 hover:text-white lg:px-0 lg:py-2`}
                           >
                             <Link
                               href={`/${text.toLowerCase()}/${sublink.text.toLowerCase()}`}

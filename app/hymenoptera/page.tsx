@@ -21,18 +21,11 @@ export default function Hymenoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.hymenoptera} />
         <article className="article-container">
-          <PageHeader text="Hymenoptera - Bees, Wasps and Ants">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Bee"
-                src={bee}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Hymenoptera - Bees, Wasps and Ants"
+            src={bee}
+            altText="Bee"
+          />
           <section>
             <p>
               Hymenoptera, which includes ants, bees, wasps, and sawflies, is a

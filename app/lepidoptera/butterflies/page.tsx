@@ -21,18 +21,7 @@ export default function Butterflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.butterflies} />
         <article className="article-container">
-          <PageHeader text="Butterflies">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Butterfly"
-                src={butterfly}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader text="Butterflies" src={butterfly} altText="Butterfly" />
           <section>
             <p>
               Butterflies, like moths, belong to the order Lepidoptera. They are

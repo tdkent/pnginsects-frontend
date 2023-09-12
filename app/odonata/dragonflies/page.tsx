@@ -21,18 +21,7 @@ export default function Dragonflies() {
       <div className="page-wrapper">
         <Subnav name={NavName.dragonfiles} />
         <article className="article-container">
-          <PageHeader text="Dragonflies">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Dragonfly"
-                src={dragonfly}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader text="Dragonflies" src={dragonfly} altText="Dragonfly" />
           <section>
             <p>
               Dragonflies belong to the order Odonata. Dragonflies are commonly

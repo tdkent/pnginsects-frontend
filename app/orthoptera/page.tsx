@@ -22,18 +22,11 @@ export default function Orthoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.orthoptera} />
         <article className="article-container">
-          <PageHeader text="Orthoptera - Grasshoppers, Crickets, and Katydids">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Grasshopper"
-                src={grasshopper}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Orthoptera - Grasshoppers, Crickets, and Katydids"
+            src={grasshopper}
+            altText="Grasshopper"
+          />
           <section>
             <p>
               Orthoptera encompasses insects such as grasshoppers, crickets, and

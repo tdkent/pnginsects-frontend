@@ -30,7 +30,7 @@ export default function ImageGalleryContents({ resources }: Props) {
             id={sectionName}
             className={`mt-12 w-full ${
               sectionName !== "Tiles" && "border-t"
-            } border-neutral-200 pt-16 lg:mt-0 lg:pt-32`}
+            } border-neutral-200 pt-16 dark:border-neutral-800 lg:mt-0 lg:pt-32`}
           >
             <InView
               as="div"

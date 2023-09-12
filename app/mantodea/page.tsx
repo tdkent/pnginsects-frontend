@@ -21,18 +21,11 @@ export default function Mantodea() {
       <div className="page-wrapper">
         <Subnav name={NavName.mantodea} />
         <article className="article-container">
-          <PageHeader text="Mantodea - Mantises">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Mantis"
-                src={mantis}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Mantodea - Mantises"
+            src={mantis}
+            altText="Mantis"
+          />
           <section>
             <p>
               Mantodea, commonly known as praying mantises, are predatory

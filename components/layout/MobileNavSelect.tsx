@@ -12,12 +12,12 @@ export default function MobileNavSelect({ isOpen, setIsOpen }: Props) {
     <div className="lg:hidden">
       {isOpen ? (
         <XMarkIcon
-          className="h-8 w-8 text-primary-100 hover:cursor-pointer"
+          className="h-8 w-8 text-primary-100 hover:cursor-pointer dark:text-primary-50"
           onClick={handleClick}
         />
       ) : (
         <Bars3Icon
-          className="h-8 w-8 text-primary-100 hover:cursor-pointer"
+          className="h-8 w-8 text-primary-100 hover:cursor-pointer dark:text-primary-50"
           onClick={handleClick}
         />
       )}

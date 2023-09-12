@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Metadata } from "next"
 
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -21,18 +20,11 @@ export default function Blattodea() {
       <div className="page-wrapper">
         <Subnav name={NavName.blattodea} />
         <article className="article-container">
-          <PageHeader text="Blattodea - Cockroaches and Termites">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Termite"
-                src={termite}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Blattodea - Cockroaches and Termites"
+            src={termite}
+            altText="Termite"
+          />
           <section>
             <p>
               Blattodea is an order of insects characterised by their flattened

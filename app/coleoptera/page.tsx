@@ -21,18 +21,11 @@ export default function Coleoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.coleoptera} />
         <article className="article-container">
-          <PageHeader text="Coleoptera - Beetles">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Rhinobeetle"
-                src={rhinobeetle}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Coleoptera - Beetles"
+            src={rhinobeetle}
+            altText="Rhinobeetle"
+          />
           <section>
             <p>
               Coleoptera, the largest order of insects, consists of beetles.

@@ -21,18 +21,7 @@ export default function Moths() {
       <div className="page-wrapper">
         <Subnav name={NavName.moths} />
         <article className="article-container">
-          <PageHeader text="Moths">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Moth"
-                src={moth}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader text="Moths" src={moth} altText="Moth" />
           <section>
             <p>
               Moths belong to the order Lepidoptera and are closely related to

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <>
       <FooterBoundary />
-      <footer className="bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-xs font-light leading-6 text-primary-50 sm:text-sm sm:leading-8 md:px-8 xl:flex xl:flex-col xl:items-center">
+      <footer className="border-t border-primary-700 bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-xs font-light leading-6 text-primary-50 dark:border-neutral-800 dark:from-black dark:from-80% dark:to-primary-900 sm:text-sm sm:leading-8 md:px-8 xl:flex xl:flex-col xl:items-center">
         <p className="mb-4 lg:mb-3">
           Any feedback, especially in relation to identifications, is always
           gratefully received. I welcome the use of my photos, should the

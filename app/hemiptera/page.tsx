@@ -22,18 +22,11 @@ export default function Hemiptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.hemiptera} />
         <article className="article-container">
-          <PageHeader text="Hemiptera - True Bugs, Hoppers, Aphids, and Allies">
-            <div className="relative h-8 w-8 max-sm:hidden">
-              <Image
-                alt="Bug"
-                src={bug}
-                fill
-                sizes="32px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Hemiptera - True Bugs, Hoppers, Aphids, and Allies"
+            src={bug}
+            altText="Bug"
+          />
           <section>
             <p>
               Hemiptera includes a diverse group of insects with a wide range of

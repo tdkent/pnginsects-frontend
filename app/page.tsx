@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <article className="article-container lg:w-full">
       <section>
-        <h2 className="mb-16 mt-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12 xl:text-2xl">
+        <h2 className="mb-16 mt-8 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 dark:border-neutral-800 dark:text-neutral-50 lg:px-12 xl:text-2xl">
           Welcome to Insects of Papua New Guinea!
         </h2>
         <p>
@@ -37,12 +37,14 @@ export default function Home() {
           gratefully received. I would also welcome the use of my photos, should
           the appropriate credit naturally be given.
         </p>
-        <div className="mt-16 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 lg:px-12">
+        <div className="mt-16 border-y border-neutral-200 px-6 py-8 text-xl leading-8 text-primary-700 dark:border-neutral-800 dark:text-neutral-50 lg:px-12">
           Get in Touch
-          <div className="flex items-center gap-x-3 pt-4 text-base text-neutral-900">
+          <div className="flex items-center gap-x-3 pt-4 text-base text-neutral-900 dark:text-neutral-50">
             <EnvelopeIcon className="h-5 w-5" />
             <div className="flex flex-col items-center">
-              <a href="mailto:jtwareing@gmail.com">jtwareing@gmail.com</a>
+              <a href="mailto:jtwareing@gmail.com" className="hover:underline">
+                jtwareing@gmail.com
+              </a>
             </div>
           </div>
         </div>

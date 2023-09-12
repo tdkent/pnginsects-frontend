@@ -21,18 +21,11 @@ export default function Trichoptera() {
       <div className="page-wrapper">
         <Subnav name={NavName.trichoptera} />
         <article className="article-container">
-          <PageHeader text="Trichoptera - Caddisflies">
-            <div className="relative h-12 w-12 max-sm:hidden">
-              <Image
-                alt="Caddisfly"
-                src={caddisfly}
-                fill
-                sizes="48px"
-                className="object-contain"
-                quality={100}
-              />
-            </div>
-          </PageHeader>
+          <PageHeader
+            text="Trichoptera - Caddisflies"
+            src={caddisfly}
+            altText="Caddisfly"
+          />
           <section>
             <p>
               Trichoptera, commonly known as caddisflies, are closely related to

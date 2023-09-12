@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     "Images and text documenting the insects of Papua New Guinea, grouped by order and family.",
   authors: [{ name: "James Wareing" }],
   keywords: ["Insects", "Papua New Guinea"],
+  icons: {
+    icon: "./icon.png",
+    apple: "./apple-icon.png",
+  },
 }
 
 export default function RootLayout({

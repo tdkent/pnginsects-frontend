@@ -1,11 +1,18 @@
 import Subnav from "@/components/pages/Subnav"
 import Image from "next/image"
+import { Metadata } from "next"
 
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import caddisfly from "../../public/caddisfly.png"
+
+export const metadata: Metadata = {
+  title: "Trichoptera - Caddisflies | Insects of Papua New Guinea",
+  description:
+    "Explore Papua New Guinea's Caddisflies: Discover Trichoptera through text and an image gallery, focusing on their distinctive tent-like shape.",
+}
 
 export default function Trichoptera() {
   return (

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import mantis from "../../public/mantis.png"
+
+export const metadata: Metadata = {
+  title: "Mantodea - Mantises | Insects of Papua New Guinea",
+  description:
+    "Discover Papua New Guinea's Praying Mantises: Explore Mantodea, predatory insects with distinctive features, through text and an image gallery.",
+}
 
 export default function Mantodea() {
   return (

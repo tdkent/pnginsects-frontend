@@ -12,8 +12,12 @@ const playfairDisplay = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  applicationName: "Insects of Papua New Guinea",
   title: "Insects of Papua New Guinea",
-  description: "Insects of PNG website",
+  description:
+    "Images and text documenting the insects of Papua New Guinea, grouped by order and family.",
+  authors: [{ name: "James Wareing" }],
+  keywords: ["Insects", "Papua New Guinea"],
 }
 
 export default function RootLayout({

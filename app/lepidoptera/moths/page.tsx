@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import moth from "../../../public/moth.png"
+
+export const metadata: Metadata = {
+  title: "Moths | Insects of Papua New Guinea",
+  description:
+    "Explore the diversity of Moths in Papua New Guinea with text and an image gallery, focusing on these nocturnal insects and their varied characteristics.",
+}
 
 export default function Moths() {
   return (

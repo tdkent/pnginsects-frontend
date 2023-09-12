@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import bee from "../../public/bee.png"
+
+export const metadata: Metadata = {
+  title: "Hymenoptera - Bees, Wasps and Ants | Insects of Papua New Guinea",
+  description:
+    "Explore Hymenoptera in Papua New Guinea: Learn about this diverse insect order, featuring ants, bees, wasps, and sawflies, through text and an image gallery.",
+}
 
 export default function Hymenoptera() {
   return (

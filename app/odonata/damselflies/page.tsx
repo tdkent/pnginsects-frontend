@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import damselfly from "../../../public/damselfly.png"
+
+export const metadata: Metadata = {
+  title: "Damselflies | Insects of Papua New Guinea",
+  description:
+    "Explore Papua New Guinea's Damselflies: Learn about these delicate insects, their graceful flight, and their aquatic habitats through text and an image gallery.",
+}
 
 export default function Damselflies() {
   return (

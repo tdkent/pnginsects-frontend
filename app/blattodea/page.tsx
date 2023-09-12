@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import MobileSubnav from "@/components/pages/MobileSubnav"
 import Subnav from "@/components/pages/Subnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import termite from "../../public/termite.png"
+
+export const metadata: Metadata = {
+  title: "Blattodea - Cockroaches and Termites | Insects of Papua New Guinea",
+  description:
+    "Explore Blattodea: ancient insects with flattened bodies, long antennae, and powerful legs. Discover their ecological roles, adaptations, and fossil history dating back over 300 million years.",
+}
 
 export default function Blattodea() {
   return (

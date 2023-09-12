@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import leafinsect from "../../public/leafinsect.png"
+
+export const metadata: Metadata = {
+  title: "Phasmida - Stick Insects | Insects of Papua New Guinea",
+  description:
+    "Explore Papua New Guinea's Stick Insects: Learn about Phasmida through text and an image gallery, focusing on their remarkable camouflage abilities and unique appearances.",
+}
 
 export default function Phasmida() {
   return (

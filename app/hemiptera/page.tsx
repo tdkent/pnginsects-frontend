@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,13 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import bug from "../../public/bug.png"
+
+export const metadata: Metadata = {
+  title:
+    "Hemiptera - True Bugs, Hoppers, Aphids, and Allies | Insects of Papua New Guinea",
+  description:
+    "Explore the Hemiptera species of Papua New Guinea, diverse insects with piercing-sucking mouthparts, through text and an image gallery.",
+}
 
 export default function Hemiptera() {
   return (

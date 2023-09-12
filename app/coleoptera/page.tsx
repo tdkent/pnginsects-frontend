@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import PageHeader from "@/components/pages/PageHeader"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import Subnav from "@/components/pages/Subnav"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import rhinobeetle from "../../public/rhinobeetle.png"
+
+export const metadata: Metadata = {
+  title: "Coleoptera - Beetles | Insects of Papua New Guinea",
+  description:
+    "Coleoptera, the largest insect order, featuring beetles with remarkable diversity in size, shape, color, and behavior. Adapted with elytra for protection, they thrive in diverse habitats across the globe.",
+}
 
 export default function Coleoptera() {
   return (

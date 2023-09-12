@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,13 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import grasshopper from "../../public/grasshopper.png"
+
+export const metadata: Metadata = {
+  title:
+    "Orthoptera - Grasshoppers, Crickets, and Katydids | Insects of Papua New Guinea",
+  description:
+    "Discover Papua New Guinea's Orthoptera: Explore grasshoppers, crickets, and katydids through text and an image gallery.",
+}
 
 export default function Orthoptera() {
   return (

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Metadata } from "next"
 
 import Subnav from "@/components/pages/Subnav"
 import MobileSubnav from "@/components/pages/MobileSubnav"
@@ -6,6 +7,12 @@ import PageHeader from "@/components/pages/PageHeader"
 import ImageGallery from "@/components/images/ImageGallery"
 import { NavName } from "@/utils/models"
 import butterfly from "../../../public/butterfly.png"
+
+export const metadata: Metadata = {
+  title: "Butterflies | Insects of Papua New Guinea",
+  description:
+    "Discover Papua New Guinea's Butterflies: Explore the colorful world of Lepidoptera with text and an image gallery.",
+}
 
 export default function Butterflies() {
   return (

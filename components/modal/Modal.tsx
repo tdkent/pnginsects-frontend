@@ -55,7 +55,11 @@ function ModalContent(props: Props) {
   }
 
   // caption innerHTML
-  const loadingStr = isLoaded ? "" : " (Loading...)"
+  const loadingStr = isLoaded
+    ? ""
+    : currentCaption
+    ? " (Loading...)"
+    : "Loading..."
   const createMarkup = () => {
     return { __html: currentCaption + loadingStr }
   }

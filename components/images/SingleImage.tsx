@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import { Resource } from "@/utils/models"
 import Modal from "../modal/Modal"
+import photoIcon from "../../public/photo.svg"
 
 interface Props {
   idx: number
@@ -51,7 +52,8 @@ export default function SingleImage(props: Props) {
         <div className="relative mb-4 pb-4 sm:mb-2 md:mb-4">
           <div
             onClick={() => handleClick(true)}
-            className="relative aspect-[3/2] w-full border border-neutral-300 hover:cursor-pointer dark:border-neutral-800"
+            style={{ backgroundImage: `url(${photoIcon.src})` }}
+            className="relative aspect-[3/2] w-full border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat hover:cursor-pointer dark:border-neutral-800"
           >
             <Image
               src={secure_url}

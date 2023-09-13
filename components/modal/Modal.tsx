@@ -9,6 +9,7 @@ import {
 
 import Backdrop from "./Backdrop"
 import { Resource } from "@/utils/models"
+import photoIcon from "../../public/photo.svg"
 
 interface Props {
   idx: number
@@ -28,6 +29,13 @@ function ModalContent(props: Props) {
     [imgs]
   )
 
+  // prevent previous image from showing when loading new image
+  const [imgData, setImgData] = useState<HTMLImageElement | null>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  useEffect(() => {
+    setIsLoaded(!!imgData)
+  }, [imgData])
+
   const [currentImg, setCurrentImg] = useState(imgUrls[idx])
   const [currentIdx, setCurrentIdx] = useState(idx)
   const [currentCaption, setCurrentCaption] = useState("")
@@ -35,6 +43,8 @@ function ModalContent(props: Props) {
   useEffect(() => {
     setCurrentImg(imgUrls[currentIdx])
     setCurrentCaption(imgCaptions[currentIdx])
+    // refresh image data when new image is selected
+    setImgData(null)
   }, [currentIdx, imgUrls, imgCaptions])
 
   const handleLeftClick = () => {
@@ -45,8 +55,9 @@ function ModalContent(props: Props) {
   }
 
   // caption innerHTML
+  const loadingStr = isLoaded ? "" : " (Loading...)"
   const createMarkup = () => {
-    return { __html: currentCaption }
+    return { __html: currentCaption + loadingStr }
   }
 
   const content = (
@@ -68,14 +79,18 @@ function ModalContent(props: Props) {
             />
           )}
         </div>
-        <div className="relative flex aspect-[3/2] basis-[80%] flex-col sm:basis-[84%]">
+        <div
+          style={{ backgroundImage: `url(${photoIcon.src})` }}
+          className="relative flex aspect-[3/2] basis-[80%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:basis-[84%]"
+        >
           <Image
             src={currentImg}
             alt={sectionName}
             fill
             sizes="(max-width: 640px) 80vw, (max-width: 1280px) 84vw, 735px"
-            className="object-cover"
+            className={`object-cover ${isLoaded ? "opacity-100" : "opacity-0"}`}
             quality={50}
+            onLoadingComplete={(img) => setImgData(img)}
           />
         </div>
         <div className="flex basis-[10%] justify-center sm:basis-[8%]">

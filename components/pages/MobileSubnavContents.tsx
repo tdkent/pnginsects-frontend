@@ -31,8 +31,8 @@ export default function MobileSubnavContents({ sections }: Props) {
   return (
     <nav
       className={`${
-        !headerDiv || isPageHeaderVisible
-          ? "max-lg:opacity-0"
+        !headerDiv || isPageHeaderVisible || isFooterVisible
+          ? "pointer-events-none max-lg:opacity-0"
           : "max-lg:opacity-100"
       } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50/95 py-3 font-semibold text-primary-700 transition-opacity duration-300 lg:hidden`}
     >
@@ -54,7 +54,7 @@ export default function MobileSubnavContents({ sections }: Props) {
             onClick={() => setIsOpen(false)}
             className={`${
               !headerDiv || isFooterVisible || isOpen
-                ? "opacity-0"
+                ? "pointer-events-none opacity-0"
                 : "opacity-1"
             } flex items-center px-1 transition-opacity duration-300`}
           >

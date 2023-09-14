@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Blattodea() {
   return (
     <>
-      <MobileSubnav name={NavName.coleoptera} />
+      <MobileSubnav name={NavName.blattodea} />
       <div className="page-wrapper">
         <Subnav name={NavName.blattodea} />
         <article className="article-container">

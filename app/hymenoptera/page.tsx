@@ -35,16 +35,16 @@ export default function Hymenoptera() {
               predators.
             </p>
             <p>
-              Identification Tips: Hymenopterans have two pairs of membranous
-              wings and a narrow waist called a petiole. Look for the presence
-              of specialised structures such as stingers or pollen baskets. Ants
-              have a distinct constricted &quot;waist&quot; and often form
-              organised colonies with different castes. Bees are known for their
-              hairy bodies, pollen-carrying structures, and important role as
-              pollinators. Wasps can vary in size and have smooth bodies, and
-              some species are known for their ability to sting. Sawflies
-              resemble wasps but lack a constricted waist and have additional
-              pairs of simple eyes.
+              <strong>Identification Tips:</strong> Hymenopterans have two pairs
+              of membranous wings and a narrow waist called a petiole. Look for
+              the presence of specialised structures such as stingers or pollen
+              baskets. Ants have a distinct constricted &quot;waist&quot; and
+              often form organised colonies with different castes. Bees are
+              known for their hairy bodies, pollen-carrying structures, and
+              important role as pollinators. Wasps can vary in size and have
+              smooth bodies, and some species are known for their ability to
+              sting. Sawflies resemble wasps but lack a constricted waist and
+              have additional pairs of simple eyes.
             </p>
           </section>
           <ImageGallery name={NavName.hymenoptera} />

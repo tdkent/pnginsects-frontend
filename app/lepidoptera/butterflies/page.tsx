@@ -31,11 +31,12 @@ export default function Butterflies() {
               nectar. There are around 800 species in Papua New Guinea.
             </p>
             <p>
-              Identification Tips: They have slender bodies, clubbed antennae,
-              and two pairs of large, often colorful wings. When identifying
-              butterflies, observe their body shape, wing structure, and
-              antennae. Pay attention to their colour patterns, which can vary
-              dramatically between species and even within species.
+              <strong>Identification Tips:</strong> They have slender bodies,
+              clubbed antennae, and two pairs of large, often colorful wings.
+              When identifying butterflies, observe their body shape, wing
+              structure, and antennae. Pay attention to their colour patterns,
+              which can vary dramatically between species and even within
+              species.
             </p>
           </section>
           <ImageGallery name={NavName.butterflies} />

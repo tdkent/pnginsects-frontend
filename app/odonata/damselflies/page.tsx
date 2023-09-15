@@ -32,11 +32,12 @@ export default function Damselflies() {
               Guinea, many endemic.
             </p>
             <p>
-              Identification Tips: When identifying damselflies, note their
-              slender bodies, long and thin wings, and their habit of resting
-              with wings held together above their bodies. Look for
-              distinguishing features such as colour patterns on their wings and
-              body, as well as the shape and colouration of their eyes.
+              <strong>Identification Tips:</strong> When identifying
+              damselflies, note their slender bodies, long and thin wings, and
+              their habit of resting with wings held together above their
+              bodies. Look for distinguishing features such as colour patterns
+              on their wings and body, as well as the shape and colouration of
+              their eyes.
             </p>
           </section>
           <ImageGallery name={NavName.damselflies} />

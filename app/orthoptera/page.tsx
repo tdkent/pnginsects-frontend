@@ -35,13 +35,13 @@ export default function Orthoptera() {
               sound-producing structures used for communication.
             </p>
             <p>
-              Identification Tips: Grasshoppers have robust bodies and long hind
-              legs built for jumping. Their antennae are short. Crickets have
-              flattened bodies and long antennae, and their songs are produced
-              by rubbing their wings together. They are often darkly coloured.
-              Katydids are often leaf-like with long antennae and can produce
-              loud, rhythmic songs. Pay attention to their body shape, leg
-              structure, and presence of wings.
+              <strong>Identification Tips:</strong> Grasshoppers have robust
+              bodies and long hind legs built for jumping. Their antennae are
+              short. Crickets have flattened bodies and long antennae, and their
+              songs are produced by rubbing their wings together. They are often
+              darkly coloured. Katydids are often leaf-like with long antennae
+              and can produce loud, rhythmic songs. Pay attention to their body
+              shape, leg structure, and presence of wings.
             </p>
           </section>
           <ImageGallery name={NavName.orthoptera} />

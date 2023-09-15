@@ -34,13 +34,13 @@ export default function Mantodea() {
               &quot;praying&quot; position.
             </p>
             <p>
-              Identification Tips: Praying mantises have a triangular head that
-              can rotate 180 degrees. Their front legs are modified for
-              capturing and grasping prey. Look for their slender bodies,
-              triangular pronotum, and compound eyes. Note their colouration,
-              body shape, and the presence of unique adaptations such as spines
-              or camouflage. Observe their hunting behaviour and characteristic
-              &quot;prayer-like&quot; pose.
+              <strong>Identification Tips:</strong> Praying mantises have a
+              triangular head that can rotate 180 degrees. Their front legs are
+              modified for capturing and grasping prey. Look for their slender
+              bodies, triangular pronotum, and compound eyes. Note their
+              colouration, body shape, and the presence of unique adaptations
+              such as spines or camouflage. Observe their hunting behaviour and
+              characteristic &quot;prayer-like&quot; pose.
             </p>
           </section>
           <ImageGallery name={NavName.mantodea} />

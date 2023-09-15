@@ -35,13 +35,13 @@ export default function Trichoptera() {
               traits.
             </p>
             <p>
-              Identification Tips: Caddisflies can be identified by their small
-              to medium-sized bodies, typically ranging from a few millimeters
-              to a few centimeters in length. They have two pairs of hairy,
-              membranous wings that are held in a tent-like manner over their
-              bodies when at rest. The wings are often adorned with intricate
-              patterns, varying in coloration from translucent to dark brown or
-              black.
+              <strong>Identification Tips:</strong> Caddisflies can be
+              identified by their small to medium-sized bodies, typically
+              ranging from a few millimeters to a few centimeters in length.
+              They have two pairs of hairy, membranous wings that are held in a
+              tent-like manner over their bodies when at rest. The wings are
+              often adorned with intricate patterns, varying in coloration from
+              translucent to dark brown or black.
             </p>
           </section>
           <ImageGallery name={NavName.trichoptera} />

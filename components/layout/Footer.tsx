@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { EnvelopeIcon } from "@heroicons/react/24/outline"
 
-import { cloudinaryUrlPrefix } from "@/utils/lib/constants"
 import FooterBoundary from "../pages/FooterBoundary"
 
 const Footer = () => {
@@ -31,7 +30,7 @@ const Footer = () => {
             <div className="flex w-20 justify-center rounded-md border bg-[#fff] px-1 py-2 shadow-lg sm:w-24 lg:w-28">
               <div className="relative -mt-1 aspect-[1632/368] w-full">
                 <Image
-                  src={`${cloudinaryUrlPrefix}/v1692732142/assets/iNat_jwwhh4.png`}
+                  src="https://res.cloudinary.com/dvgzr0wt3/image/upload/v1692732142/assets/iNat_jwwhh4.png"
                   alt="iNaturalist logo"
                   fill
                   sizes="(max-width: 640px) 70px, (max-width: 1024px) 86px, 102px"

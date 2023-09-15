@@ -37,13 +37,14 @@ export default function Hemiptera() {
               predators, and disease vectors.
             </p>
             <p>
-              Identification Tips: Bugs have characteristic mouthparts forming a
-              long, slender proboscis. Their forewings are typically half
-              leathery and half membranous, forming an &quot;X&quot; shape when
-              at rest. Pay attention to their body shape, wing structure, and
-              presence of specialised structures like scent glands or enlarged
-              legs. Note their diverse colouration and the presence of unique
-              adaptations such as camouflage or defensive structures.
+              <strong>Identification Tips:</strong> Bugs have characteristic
+              mouthparts forming a long, slender proboscis. Their forewings are
+              typically half leathery and half membranous, forming an
+              &quot;X&quot; shape when at rest. Pay attention to their body
+              shape, wing structure, and presence of specialised structures like
+              scent glands or enlarged legs. Note their diverse colouration and
+              the presence of unique adaptations such as camouflage or defensive
+              structures.
             </p>
           </section>
           <ImageGallery name={NavName.hemiptera} />

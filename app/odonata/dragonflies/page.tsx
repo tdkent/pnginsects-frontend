@@ -31,11 +31,12 @@ export default function Dragonflies() {
               Most species and some genera are not found elsehwere.
             </p>
             <p>
-              Identification Tips: To identify dragonflies, observe their robust
-              bodies, large eyes, and distinct wing shape. When resting, their
-              wings are spread perpendicular to their body in contrast to
-              damselflies. Their eyes are also larger than damselflies, with no
-              gap between them (except in Ictinogomphus australis)
+              <strong>Identification Tips:</strong> To identify dragonflies,
+              observe their robust bodies, large eyes, and distinct wing shape.
+              When resting, their wings are spread perpendicular to their body
+              in contrast to damselflies. Their eyes are also larger than
+              damselflies, with no gap between them (except in Ictinogomphus
+              australis)
             </p>
           </section>
           <ImageGallery name={NavName.dragonfiles} />

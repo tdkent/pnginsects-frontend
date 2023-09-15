@@ -34,16 +34,16 @@ export default function Phasmida() {
               surroundings.
             </p>
             <p>
-              Identification Tips: Look for a stick-like appearance, long
-              slender bodies, and typically slow-moving behavior. Pay attention
-              to their leg structure, antennae length, and the presence of
-              wings. Members of the order are found on all continents except
-              Antarctica, but they are most abundant in the tropics and
-              subtropics.To observe phasmids, it is best to pay close attention
-              to vegetation. They are primarily nocturnal, and some species may
-              be more active during certain times of the year.Note their body
-              coloration, mimicry of plant structures, and unique adaptations
-              such as spines or leaf-shaped appendages.
+              <strong>Identification Tips:</strong> Look for a stick-like
+              appearance, long slender bodies, and typically slow-moving
+              behavior. Pay attention to their leg structure, antennae length,
+              and the presence of wings. Members of the order are found on all
+              continents except Antarctica, but they are most abundant in the
+              tropics and subtropics.To observe phasmids, it is best to pay
+              close attention to vegetation. They are primarily nocturnal, and
+              some species may be more active during certain times of the
+              year.Note their body coloration, mimicry of plant structures, and
+              unique adaptations such as spines or leaf-shaped appendages.
             </p>
           </section>
           <ImageGallery name={NavName.phasmida} />

@@ -29,11 +29,11 @@ export default function Moths() {
               species are active during the day.
             </p>
             <p>
-              Identification Tips: They have stout bodies, feathery or
-              filamentous antennae, and two pairs of wings covered in scales.
-              Moths often display intricate patterns and cryptic colouration,
-              which aid in camouflage. When identifying moths, observe their
-              body shape, wing structure and antennae.
+              <strong>Identification Tips:</strong> They have stout bodies,
+              feathery or filamentous antennae, and two pairs of wings covered
+              in scales. Moths often display intricate patterns and cryptic
+              colouration, which aid in camouflage. When identifying moths,
+              observe their body shape, wing structure and antennae.
             </p>
           </section>
           <ImageGallery name={NavName.moths} />

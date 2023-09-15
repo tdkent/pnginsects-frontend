@@ -39,7 +39,7 @@ export default function MobileSubnavContents({ sections }: Props) {
       <div className="flex flex-col lg:hidden">
         <div className="flex items-center justify-between px-4 md:px-8 lg:hidden">
           <div
-            className="flex items-center"
+            className="flex items-center hover:cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
           >
             {isOpen ? (

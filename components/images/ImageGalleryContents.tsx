@@ -11,9 +11,11 @@ interface Props {
     sectionName: string
     images: Resource[]
   }[]
+  count: number
 }
 
-export default function ImageGalleryContents({ resources }: Props) {
+export default function ImageGalleryContents({ resources, count }: Props) {
+  console.log("count", count)
   // set margin for intersection observer
   const [bottomMargin, setBottomMargin] = useState("")
   useEffect(() => {

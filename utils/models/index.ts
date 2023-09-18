@@ -51,4 +51,5 @@ export interface CloudinaryResources {
     sectionName: string
     images: Resource[]
   }[]
+  count: number
 }

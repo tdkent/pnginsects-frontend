@@ -22,9 +22,7 @@ export default function ImageGalleryContents({ resources, count }: Props) {
     const marginAndPadding = 48 + 64
     setBottomMargin(`${headerSize - window.innerHeight + marginAndPadding}px`)
   }, [])
-  useEffect(() => {
-    if (count) console.log("count ", count)
-  }, [count])
+  useEffect(() => console.log("count ", count), [count])
   const changeVisibility = useStore((state) => state.changeSectionVisibility)
   return (
     <div>

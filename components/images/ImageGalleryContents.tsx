@@ -15,7 +15,6 @@ interface Props {
 }
 
 export default function ImageGalleryContents({ resources, count }: Props) {
-  console.log("count", count)
   // set margin for intersection observer
   const [bottomMargin, setBottomMargin] = useState("")
   useEffect(() => {
@@ -23,6 +22,7 @@ export default function ImageGalleryContents({ resources, count }: Props) {
     const marginAndPadding = 48 + 64
     setBottomMargin(`${headerSize - window.innerHeight + marginAndPadding}px`)
   }, [])
+  useEffect(() => console.log("count ", count), [count])
   const changeVisibility = useStore((state) => state.changeSectionVisibility)
   return (
     <div>

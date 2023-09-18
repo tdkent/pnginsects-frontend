@@ -10,6 +10,7 @@ import {
 import Backdrop from "./Backdrop"
 import { Resource } from "@/utils/models"
 import photoIcon from "../../public/photo.svg"
+import fallbackImage from "../../public/fallback-lg.jpg"
 
 interface Props {
   idx: number
@@ -64,6 +65,12 @@ function ModalContent(props: Props) {
     return { __html: currentCaption + loadingStr }
   }
 
+  // error handling
+  const [error, setError] = useState(false)
+  useEffect(() => {
+    setError(false)
+  }, [currentImg])
+
   const content = (
     <div className="fixed left-0 top-1/2 z-50 mx-auto flex w-screen max-w-[1280px] -translate-y-[calc(50%+3rem)] flex-col gap-y-4 xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
       <div className="mx-auto flex w-[80%] justify-end sm:w-[84%]">
@@ -88,13 +95,14 @@ function ModalContent(props: Props) {
           className="relative flex aspect-[3/2] basis-[80%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:basis-[84%]"
         >
           <Image
-            src={currentImg}
+            src={error ? fallbackImage : currentImg}
             alt={sectionName}
             fill
-            sizes="(max-width: 640px) 80vw, (max-width: 1280px) 84vw, 735px"
+            sizes="(max-width: 640px) 80vw, (max-width: 1280px) 84vw, 1074px"
             className={`object-cover ${isLoaded ? "opacity-100" : "opacity-0"}`}
             quality={50}
             onLoadingComplete={(img) => setImgData(img)}
+            onError={() => setError(true)}
           />
         </div>
         <div className="flex basis-[10%] justify-center sm:basis-[8%]">

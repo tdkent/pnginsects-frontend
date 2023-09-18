@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
-import Image from "next/image"
 
+import ImageWIthFallback from "./ImageWIthFallback"
 import { Resource } from "@/utils/models"
 import Modal from "../modal/Modal"
 import photoIcon from "../../public/photo.svg"
@@ -15,9 +15,7 @@ interface Props {
 
 export default function SingleImage(props: Props) {
   const {
-    idx,
-    img: { secure_url, caption },
-    sectionName,
+    img: { caption },
   } = props
   const [isOpen, setIsOpen] = useState(false)
   // body scroll lock
@@ -46,7 +44,7 @@ export default function SingleImage(props: Props) {
       {isOpen && <Modal handleClick={handleClick} {...props} />}
       <figure
         className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 xl:basis-1/3 ${
-          sectionName === "Tiles" && "lg:basis-1/3"
+          props.sectionName === "Tiles" && "lg:basis-1/3"
         }`}
       >
         <div className="relative mb-4 pb-4 sm:mb-2 md:mb-4">
@@ -55,14 +53,7 @@ export default function SingleImage(props: Props) {
             style={{ backgroundImage: `url(${photoIcon.src})` }}
             className="relative aspect-[3/2] w-full border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat hover:cursor-pointer dark:border-neutral-800"
           >
-            <Image
-              src={secure_url}
-              alt={`${sectionName} ${idx + 1}`}
-              fill
-              sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 70vw, 725px"
-              className="object-cover"
-              quality={25}
-            />
+            <ImageWIthFallback {...props} />
           </div>
           {caption && (
             <figcaption

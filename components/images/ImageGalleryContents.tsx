@@ -14,6 +14,7 @@ interface Props {
 }
 
 export default function ImageGalleryContents({ resources }: Props) {
+  // set margin for intersection observer
   const [bottomMargin, setBottomMargin] = useState("")
   useEffect(() => {
     const headerSize = 115

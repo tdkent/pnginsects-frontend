@@ -12,10 +12,9 @@ interface Props {
 export default function SubnavContents({ sections }: Props) {
   // intersection observer
   const [headerDiv, setHeaderDiv] = useState<HTMLElement | null>(null)
-  useEffect(
-    () => setHeaderDiv(document.getElementById("page-header-boundary")),
-    []
-  )
+  useEffect(() => {
+    setHeaderDiv(document.getElementById("page-header-boundary"))
+  }, [])
   const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
   const currentVisibleSection = useStore((state) => state.currentVisibleSection)
   return (

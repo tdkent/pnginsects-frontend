@@ -5,6 +5,7 @@ import { InView } from "react-intersection-observer"
 import { Resource } from "@/utils/models"
 import SingleImage from "./SingleImage"
 import useStore from "@/utils/hooks"
+import Loading from "../pages/Loading"
 
 interface Props {
   resources: {
@@ -22,6 +23,12 @@ export default function ImageGalleryContents({ resources }: Props) {
     setBottomMargin(`${headerSize - window.innerHeight + marginAndPadding}px`)
   }, [])
   const changeVisibility = useStore((state) => state.changeSectionVisibility)
+  // wait for component to mount
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  if (!mounted) {
+    return <Loading />
+  }
   return (
     <div>
       {resources &&

@@ -8,6 +8,6 @@ interface Props {
 
 export default async function ImageGallery({ name }: Props) {
   const endpoint = name.toLowerCase()
-  const { resources, count }: CloudinaryResources = await getImages(endpoint)
-  return <ImageGalleryContents resources={resources} count={count} />
+  const { resources }: CloudinaryResources = await getImages(endpoint)
+  return <ImageGalleryContents resources={resources} />
 }

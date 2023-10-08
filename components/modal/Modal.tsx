@@ -5,6 +5,7 @@ import {
   ChevronRightIcon,
   ChevronLeftIcon,
   XCircleIcon,
+  ArrowPathIcon,
 } from "@heroicons/react/24/outline"
 
 import Backdrop from "./Backdrop"
@@ -56,13 +57,8 @@ function ModalContent(props: Props) {
   }
 
   // caption innerHTML
-  const loadingStr = isLoaded
-    ? ""
-    : currentCaption
-    ? " (Loading...)"
-    : "Loading..."
   const createMarkup = () => {
-    return { __html: currentCaption + loadingStr }
+    return { __html: currentCaption }
   }
 
   // error handling
@@ -73,16 +69,16 @@ function ModalContent(props: Props) {
 
   const content = (
     <div className="fixed left-0 top-1/2 z-50 mx-auto flex w-screen max-w-[1280px] -translate-y-[calc(50%+3rem)] flex-col gap-y-4 xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
-      <div className="mx-auto flex w-[80%] justify-end sm:w-[84%]">
+      <div className="mx-auto flex w-[80%] justify-end sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
         <div
           onClick={() => handleClick(false)}
           className="w-fit hover:cursor-pointer"
         >
-          <XCircleIcon className="h-8 w-8 text-neutral-50 sm:h-12 sm:w-12" />
+          <XCircleIcon className="h-8 w-8 text-neutral-50" />
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-center">
-        <div className="flex basis-[10%] justify-center sm:basis-[8%]">
+        <div className="flex w-[10%] justify-center sm:w-[8%]">
           {currentIdx && (
             <ChevronLeftIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
@@ -92,7 +88,7 @@ function ModalContent(props: Props) {
         </div>
         <div
           style={{ backgroundImage: `url(${photoIcon.src})` }}
-          className="relative flex aspect-[3/2] basis-[80%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:basis-[84%]"
+          className="relative flex aspect-[3/2] w-4/5 flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:w-[84%] xl:h-[65vh] xl:w-auto"
         >
           <Image
             src={error ? fallbackImage : currentImg}
@@ -105,7 +101,7 @@ function ModalContent(props: Props) {
             onError={() => setError(true)}
           />
         </div>
-        <div className="flex basis-[10%] justify-center sm:basis-[8%]">
+        <div className="flex w-[10%] justify-center sm:w-[8%]">
           {currentIdx !== imgUrls.length - 1 && (
             <ChevronRightIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
@@ -113,10 +109,12 @@ function ModalContent(props: Props) {
             />
           )}
         </div>
-        <div
-          dangerouslySetInnerHTML={createMarkup()}
-          className="mt-4 h-7 basis-full px-8 text-center font-light text-primary-50"
-        />
+        <div className="mt-4 flex h-7 w-full items-center justify-center gap-x-4 px-8 text-center font-light text-primary-50">
+          <div dangerouslySetInnerHTML={createMarkup()} />
+          {isLoaded ? null : (
+            <ArrowPathIcon className="h-4 w-4 motion-safe:animate-[spin_2s_linear_infinite]" />
+          )}
+        </div>
       </div>
     </div>
   )

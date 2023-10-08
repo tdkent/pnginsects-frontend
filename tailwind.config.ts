@@ -37,9 +37,13 @@ const config: Config = {
       },
     },
     extend: {
+      screens: {
+        "2xl": "1440px",
+        "3xl": "1536px",
+      },
       fontFamily: {
-        sans: ["var(--font-open-sans)"],
-        serif: ["var(--font-playfair-display)"],
+        sans: ["var(--font-montserrat)", "sans-serif"],
+        serif: ["var(--font-playfair-display)", "serif"],
       },
     },
   },

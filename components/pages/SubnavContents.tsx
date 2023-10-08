@@ -17,9 +17,20 @@ export default function SubnavContents({ sections }: Props) {
   }, [])
   const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
   const currentVisibleSection = useStore((state) => state.currentVisibleSection)
+
+  // wait for component to mount
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  if (!mounted) {
+    return (
+      <nav className="min-[1536]:w-1/5 w-[30%] py-20 pr-8 text-sm max-lg:hidden xl:pr-14 min-[1440px]:w-1/4">
+        <div className="sticky top-[156px] w-full">Loading...</div>
+      </nav>
+    )
+  }
   return (
     <>
-      <nav className="w-[30%] py-20 pr-8 text-sm max-lg:hidden xl:pr-20">
+      <nav className="min-[1536]:w-1/5 w-[30%] py-20 pr-8 text-sm max-lg:hidden xl:pr-14 min-[1440px]:w-1/4">
         <div className="sticky top-[156px] w-full">
           <div className="h-fit max-h-[430px] overflow-y-scroll border-b border-neutral-200 pb-2 dark:border-neutral-800">
             <div className="sticky top-0 bg-white pb-2 font-medium dark:bg-black">

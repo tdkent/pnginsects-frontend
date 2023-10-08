@@ -12,7 +12,7 @@ export default function PageHeader({ text, src, altText }: Props) {
   return (
     <>
       <div className="mb-6 flex items-center">
-        <div className="relative h-8 w-8 border border-white dark:rounded-full dark:bg-white max-sm:hidden">
+        <div className="relative h-8 w-8 border-none dark:rounded-full dark:bg-white max-sm:hidden">
           <Image
             alt={altText}
             src={src}
@@ -22,7 +22,7 @@ export default function PageHeader({ text, src, altText }: Props) {
             quality={100}
           />
         </div>
-        <h2 className="text-xl leading-8 sm:ml-2 md:mx-3 lg:text-2xl">
+        <h2 className="text-2xl leading-8 sm:ml-2 md:mx-3 xl:text-3xl">
           {text}
         </h2>
       </div>

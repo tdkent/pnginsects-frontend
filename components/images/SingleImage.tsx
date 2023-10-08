@@ -43,11 +43,13 @@ export default function SingleImage(props: Props) {
     <>
       {isOpen && <Modal handleClick={handleClick} {...props} />}
       <figure
-        className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 xl:basis-1/3 ${
-          props.sectionName === "Tiles" && "lg:basis-1/3"
+        className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 ${
+          props.sectionName === "Tiles"
+            ? "lg:basis-1/3"
+            : "xl:basis-1/3 2xl:basis-1/4 3xl:basis-1/5"
         }`}
       >
-        <div className="relative mb-4 pb-4 sm:mb-2 md:mb-4">
+        <div className="relative mb-8 pb-4">
           <div
             onClick={() => handleClick(true)}
             style={{ backgroundImage: `url(${photoIcon.src})` }}
@@ -57,7 +59,7 @@ export default function SingleImage(props: Props) {
           </div>
           {caption && (
             <figcaption
-              className="absolute ml-1 mt-0.5 text-sm xl:text-xs"
+              className="absolute mt-0.5 w-full text-center text-xs"
               dangerouslySetInnerHTML={createMarkup()}
             />
           )}

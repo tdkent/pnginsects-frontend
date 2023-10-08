@@ -5,11 +5,11 @@
 @layer base {
   /* body */
   body {
-    @apply bg-primary-900 font-sans;
+    @apply overflow-x-hidden bg-primary-800 font-sans;
   }
 
   main {
-    @apply mx-auto max-w-[1280px] border-neutral-200 bg-white text-neutral-900 dark:border-t dark:border-black dark:border-t-neutral-800 dark:bg-black dark:text-neutral-50 xl:border-x;
+    @apply mx-auto max-w-[1536px] border-neutral-200 bg-white text-neutral-900 dark:border-t dark:border-black dark:border-t-neutral-800 dark:bg-black dark:text-neutral-50 xl:border-x;
   }
 
   /* containers & layout */
@@ -18,7 +18,7 @@
   }
 
   .article-container {
-    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20 xl:px-20;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20 xl:px-14 2xl:w-3/4 3xl:w-4/5;
   }
 
   article p {

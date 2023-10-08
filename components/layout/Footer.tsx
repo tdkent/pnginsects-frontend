@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <>
       <FooterBoundary />
-      <footer className="border-t border-primary-700 bg-gradient-to-b from-primary-700 from-50% to-primary-900 px-5 py-10 text-xs font-light leading-6 text-primary-50 dark:border-neutral-800 dark:from-black dark:from-80% dark:to-primary-900 sm:text-sm sm:leading-8 md:px-8 xl:flex xl:flex-col xl:items-center">
+      <footer className="border-t border-primary-600 bg-gradient-to-b from-primary-600 from-50% to-primary-800 px-5 py-10 text-xs font-light leading-6 text-primary-50 dark:border-neutral-800 dark:from-black dark:from-80% dark:to-primary-900 sm:text-sm sm:leading-8 md:px-8 xl:flex xl:flex-col xl:items-center">
         <p className="mb-4 lg:mb-3">
           Any feedback, especially in relation to identifications, is always
           gratefully received. I welcome the use of my photos, should the
           appropriate credit naturally be given.
         </p>
-        <div className="flex w-full flex-nowrap items-center justify-between py-2 lg:justify-start lg:gap-x-12 lg:py-6 xl:justify-center xl:gap-x-24 xl:py-8">
+        <div className="flex w-full flex-nowrap items-center justify-between py-2 lg:justify-start lg:gap-x-12 lg:py-0 xl:justify-center xl:gap-x-24">
           <div className="">&copy; 2023</div>
           <a
             href="mailto:jtwareing@gmail.com"

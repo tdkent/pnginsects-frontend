@@ -38,9 +38,10 @@ export default function MobileSubnavContents({ sections }: Props) {
     >
       <div className="flex flex-col lg:hidden">
         <div className="flex items-center justify-between px-4 md:px-8 lg:hidden">
-          <div
+          <button
             className="flex items-center hover:cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
+            tabIndex={-1}
           >
             {isOpen ? (
               <ChevronDownIcon className="h-4 w-4" />
@@ -48,10 +49,11 @@ export default function MobileSubnavContents({ sections }: Props) {
               <ChevronRightIcon className="h-4 w-4" />
             )}
             <div className="pl-2">Page contents</div>
-          </div>
+          </button>
           <a
             href="#"
             onClick={() => setIsOpen(false)}
+            tabIndex={-1}
             className={`${
               !headerDiv || isFooterVisible || isOpen
                 ? "pointer-events-none opacity-0"

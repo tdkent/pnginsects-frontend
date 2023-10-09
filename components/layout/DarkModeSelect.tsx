@@ -24,18 +24,12 @@ export default function DarkModeSelect() {
     }
   }, [isDark])
   return (
-    <div className="">
+    <button onClick={handleClick} className="hover:cursor-pointer">
       {isDark ? (
-        <MoonIcon
-          className="h-8 w-8 text-primary-50 hover:cursor-pointer xl:h-9 xl:w-9"
-          onClick={handleClick}
-        />
+        <MoonIcon className="h-8 w-8 text-primary-50 xl:h-9 xl:w-9" />
       ) : (
-        <SunIcon
-          className="h-8 w-8 text-primary-100 hover:cursor-pointer xl:h-9 xl:w-9"
-          onClick={handleClick}
-        />
+        <SunIcon className="h-8 w-8 text-primary-100 xl:h-9 xl:w-9" />
       )}
-    </div>
+    </button>
   )
 }

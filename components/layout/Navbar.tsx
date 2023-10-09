@@ -1,4 +1,5 @@
 "use client"
+import React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -95,7 +96,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
               pathname.slice(1) === text.toLowerCase() ||
               (text === "Home" && pathname === "/")
             return (
-              <div key={id}>
+              <React.Fragment key={id}>
                 {sublinks ? (
                   <div
                     className="group"
@@ -152,7 +153,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                     </Link>
                   </li>
                 )}
-              </div>
+              </React.Fragment>
             )
           })}
       </ul>

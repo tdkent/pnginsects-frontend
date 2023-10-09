@@ -54,6 +54,8 @@ export default function SingleImage(props: Props) {
             onClick={() => handleClick(true)}
             style={{ backgroundImage: `url(${photoIcon.src})` }}
             className="relative aspect-[3/2] w-full border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat hover:cursor-pointer dark:border-neutral-800"
+            role="button"
+            tabIndex={0}
           >
             <ImageWIthFallback {...props} />
           </div>

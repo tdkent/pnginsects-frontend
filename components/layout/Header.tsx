@@ -19,11 +19,8 @@ const Header = () => {
     <header className="z-50 w-screen bg-gradient-to-r from-primary-800 to-primary-600 dark:bg-gradient-to-b dark:from-primary-800 dark:to-black max-lg:dark:from-25% lg:sticky lg:top-0 lg:bg-gradient-to-b">
       <div className="flex h-[64px] max-w-[1536px] items-center justify-between px-5 sm:h-[72px] md:px-8 xl:px-14 3xl:mx-auto">
         <div className="flex items-center gap-x-6 md:gap-x-9 lg:gap-x-12">
-          <Link href="/">
-            <h1
-              className="text-primary-300 dark:text-primary-200 sm:text-2xl lg:text-3xl xl:text-4xl"
-              onClick={() => setIsOpen(false)}
-            >
+          <Link href="/" onClick={() => setIsOpen(false)} role="button">
+            <h1 className="text-primary-300 dark:text-primary-200 sm:text-2xl lg:text-3xl xl:text-4xl">
               Insects of
               <span className="text-2xl leading-5 text-primary-100 dark:text-primary-300 max-sm:block sm:pl-2 lg:text-3xl xl:pl-3 xl:text-4xl">
                 Papua New Guinea

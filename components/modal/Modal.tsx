@@ -70,22 +70,22 @@ function ModalContent(props: Props) {
   const content = (
     <div className="fixed left-0 top-1/2 z-50 mx-auto flex w-screen max-w-[1280px] -translate-y-[calc(50%+3rem)] flex-col gap-y-4 xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
       <div className="mx-auto flex w-[80%] justify-end sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
-        <div
+        <button
           onClick={() => handleClick(false)}
           className="w-fit hover:cursor-pointer"
         >
           <XCircleIcon className="h-8 w-8 text-neutral-50" />
-        </div>
+        </button>
       </div>
       <div className="flex flex-wrap items-center justify-center">
-        <div className="flex w-[10%] justify-center sm:w-[8%]">
+        <button className="flex w-[10%] justify-center sm:w-[8%]">
           {currentIdx && (
             <ChevronLeftIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
               onClick={handleLeftClick}
             />
           )}
-        </div>
+        </button>
         <div
           style={{ backgroundImage: `url(${photoIcon.src})` }}
           className="relative flex aspect-[3/2] w-4/5 flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:w-[84%] xl:h-[65vh] xl:w-auto"
@@ -100,14 +100,14 @@ function ModalContent(props: Props) {
             onError={() => setError(true)}
           />
         </div>
-        <div className="flex w-[10%] justify-center sm:w-[8%]">
+        <button className="flex w-[10%] justify-center sm:w-[8%]">
           {currentIdx !== imgUrls.length - 1 && (
             <ChevronRightIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
               onClick={handleRightClick}
             />
           )}
-        </div>
+        </button>
         <div className="mt-4 flex h-7 w-full items-center justify-center gap-x-4 px-8 text-center font-light text-primary-50">
           <div dangerouslySetInnerHTML={createMarkup()} />
           {isLoaded ? null : (

@@ -1,5 +1,4 @@
 import Subnav from "@/components/pages/Subnav"
-import Image from "next/image"
 import { Metadata } from "next"
 
 import MobileSubnav from "@/components/pages/MobileSubnav"

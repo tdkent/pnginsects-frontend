@@ -94,7 +94,6 @@ function ModalContent(props: Props) {
             src={error ? fallbackImage : currentImg}
             alt={sectionName}
             fill
-            sizes="(max-width: 640px) 80vw, (max-width: 1280px) 84vw, 1074px"
             className={`object-cover ${isLoaded ? "opacity-100" : "opacity-0"}`}
             quality={50}
             onLoadingComplete={(img) => setImgData(img)}

@@ -66,7 +66,7 @@ export default function MobileSubnavContents({ sections }: Props) {
         </div>
         {isOpen && (
           <div className="h-screen px-4 py-3">
-            <ul className="h-[calc(100vh-160px)] overflow-y-scroll py-2 text-primary-700 dark:text-neutral-50">
+            <ul className="h-[calc(65vh)] overflow-y-scroll py-2 text-primary-700 dark:text-neutral-50">
               {sections &&
                 sections.map((section, i) => {
                   return (

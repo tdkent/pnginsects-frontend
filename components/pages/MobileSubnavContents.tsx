@@ -24,18 +24,19 @@ export default function MobileSubnavContents({ sections }: Props) {
   // intersection observer
   const [headerDiv, setHeaderDiv] = useState<HTMLElement | null>(null)
   const isFooterVisible = useStore((state) => state.isFooterVisible)
-  const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
+  // const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
   useEffect(() => {
     setHeaderDiv(document.getElementById("page-header-boundary"))
   }, [])
   return (
-    <nav
-      className={`${
-        !headerDiv || isPageHeaderVisible || isFooterVisible
-          ? "pointer-events-none max-lg:opacity-0"
-          : "max-lg:opacity-100"
-      } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50 py-3 font-semibold text-primary-700 transition-opacity duration-300 dark:border-b-neutral-800 dark:border-t-black dark:bg-black dark:font-light dark:text-neutral-50 lg:hidden`}
-    >
+    // <nav
+    //   className={`${
+    //     !headerDiv || isPageHeaderVisible || isFooterVisible
+    //       ? "pointer-events-none max-lg:opacity-0"
+    //       : "max-lg:opacity-100"
+    //   } sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50 py-3 font-semibold text-primary-700 transition-opacity duration-300 dark:border-b-neutral-800 dark:border-t-black dark:bg-black dark:font-light dark:text-neutral-50 lg:hidden`}
+    // >
+    <nav className="sticky top-0 z-10 w-full border-y border-primary-700 bg-primary-50 py-3 font-semibold text-primary-700 transition-opacity duration-300 dark:border-b-neutral-800 dark:border-t-black dark:bg-black dark:font-light dark:text-neutral-50 max-lg:opacity-100 lg:hidden">
       <div className="flex flex-col lg:hidden">
         <div className="flex items-center justify-between px-4 md:px-8 lg:hidden">
           <button

@@ -21,7 +21,7 @@ export default function MobileNavDisplay({
   length,
 }: Props) {
   return (
-    <div className="sticky bottom-4 z-50 mx-auto mt-[calc(100vh-100px)] flex w-[95%] justify-between place-self-end text-neutral-50 lg:hidden">
+    <div className="mx-auto mt-12 flex w-[95%] justify-between text-neutral-50 lg:hidden">
       <div className="flex basis-1/3 items-center justify-start">
         <button className="hover:cursor-pointer">
           {currentIdx ? (

@@ -69,7 +69,54 @@ function ModalContent(props: Props) {
   }, [currentImg])
 
   const content = (
-    <>
+    <div className="fixed left-0 top-[10%] z-50 mx-auto flex w-screen max-w-[1280px] flex-col gap-y-4 md:top-[5%] lg:top-1/2 lg:-translate-y-[calc(50%+3rem)] xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
+      {/* Lg breakpoint close button */}
+      <div className="mx-auto flex w-[80%] justify-end max-lg:hidden sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
+        <button
+          onClick={() => handleClick(false)}
+          className="w-fit hover:cursor-pointer"
+        >
+          <XCircleIcon className="h-8 w-8 text-neutral-50" />
+        </button>
+      </div>
+      <div className="flex flex-wrap items-center justify-center">
+        <button className="flex w-[8%] justify-center max-lg:hidden">
+          {currentIdx && (
+            <ChevronLeftIcon
+              className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
+              onClick={handleLeftClick}
+            />
+          )}
+        </button>
+        <div
+          style={{ backgroundImage: `url(${photoIcon.src})` }}
+          className="relative flex aspect-[3/2] w-[95%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 lg:w-[84%] xl:h-[65vh] xl:w-auto"
+        >
+          <Image
+            src={error ? fallbackImage : currentImg}
+            alt={sectionName}
+            fill
+            className={`object-cover ${isLoaded ? "opacity-100" : "opacity-0"}`}
+            quality={50}
+            onLoadingComplete={(img) => setImgData(img)}
+            onError={() => setError(true)}
+          />
+        </div>
+        <button className="flex w-[8%] justify-center max-lg:hidden">
+          {currentIdx !== imgUrls.length - 1 && (
+            <ChevronRightIcon
+              className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
+              onClick={handleRightClick}
+            />
+          )}
+        </button>
+        <div className="mt-4 flex h-7 w-full items-center justify-center gap-x-4 px-8 text-center font-light text-primary-50">
+          <div dangerouslySetInnerHTML={createMarkup()} />
+          {isLoaded ? null : (
+            <ArrowPathIcon className="h-4 w-4 motion-safe:animate-[spin_2s_linear_infinite]" />
+          )}
+        </div>
+      </div>
       <MobileNavDisplay
         currentIdx={currentIdx}
         length={imgUrls.length}
@@ -77,58 +124,7 @@ function ModalContent(props: Props) {
         handleLeftClick={handleLeftClick}
         handleRightClick={handleRightClick}
       />
-      <div className="fixed left-0 top-[10%] z-50 mx-auto flex w-screen max-w-[1280px] flex-col gap-y-4 md:top-[8%] lg:top-1/2 lg:-translate-y-[calc(50%+3rem)] xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
-        {/* Lg breakpoint close button */}
-        <div className="mx-auto flex w-[80%] justify-end max-lg:hidden sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
-          <button
-            onClick={() => handleClick(false)}
-            className="w-fit hover:cursor-pointer"
-          >
-            <XCircleIcon className="h-8 w-8 text-neutral-50" />
-          </button>
-        </div>
-        <div className="flex flex-wrap items-center justify-center">
-          <button className="flex w-[8%] justify-center max-lg:hidden">
-            {currentIdx && (
-              <ChevronLeftIcon
-                className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
-                onClick={handleLeftClick}
-              />
-            )}
-          </button>
-          <div
-            style={{ backgroundImage: `url(${photoIcon.src})` }}
-            className="relative flex aspect-[3/2] w-[95%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 lg:w-[84%] xl:h-[65vh] xl:w-auto"
-          >
-            <Image
-              src={error ? fallbackImage : currentImg}
-              alt={sectionName}
-              fill
-              className={`object-cover ${
-                isLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              quality={50}
-              onLoadingComplete={(img) => setImgData(img)}
-              onError={() => setError(true)}
-            />
-          </div>
-          <button className="flex w-[8%] justify-center max-lg:hidden">
-            {currentIdx !== imgUrls.length - 1 && (
-              <ChevronRightIcon
-                className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
-                onClick={handleRightClick}
-              />
-            )}
-          </button>
-          <div className="mt-4 flex h-7 w-full items-center justify-center gap-x-4 px-8 text-center font-light text-primary-50">
-            <div dangerouslySetInnerHTML={createMarkup()} />
-            {isLoaded ? null : (
-              <ArrowPathIcon className="h-4 w-4 motion-safe:animate-[spin_2s_linear_infinite]" />
-            )}
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   )
   return ReactDOM.createPortal(
     content,

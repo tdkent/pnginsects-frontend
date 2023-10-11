@@ -64,12 +64,13 @@ export default function MobileSubnavContents({ sections }: Props) {
               {sections &&
                 sections.map((section, i) => {
                   return (
-                    <li
-                      key={i}
-                      className="px-6 py-3 text-sm md:px-8 md:py-4"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Link href={`#${section}`}>{section}</Link>
+                    <li key={i} className="px-6 py-3 text-sm md:px-8 md:py-4">
+                      <Link
+                        onClick={() => setIsOpen(false)}
+                        href={`#${section}`}
+                      >
+                        {section}
+                      </Link>
                     </li>
                   )
                 })}

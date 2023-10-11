@@ -68,8 +68,40 @@ function ModalContent(props: Props) {
   }, [currentImg])
 
   const content = (
-    <div className="fixed left-0 top-1/2 z-50 mx-auto flex w-screen max-w-[1280px] -translate-y-[calc(50%+3rem)] flex-col gap-y-4 xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
-      <div className="mx-auto flex w-[80%] justify-end sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
+    <div className="fixed left-0 top-[15%] z-50 mx-auto flex w-screen max-w-[1280px] flex-col gap-y-4 md:top-[8%] lg:top-1/2 lg:-translate-y-[calc(50%+3rem)] xl:left-1/2 xl:-translate-x-[calc(50%)] xl:-translate-y-[calc(50%+2rem)]">
+      {/* Max-lg breakpoint nav buttons */}
+      <div className="mx-auto flex w-[95%] justify-between text-neutral-50 lg:hidden">
+        <div className="flex basis-1/3 items-center justify-start">
+          <button className="hover:cursor-pointer">
+            {currentIdx ? (
+              <ChevronLeftIcon
+                className="h-10 w-10"
+                onClick={handleLeftClick}
+              />
+            ) : null}
+          </button>
+        </div>
+        <div className="flex basis-1/3 items-center justify-center">
+          <button className="hover:cursor-pointer">
+            {currentIdx !== imgUrls.length - 1 ? (
+              <ChevronRightIcon
+                className="h-10 w-10"
+                onClick={handleRightClick}
+              />
+            ) : null}
+          </button>
+        </div>
+        <div className="flex basis-1/3 items-center justify-end">
+          <button
+            onClick={() => handleClick(false)}
+            className="hover:cursor-pointer"
+          >
+            <XCircleIcon className="h-10 w-10" />
+          </button>
+        </div>
+      </div>
+      {/* Lg breakpoint close button */}
+      <div className="mx-auto flex w-[80%] justify-end max-lg:hidden sm:w-[84%] xl:w-[calc(65vh*(3/2))]">
         <button
           onClick={() => handleClick(false)}
           className="w-fit hover:cursor-pointer"
@@ -78,7 +110,7 @@ function ModalContent(props: Props) {
         </button>
       </div>
       <div className="flex flex-wrap items-center justify-center">
-        <button className="flex w-[10%] justify-center sm:w-[8%]">
+        <button className="flex w-[8%] justify-center max-lg:hidden">
           {currentIdx && (
             <ChevronLeftIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
@@ -88,7 +120,7 @@ function ModalContent(props: Props) {
         </button>
         <div
           style={{ backgroundImage: `url(${photoIcon.src})` }}
-          className="relative flex aspect-[3/2] w-4/5 flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 sm:w-[84%] xl:h-[65vh] xl:w-auto"
+          className="relative flex aspect-[3/2] w-[95%] flex-col border border-neutral-300 bg-[length:12.5%] bg-center bg-no-repeat dark:border-neutral-800 lg:w-[84%] xl:h-[65vh] xl:w-auto"
         >
           <Image
             src={error ? fallbackImage : currentImg}
@@ -100,7 +132,7 @@ function ModalContent(props: Props) {
             onError={() => setError(true)}
           />
         </div>
-        <button className="flex w-[10%] justify-center sm:w-[8%]">
+        <button className="flex w-[8%] justify-center max-lg:hidden">
           {currentIdx !== imgUrls.length - 1 && (
             <ChevronRightIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"

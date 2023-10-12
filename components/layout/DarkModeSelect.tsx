@@ -16,10 +16,12 @@ export default function DarkModeSelect() {
       (window.matchMedia("(prefers-color-scheme: dark").matches &&
         !localStorage.colorScheme)
     ) {
-      document.body.classList.add("dark")
+      // add class to <html> tag
+      document.documentElement.classList.add("dark")
       setIsDark(true)
     } else {
-      document.body.classList.remove("dark")
+      // remove class from <html> tag
+      document.documentElement.classList.remove("dark")
       setIsDark(false)
     }
   }, [isDark])

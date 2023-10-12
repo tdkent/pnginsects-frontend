@@ -86,7 +86,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
     <nav
       className={`${
         isOpen ? "max-lg:left-0" : "max-lg:left-full"
-      } fixed top-[64px] w-screen border-y border-b-primary-600 border-t-primary-400 from-primary-800 to-primary-600 dark:border-neutral-800 dark:from-black dark:to-black max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[72px] lg:absolute lg:left-0 lg:bg-primary-600 lg:dark:bg-black`}
+      } fixed top-[66px] w-screen border-y border-b-primary-600 border-t-primary-400 from-primary-800 to-primary-600 dark:border-neutral-800 dark:from-black dark:to-black max-lg:bottom-0 max-lg:z-50 max-lg:h-screen max-lg:overflow-y-auto max-lg:overflow-x-hidden max-lg:bg-gradient-to-r max-lg:pb-[72px] sm:top-[74px] lg:absolute lg:left-0 lg:top-[72px] lg:bg-primary-600 lg:dark:bg-black`}
     >
       <ul className="max-lg:h-[calc(100% + 4rem)] relative flex max-w-[1536px] flex-col p-6 pb-24 font-light text-primary-200 dark:text-neutral-300 max-lg:gap-y-6 max-lg:overflow-y-auto sm:gap-y-8 sm:text-lg md:p-8 md:pb-32 lg:flex-row lg:justify-between lg:gap-x-4 lg:py-3 lg:text-xs xl:px-14 xl:text-sm 3xl:mx-auto">
         {links

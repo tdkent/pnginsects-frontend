@@ -5,7 +5,7 @@
 @layer base {
   /* body */
   body {
-    @apply overflow-x-hidden bg-primary-800 font-sans;
+    @apply overflow-x-hidden font-sans;
   }
 
   main {

@@ -16,7 +16,7 @@ const Header = () => {
       : document.body.classList.remove("overflow-hidden")
   }, [isOpen])
   return (
-    <header className="z-50 w-screen border-primary-300 bg-gradient-to-r from-primary-800 to-primary-600 dark:bg-gradient-to-b dark:from-black dark:to-black max-lg:border-t-2 max-lg:dark:from-25% lg:sticky lg:top-0 lg:bg-gradient-to-b dark:lg:from-primary-800 dark:lg:to-black">
+    <header className="z-50 w-screen border-primary-300 bg-gradient-to-r from-primary-800 to-primary-600 dark:border-neutral-800 dark:bg-gradient-to-b dark:from-black dark:to-black max-lg:border-t-2 max-lg:dark:from-25% lg:sticky lg:top-0 lg:bg-gradient-to-b dark:lg:from-primary-800 dark:lg:to-black">
       <div className="flex h-[64px] max-w-[1536px] items-center justify-between px-5 sm:h-[72px] md:px-8 xl:px-14 3xl:mx-auto">
         <div className="flex items-center gap-x-6 md:gap-x-9 lg:gap-x-12">
           <Link href="/" onClick={() => setIsOpen(false)} role="button">

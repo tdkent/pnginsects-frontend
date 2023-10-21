@@ -18,31 +18,34 @@ export default function Coleoptera() {
     <>
       <MobileSubnav name={NavName.coleoptera} />
       <div className="page-wrapper">
-        <Subnav name={NavName.coleoptera} />
         <article className="article-container">
           <PageHeader
             text="Coleoptera - Beetles"
             src={rhinobeetle}
             altText="Rhinobeetle"
           />
-          <section>
-            <p>
-              Coleoptera, the largest order of insects, consists of beetles.
-              With over 400,000 known species, beetles exhibit remarkable
-              diversity in terms of size, shape, colour, and behaviour. They can
-              be found in almost every habitat on Earth, including terrestrial,
-              freshwater, and marine environments. Beetles are characterized by
-              their hardened forewings called elytra, which protect their
-              membranous hindwings.
-            </p>
-            <p>
-              <strong>Identification Tips:</strong> Beetles have a distinct
-              appearance with their hardened forewings covering the abdomen.
-              Their antennae vary in shape and can be clubbed, serrated, or
-              thread-like. Look for the presence of chewing mouthparts and the
-              ability to fly. Pay attention to their size, colour patterns, and
-              unique adaptations such as horns or modified body structures.
-            </p>
+          <section className="intro">
+            <div className="intro-text">
+              <p>
+                Coleoptera, the largest order of insects, consists of beetles.
+                With over 400,000 known species, beetles exhibit remarkable
+                diversity in terms of size, shape, colour, and behaviour. They
+                can be found in almost every habitat on Earth, including
+                terrestrial, freshwater, and marine environments. Beetles are
+                characterized by their hardened forewings called elytra, which
+                protect their membranous hindwings.
+              </p>
+              <p>
+                <strong>Identification Tips:</strong> Beetles have a distinct
+                appearance with their hardened forewings covering the abdomen.
+                Their antennae vary in shape and can be clubbed, serrated, or
+                thread-like. Look for the presence of chewing mouthparts and the
+                ability to fly. Pay attention to their size, colour patterns,
+                and unique adaptations such as horns or modified body
+                structures.
+              </p>
+            </div>
+            <Subnav name={NavName.coleoptera} />
           </section>
           <ImageGallery name={NavName.coleoptera} />
         </article>

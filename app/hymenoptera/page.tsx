@@ -18,33 +18,36 @@ export default function Hymenoptera() {
     <>
       <MobileSubnav name={NavName.hymenoptera} />
       <div className="page-wrapper">
-        <Subnav name={NavName.hymenoptera} />
         <article className="article-container">
           <PageHeader
             text="Hymenoptera - Bees, Wasps and Ants"
             src={bee}
             altText="Bee"
           />
-          <section>
-            <p>
-              Hymenoptera, which includes ants, bees, wasps, and sawflies, is a
-              large and diverse order of insects. They exhibit complex social
-              behaviors and display a wide range of body forms and adaptations.
-              They are also of great ecological importance as pollinators and
-              predators.
-            </p>
-            <p>
-              <strong>Identification Tips:</strong> Hymenopterans have two pairs
-              of membranous wings and a narrow waist called a petiole. Look for
-              the presence of specialised structures such as stingers or pollen
-              baskets. Ants have a distinct constricted &quot;waist&quot; and
-              often form organised colonies with different castes. Bees are
-              known for their hairy bodies, pollen-carrying structures, and
-              important role as pollinators. Wasps can vary in size and have
-              smooth bodies, and some species are known for their ability to
-              sting. Sawflies resemble wasps but lack a constricted waist and
-              have additional pairs of simple eyes.
-            </p>
+          <section className="intro">
+            <div className="intro-text">
+              <p>
+                Hymenoptera, which includes ants, bees, wasps, and sawflies, is
+                a large and diverse order of insects. They exhibit complex
+                social behaviors and display a wide range of body forms and
+                adaptations. They are also of great ecological importance as
+                pollinators and predators.
+              </p>
+              <p>
+                <strong>Identification Tips:</strong> Hymenopterans have two
+                pairs of membranous wings and a narrow waist called a petiole.
+                Look for the presence of specialised structures such as stingers
+                or pollen baskets. Ants have a distinct constricted
+                &quot;waist&quot; and often form organised colonies with
+                different castes. Bees are known for their hairy bodies,
+                pollen-carrying structures, and important role as pollinators.
+                Wasps can vary in size and have smooth bodies, and some species
+                are known for their ability to sting. Sawflies resemble wasps
+                but lack a constricted waist and have additional pairs of simple
+                eyes.
+              </p>
+            </div>
+            <Subnav name={NavName.hymenoptera} />
           </section>
           <ImageGallery name={NavName.hymenoptera} />
         </article>

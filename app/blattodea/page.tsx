@@ -18,7 +18,7 @@ export default function Blattodea() {
     <>
       <MobileSubnav name={NavName.blattodea} />
       <div className="page-wrapper">
-        <Subnav name={NavName.blattodea} />
+        {/* <Subnav name={NavName.blattodea} /> */}
         <article className="article-container">
           <PageHeader
             text="Blattodea - Cockroaches and Termites"

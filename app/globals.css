@@ -18,7 +18,7 @@
   }
 
   .article-container {
-    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20 xl:px-14 2xl:w-3/4 3xl:w-4/5;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:py-20 xl:px-14;
   }
 
   article p {

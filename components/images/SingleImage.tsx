@@ -42,13 +42,7 @@ export default function SingleImage(props: Props) {
   return (
     <>
       {isOpen && <Modal handleClick={handleClick} {...props} />}
-      <figure
-        className={`my-0 grow basis-full sm:my-0 sm:basis-1/2 sm:p-1 ${
-          props.sectionName === "Tiles"
-            ? "lg:basis-1/3"
-            : "xl:basis-1/3 2xl:basis-1/4 3xl:basis-1/5"
-        }`}
-      >
+      <figure className="my-0 grow-0 basis-full sm:my-0 sm:basis-1/2 sm:p-1 lg:basis-1/3">
         <div className="relative mb-8 pb-4">
           <div
             onClick={() => handleClick(true)}

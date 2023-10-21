@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Montserrat } from "next/font/google"
 
 import Header from "components/layout/Header"
+import BackToTop from "@/components/layout/BackToTop"
 import Footer from "components/layout/Footer"
 
 const montserrat = Montserrat({
@@ -45,6 +46,7 @@ export default function RootLayout({
             <Header />
             <main>{children}</main>
           </div>
+          <BackToTop />
           <Footer />
         </div>
       </body>

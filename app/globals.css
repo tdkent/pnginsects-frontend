@@ -18,11 +18,19 @@
   }
 
   .article-container {
-    @apply flex flex-col px-5 py-8 md:px-8 lg:w-[70%] lg:py-20 xl:px-14 2xl:w-3/4 3xl:w-4/5;
+    @apply flex flex-col px-5 py-8 md:px-8 lg:py-20 xl:px-14;
+  }
+
+  .intro {
+    @apply flex lg:min-h-[340px];
+  }
+
+  .intro-text {
+    @apply w-full lg:w-3/4;
   }
 
   article p {
-    @apply mb-5 leading-8 last:mb-10 md:pr-8 xl:mb-10 xl:w-4/5 xl:pr-0;
+    @apply mb-5 leading-8 last:mb-10 md:pr-16 lg:pr-12 xl:mb-10;
   }
 
   svg {

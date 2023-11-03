@@ -18,25 +18,27 @@ export default function Butterflies() {
     <>
       <MobileSubnav name={NavName.butterflies} />
       <div className="page-wrapper">
-        <Subnav name={NavName.butterflies} />
         <article className="article-container">
           <PageHeader text="Butterflies" src={butterfly} altText="Butterfly" />
-          <section>
-            <p>
-              Butterflies, like moths, belong to the order Lepidoptera. They are
-              known for their vibrant colours, delicate wing structures, and
-              charismatic flight. Butterflies are typically diurnal, being
-              active during the day, and are commonly seen visiting flowers for
-              nectar. There are around 800 species in Papua New Guinea.
-            </p>
-            <p>
-              <strong>Identification Tips:</strong> They have slender bodies,
-              clubbed antennae, and two pairs of large, often colorful wings.
-              When identifying butterflies, observe their body shape, wing
-              structure, and antennae. Pay attention to their colour patterns,
-              which can vary dramatically between species and even within
-              species.
-            </p>
+          <section className="intro">
+            <div className="intro-text">
+              <p>
+                Butterflies, like moths, belong to the order Lepidoptera. They
+                are known for their vibrant colours, delicate wing structures,
+                and charismatic flight. Butterflies are typically diurnal, being
+                active during the day, and are commonly seen visiting flowers
+                for nectar. There are around 800 species in Papua New Guinea.
+              </p>
+              <p>
+                <strong>Identification Tips:</strong> They have slender bodies,
+                clubbed antennae, and two pairs of large, often colorful wings.
+                When identifying butterflies, observe their body shape, wing
+                structure, and antennae. Pay attention to their colour patterns,
+                which can vary dramatically between species and even within
+                species.
+              </p>
+            </div>
+            <Subnav name={NavName.butterflies} />
           </section>
           <ImageGallery name={NavName.butterflies} />
         </article>

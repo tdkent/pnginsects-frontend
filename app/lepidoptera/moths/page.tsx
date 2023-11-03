@@ -18,23 +18,25 @@ export default function Moths() {
     <>
       <MobileSubnav name={NavName.moths} />
       <div className="page-wrapper">
-        <Subnav name={NavName.moths} />
         <article className="article-container">
           <PageHeader text="Moths" src={moth} altText="Moth" />
-          <section>
-            <p>
-              Moths belong to the order Lepidoptera and are closely related to
-              butterflies. They are diverse insects with a wide range of sizes,
-              shapes, and colors. Moths are typically nocturnal, although some
-              species are active during the day.
-            </p>
-            <p>
-              <strong>Identification Tips:</strong> They have stout bodies,
-              feathery or filamentous antennae, and two pairs of wings covered
-              in scales. Moths often display intricate patterns and cryptic
-              colouration, which aid in camouflage. When identifying moths,
-              observe their body shape, wing structure and antennae.
-            </p>
+          <section className="intro">
+            <div className="intro-text">
+              <p>
+                Moths belong to the order Lepidoptera and are closely related to
+                butterflies. They are diverse insects with a wide range of
+                sizes, shapes, and colors. Moths are typically nocturnal,
+                although some species are active during the day.
+              </p>
+              <p>
+                <strong>Identification Tips:</strong> They have stout bodies,
+                feathery or filamentous antennae, and two pairs of wings covered
+                in scales. Moths often display intricate patterns and cryptic
+                colouration, which aid in camouflage. When identifying moths,
+                observe their body shape, wing structure and antennae.
+              </p>
+            </div>
+            <Subnav name={NavName.moths} />
           </section>
           <ImageGallery name={NavName.moths} />
         </article>

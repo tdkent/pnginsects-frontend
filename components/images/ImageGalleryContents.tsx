@@ -27,7 +27,11 @@ export default function ImageGalleryContents({ resources }: Props) {
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
   if (!mounted) {
-    return <Loading />
+    return (
+      <div>
+        <Loading />
+      </div>
+    )
   }
   return (
     <div>

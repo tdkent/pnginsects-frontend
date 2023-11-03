@@ -18,26 +18,28 @@ export default function Damselflies() {
     <>
       <MobileSubnav name={NavName.damselflies} />
       <div className="page-wrapper">
-        <Subnav name={NavName.damselflies} />
         <article className="article-container">
           <PageHeader text="Damselflies" src={damselfly} altText="Damselfly" />
-          <section>
-            <p>
-              Damselflies belong to the order Odonata, along with dragonflies,
-              and are known for their delicate appearance and graceful flight.
-              They are often found near freshwater habitats, such as ponds,
-              lakes, and streams, where they lay their eggs and spend their
-              nymph stage underwater. Around 285 species are present in New
-              Guinea, many endemic.
-            </p>
-            <p>
-              <strong>Identification Tips:</strong> When identifying
-              damselflies, note their slender bodies, long and thin wings, and
-              their habit of resting with wings held together above their
-              bodies. Look for distinguishing features such as colour patterns
-              on their wings and body, as well as the shape and colouration of
-              their eyes.
-            </p>
+          <section className="intro">
+            <div className="intro-text">
+              <p>
+                Damselflies belong to the order Odonata, along with dragonflies,
+                and are known for their delicate appearance and graceful flight.
+                They are often found near freshwater habitats, such as ponds,
+                lakes, and streams, where they lay their eggs and spend their
+                nymph stage underwater. Around 285 species are present in New
+                Guinea, many endemic.
+              </p>
+              <p>
+                <strong>Identification Tips:</strong> When identifying
+                damselflies, note their slender bodies, long and thin wings, and
+                their habit of resting with wings held together above their
+                bodies. Look for distinguishing features such as colour patterns
+                on their wings and body, as well as the shape and colouration of
+                their eyes.
+              </p>
+            </div>
+            <Subnav name={NavName.damselflies} />
           </section>
           <ImageGallery name={NavName.damselflies} />
         </article>

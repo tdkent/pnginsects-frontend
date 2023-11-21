@@ -1,5 +1,6 @@
 import "./globals.css"
 import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/react"
 import { Playfair_Display, Montserrat } from "next/font/google"
 
 import Header from "components/layout/Header"
@@ -49,6 +50,7 @@ export default function RootLayout({
           <BackToTop />
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   )

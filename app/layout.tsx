@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   applicationName: "Insects of Papua New Guinea",
   title: "Insects of Papua New Guinea",
   description:
-    "Images and text documenting the insects of Papua New Guinea, grouped by order and family.",
+    "A collection of images of over 1000 insect species documented in Papua New Guinea.",
   authors: [{ name: "James Wareing" }],
   keywords: ["Insects", "Papua New Guinea"],
   icons: {

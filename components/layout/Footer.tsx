@@ -39,6 +39,18 @@ const Footer = () => {
               </div>
             </div>
           </Link>
+          <div className="max-md:hidden">
+            Website developed by{" "}
+            <Link href="https://www.timdkent.com/" target="_blank">
+              <span className="hover:underline">Tim Kent</span>
+            </Link>
+          </div>
+        </div>
+        <div className="mx-auto my-6 text-center md:hidden">
+          Website developed by{" "}
+          <Link href="https://www.timdkent.com/" target="_blank">
+            <span className="hover:underline">Tim Kent</span>
+          </Link>
         </div>
       </footer>
     </>

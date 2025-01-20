@@ -36,6 +36,7 @@ export default function MobileSubnavContents({ sections }: Props) {
             className="flex items-center hover:cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
             tabIndex={-1}
+            aria-label="Subnavigation Menu"
           >
             {isOpen ? (
               <ChevronDownIcon className="h-4 w-4" />

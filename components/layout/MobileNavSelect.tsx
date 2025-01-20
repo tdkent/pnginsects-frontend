@@ -9,7 +9,11 @@ interface Props {
 export default function MobileNavSelect({ isOpen, setIsOpen }: Props) {
   const handleClick = () => setIsOpen((prev) => !prev)
   return (
-    <button className="hover:cursor-pointer lg:hidden" onClick={handleClick}>
+    <button
+      className="hover:cursor-pointer lg:hidden"
+      onClick={handleClick}
+      aria-label="Mobile Navigation Menu"
+    >
       {isOpen ? (
         <XMarkIcon className="h-8 w-8 text-primary-100 dark:text-primary-50" />
       ) : (

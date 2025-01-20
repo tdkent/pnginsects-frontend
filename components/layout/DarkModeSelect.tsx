@@ -26,7 +26,11 @@ export default function DarkModeSelect() {
     }
   }, [isDark])
   return (
-    <button onClick={handleClick} className="hover:cursor-pointer">
+    <button
+      onClick={handleClick}
+      className="hover:cursor-pointer"
+      aria-label="Dark Mode"
+    >
       {isDark ? (
         <MoonIcon className="h-8 w-8 text-primary-50 xl:h-9 xl:w-9" />
       ) : (

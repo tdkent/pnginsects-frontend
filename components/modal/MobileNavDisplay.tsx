@@ -23,14 +23,14 @@ export default function MobileNavDisplay({
   return (
     <div className="mx-auto mt-12 flex w-[95%] justify-between text-neutral-50 lg:hidden">
       <div className="flex basis-1/3 items-center justify-start">
-        <button className="hover:cursor-pointer">
+        <button className="hover:cursor-pointer" aria-label="Previous Image">
           {currentIdx ? (
             <ChevronLeftIcon className="h-10 w-10" onClick={handleLeftClick} />
           ) : null}
         </button>
       </div>
       <div className="flex basis-1/3 items-center justify-center">
-        <button className="hover:cursor-pointer">
+        <button className="hover:cursor-pointer" aria-label="Next Image">
           {currentIdx !== length - 1 ? (
             <ChevronRightIcon
               className="h-10 w-10"
@@ -43,6 +43,7 @@ export default function MobileNavDisplay({
         <button
           onClick={() => handleClick(false)}
           className="hover:cursor-pointer"
+          aria-label="Close"
         >
           <XCircleIcon className="h-10 w-10" />
         </button>

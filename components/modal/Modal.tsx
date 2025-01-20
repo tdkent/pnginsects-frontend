@@ -75,6 +75,7 @@ function ModalContent(props: Props) {
         <button
           onClick={() => handleClick(false)}
           className="w-fit hover:cursor-pointer"
+          aria-label="Close"
         >
           <XCircleIcon className="h-8 w-8 text-neutral-50" />
         </button>
@@ -85,6 +86,7 @@ function ModalContent(props: Props) {
             <ChevronLeftIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
               onClick={handleLeftClick}
+              aria-label="Previous Image"
             />
           )}
         </button>
@@ -107,6 +109,7 @@ function ModalContent(props: Props) {
             <ChevronRightIcon
               className="h-8 w-8 text-neutral-50 hover:cursor-pointer sm:h-12 sm:w-12"
               onClick={handleRightClick}
+              aria-label="Next Image"
             />
           )}
         </button>

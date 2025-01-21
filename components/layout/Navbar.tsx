@@ -98,7 +98,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
             return (
               <React.Fragment key={id}>
                 {sublinks ? (
-                  <div
+                  <li
                     className="group"
                     onMouseEnter={() => {
                       setIsSubnav(true)
@@ -109,15 +109,15 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                       setHoveredId(0)
                     }}
                   >
-                    <li className="max-lg:text-primary-400 max-lg:dark:text-primary-300 lg:flex lg:items-center lg:gap-x-1 lg:hover:cursor-pointer">
+                    <span className="max-lg:text-primary-400 max-lg:dark:text-primary-300 lg:flex lg:items-center lg:gap-x-1 lg:hover:cursor-pointer">
                       {isSubnav && id === hoveredId ? (
                         <ChevronDownIcon className="h-2.5 w-2.5 max-lg:hidden" />
                       ) : (
                         <ChevronRightIcon className="h-2.5 w-2.5 max-lg:hidden" />
                       )}
                       {text}
-                    </li>
-                    <div className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-600 lg:p-2 lg:text-primary-50 lg:group-hover:block lg:dark:border lg:dark:border-neutral-800 lg:dark:bg-black lg:dark:text-neutral-300 xl:w-[98px]">
+                    </span>
+                    <ul className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-600 lg:p-2 lg:text-primary-50 lg:group-hover:block lg:dark:border lg:dark:border-neutral-800 lg:dark:bg-black lg:dark:text-neutral-300 xl:w-[98px]">
                       {sublinks.map((sublink) => {
                         const isActive =
                           pathname.split("/")[2] === sublink.text.toLowerCase()
@@ -137,8 +137,8 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                           </li>
                         )
                       })}
-                    </div>
-                  </div>
+                    </ul>
+                  </li>
                 ) : (
                   <li
                     className={`${isActive && "text-white"} hover:text-white`}

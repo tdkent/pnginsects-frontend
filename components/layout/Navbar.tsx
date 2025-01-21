@@ -117,7 +117,7 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
                       )}
                       {text}
                     </span>
-                    <ul className="absolute flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:hidden lg:w-[88px] lg:bg-primary-600 lg:p-2 lg:text-primary-50 lg:group-hover:block lg:dark:border lg:dark:border-neutral-800 lg:dark:bg-black lg:dark:text-neutral-300 xl:w-[98px]">
+                    <ul className="flex flex-col gap-y-6 pt-6 sm:gap-y-8 lg:absolute lg:hidden lg:w-[88px] lg:bg-primary-600 lg:p-2 lg:text-primary-50 lg:group-hover:block lg:dark:border lg:dark:border-neutral-800 lg:dark:bg-black lg:dark:text-neutral-300 xl:w-[98px]">
                       {sublinks.map((sublink) => {
                         const isActive =
                           pathname.split("/")[2] === sublink.text.toLowerCase()

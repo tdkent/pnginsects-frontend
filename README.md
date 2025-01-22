@@ -90,3 +90,11 @@ export const extractCaptions = (resources: CloudinaryResource[]) => {
 - Cloudinary Node.js SDK
 
 ## Views
+
+### Mobile
+
+![pnginsects-mobile-views](https://github.com/user-attachments/assets/124596a4-5ab8-406b-b916-eb977694cc52)
+
+### Desktop
+
+![pnginsects-desktop-view](https://github.com/user-attachments/assets/42e2dd84-13b4-44b8-864d-82f36cc762e3)

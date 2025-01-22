@@ -15,7 +15,7 @@ const Footer = () => {
           appropriate credit naturally be given.
         </p>
         <div className="flex w-full flex-nowrap items-center justify-between py-2 lg:justify-start lg:gap-x-12 lg:py-0 xl:justify-center xl:gap-x-24">
-          <div className="">&copy; 2023</div>
+          <div className="">&copy; 2023 - 2025</div>
           <a
             href="mailto:jtwareing@gmail.com"
             className="flex items-center gap-x-2 hover:underline"

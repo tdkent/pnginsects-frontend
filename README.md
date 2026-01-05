@@ -2,7 +2,9 @@
 
 ## Description
 
-[PNGInsects.com](https://www.pnginsects.com/) is an image-based website documenting the many insects found on Papua New Guinea, a large island country in the southwestern Pacific.
+PNG Insects is an image-based website documenting the many insects found on Papua New Guinea, a large island country in the southwestern Pacific.
+
+[Visit PNG Insects](https://www.pnginsects.com/)
 
 I developed this application between September and November 2023 as freelance project in collaboration with conservationist and photographer James Wareing. The project leveraged Next.js, particularly its powerful Image component, to deliver an optimized browsing experience. Key techniques included lazy loading, fallback images, and robust error handling to ensure high performance and reliability.
 
@@ -28,49 +30,6 @@ The backend for this project (private repository) is a Node.js REST server desig
 
 The integration of the Cloudinary Node.js SDK enables automated updates to the image data. When new subdirectories are added in Cloudinary, corresponding species sections are dynamically created in the frontend. Fetch requests also account for additions and removals, ensuring the website stays up-to-date with minimal manual intervention.
 
-### Example Code
-
-```js
-export const extractCaptions = (resources: CloudinaryResource[]) => {
-  return resources.map((img) => {
-    const fragment = img.public_id.split("/")[2];
-    let filteredString = "";
-
-    // italicize species names
-    // ' (apostrophe) indicates word should be italicized
-    if (fragment[0] === "'") {
-      for (let i = 0; i < fragment.length; i++) {
-        const char = fragment[i];
-        if (char === "'") {
-          if (i === 0 || fragment[i - 1] === " ") filteredString += "<i>";
-          else filteredString += "</i>";
-        } else filteredString += char;
-      }
-
-      // remove auto-generated duplicate naming
-      // ex: (2) or (3)
-      // check if character is '(' and following char is a number
-      const regex = /[(]+[0-9]/g;
-      // if so, remove the last 4 characters from the string
-      // if the copy number is 9 or less, this will remove ' (x)'
-      // if the copy number is 10 or greater, this will remove '(xx)'
-      // in this case we can use trim() to remove the trailing space
-      if (filteredString.match(regex))
-        filteredString = filteredString.slice(0, -4);
-      // add line break tag if caption includes a common name
-      const commonNameHyphen = " - ";
-      if (filteredString.includes(commonNameHyphen)) {
-        filteredString =
-          filteredString.split(commonNameHyphen)[0] +
-          "<br />" +
-          filteredString.split(commonNameHyphen)[1];
-      }
-    }
-    return { ...img, caption: filteredString.trim() };
-  });
-};
-```
-
 ## Built with
 
 ### Frontend
@@ -91,10 +50,4 @@ export const extractCaptions = (resources: CloudinaryResource[]) => {
 
 ## Views
 
-### Mobile
-
 ![pnginsects-mobile-views](https://github.com/user-attachments/assets/124596a4-5ab8-406b-b916-eb977694cc52)
-
-### Desktop
-
-![pnginsects-desktop-view](https://github.com/user-attachments/assets/42e2dd84-13b4-44b8-864d-82f36cc762e3)

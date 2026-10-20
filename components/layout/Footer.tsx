@@ -5,6 +5,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline"
 import FooterBoundary from "../pages/FooterBoundary"
 
 const Footer = () => {
+  const currYear = new Date().getFullYear()
   return (
     <>
       <FooterBoundary />
@@ -15,7 +16,7 @@ const Footer = () => {
           appropriate credit naturally be given.
         </p>
         <div className="flex w-full flex-nowrap items-center justify-between py-2 lg:justify-start lg:gap-x-12 lg:py-0 xl:justify-center xl:gap-x-24">
-          <div className="">&copy; 2023 - 2025</div>
+          <div className="">&copy; {currYear}. All rights reserved.</div>
           <a
             href="mailto:jtwareing@gmail.com"
             className="flex items-center gap-x-2 hover:underline"
@@ -38,18 +39,6 @@ const Footer = () => {
                 />
               </div>
             </div>
-          </Link>
-          <div className="max-md:hidden">
-            Website developed by{" "}
-            <Link href="https://www.timdkent.com/" target="_blank">
-              <span className="hover:underline">Tim Kent</span>
-            </Link>
-          </div>
-        </div>
-        <div className="mx-auto my-6 text-center md:hidden">
-          Website developed by{" "}
-          <Link href="https://www.timdkent.com/" target="_blank">
-            <span className="hover:underline">Tim Kent</span>
           </Link>
         </div>
       </footer>

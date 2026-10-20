@@ -6,10 +6,30 @@ import { ArrowUpCircleIcon } from "@heroicons/react/24/outline"
 export default function BackToTop() {
   const pathname = usePathname()
   const isPageHeaderVisible = useStore((state) => state.isPageHeaderVisible)
+
+  
+  const validPaths = [
+    "/blattodea",
+    "/coleoptera",
+    "/diptera",
+    "/hemiptera",
+    "/hymenoptera",
+    "/lepidoptera/butterflies",
+    "/lepidoptera/moths",
+    "/mantodea",
+    "/odonata/dragonflies",
+    "/odonata/damselflies",
+    "/orthoptera",
+    "/phasmida",
+    "/trichoptera",
+  ]
+  
+  const isValidPath = validPaths.includes(pathname);
+  
   return (
     <a
       href="#"
-      className={`${pathname === "/" && "hidden"} ${
+      className={`${!isValidPath && "hidden"} ${
         isPageHeaderVisible ? "opacity-0" : "opacity-100"
       } sticky bottom-6 left-full mb-6 mr-6 flex w-fit items-center justify-end gap-x-2 place-self-end whitespace-nowrap rounded-xl bg-black/60 p-4 text-white transition-opacity duration-300 dark:bg-neutral-500/75 max-lg:hidden`}
     >

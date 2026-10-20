@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     formats: ["image/webp"],
-    domains: ["res.cloudinary.com"],
+    remotePatterns: [new URL("https://res.cloudinary.com/**")],
   },
 }
 
